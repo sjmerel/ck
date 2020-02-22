@@ -1,0 +1,265 @@
+
+include $(CK_ROOT)/build/Makefile-defs
+
+
+C_OBJ_FILES := $(addprefix $(OBJ_DIR)/,$(addsuffix .o,$(basename $(CK_C_SRC_FILES))))
+CPP_OBJ_FILES := $(addprefix $(OBJ_DIR)/,$(addsuffix .o,$(basename $(CK_CPP_SRC_FILES))))
+OBJ_FILES := $(C_OBJ_FILES) $(CPP_OBJ_FILES) $(CK_OBJ_FILES)
+
+C_S_FILES := $(addprefix $(OBJ_DIR)/,$(addsuffix .s,$(basename $(CK_C_SRC_FILES))))
+CPP_S_FILES := $(addprefix $(OBJ_DIR)/,$(addsuffix .s,$(basename $(CK_CPP_SRC_FILES))))
+S_FILES := $(C_S_FILES) $(CPP_S_FILES)
+
+C_OBJ_DIRS := $(sort $(dir $(C_OBJ_FILES)))
+CPP_OBJ_DIRS := $(sort $(dir $(CPP_OBJ_FILES)))
+OBJ_DIRS := $(C_OBJ_DIRS) $(CPP_OBJ_DIRS)
+
+PCH_OBJ_FILE := $(addprefix $(OBJ_DIR)/,$(addsuffix .gch,$(CK_PCH_FILE)))
+
+
+##################################################################3
+# tools
+
+ifeq ($(CK_TARGET_OS),android)
+  AR := $(GCC_DIR)/bin/$(GCC_PREFIX)-ar 
+  CC := $(LLVM_DIR)/bin/clang
+  CXX := $(LLVM_DIR)/bin/clang++
+else
+  AR := ar
+  CC := clang
+  CXX := clang++
+endif
+
+
+##################################################################3
+# compiler flags
+
+C_COMMON_FLAGS := \
+       -fpic \
+       -ffunction-sections \
+       -funwind-tables \
+       -fstack-protector \
+       -Wall \
+       -Wno-sign-compare \
+       -fno-exceptions \
+       -fstrict-aliasing \
+       -I$(CK_ROOT)/inc \
+       -I$(CK_ROOT)/src \
+       $(addprefix -I,$(CK_INCLUDE_DIRS)) \
+       -Wformat \
+       -Werror=format-security \
+       -Werror=strict-aliasing \
+       -g \
+       $(CK_C_FLAGS)
+
+ifeq ($(CK_TARGET_OS),android)
+  C_COMMON_FLAGS += \
+       -gcc-toolchain $(GCC_DIR) \
+       -no-canonical-prefixes \
+       -isystem$(CK_ANDROID_NDK_DIR)/sources/cxx-stl/system/include \
+       -isystem$(CK_ANDROID_NDK_DIR)/sources/android \
+       -isystem$(CK_ANDROID_NDK_DIR)/platforms/android-$(CK_API_TARGET)/arch-$(ARCH_TYPE)/usr/include \
+       -DANDROID \
+       -D__ANDROID__ 
+endif
+
+
+CPP_COMMON_FLAGS := -fno-rtti
+
+ifeq ($(CK_TARGET_OS),android)
+  CPP_COMMON_FLAGS += -I$(CK_ANDROID_NDK_DIR)/sources/cxx-stl/system/include
+endif
+
+
+ifeq ($(CK_TARGET_OS),android)
+  ifeq ($(CK_ARCH),armeabi)
+    C_ARCH_FLAGS := -target armv5te-none-linux-androideabi -march=armv5te -mno-thumb -mtune=xscale -msoft-float 
+  else ifeq ($(CK_ARCH),armeabi-v7a)
+    C_ARCH_FLAGS := -target armv7-none-linux-androideabi -march=armv7-a -mthumb -mfloat-abi=softfp -mfpu=vfpv3-d16
+  else ifeq ($(CK_ARCH),arm64-v8a)
+    C_ARCH_FLAGS := -target aarch64-none-linux-android 
+  else ifeq ($(CK_ARCH),x86)
+    C_ARCH_FLAGS := -target i686-none-linux-android -mtune=atom -msse3 -mfpmath=sse
+  else ifeq ($(CK_ARCH),x86_64)
+    C_ARCH_FLAGS := -target x86_64-none-linux-android -mtune=atom -msse3 -mfpmath=sse
+  else ifeq ($(CK_ARCH),mips)
+    C_ARCH_FLAGS := -target mipsel-none-linux-android
+  else ifeq ($(CK_ARCH),mips64)
+    C_ARCH_FLAGS := -target mips64el-none-linux-android
+  else ifdef CK_ARCH
+    $(error unknown Android architecture!)
+  endif
+else ifeq ($(CK_TARGET_OS),linux)
+  ifeq ($(CK_ARCH),x86)
+    C_ARCH_FLAGS := -m32
+  else ifeq ($(CK_ARCH),x64)
+    C_ARCH_FLAGS := -m64
+  endif
+else
+  $(error unknown target OS!)
+endif
+
+
+C_DEBUG_FLAGS   := -O0 -Os -DCK_DEBUG=1 
+C_RELEASE_FLAGS := -O2 -Os -fomit-frame-pointer -DCK_NDEBUG=1 -DNDEBUG 
+ifeq ($(CK_CONFIG),debug)
+  C_FLAGS := $(C_COMMON_FLAGS) $(C_ARCH_FLAGS) $(C_DEBUG_FLAGS)
+else
+  C_FLAGS := $(C_COMMON_FLAGS) $(C_ARCH_FLAGS) $(C_RELEASE_FLAGS)
+endif
+
+ASM_FLAGS := -Wa,--noexecstack
+
+CPP_FLAGS  := $(C_FLAGS) $(CPP_COMMON_FLAGS) $(CK_CPP_FLAGS)
+
+CPP_LINK_FLAGS := -L$(LIB_DIR)
+ifeq ($(CK_TARGET_OS),linux)
+  ifeq ($(CK_ARCH),x86)
+    CPP_LINK_FLAGS += -L/usr/lib/i386-linux-gnu 
+  else
+    CPP_LINK_FLAGS += -L/usr/lib/x86_64-linux-gnu 
+  endif
+endif
+
+
+##################################################################3
+# include generated dependency files (failing silently if they don't exist)
+
+-include $(C_OBJ_FILES:%.o=%.d) $(CPP_OBJ_FILES:%.o=%.d) $(PCH_OBJ_FILE:%.gch=%.d)
+
+
+##################################################################3
+# rules
+
+clean:
+	rm -rf $(OBJ_DIR_BASE) $(LIB_DIR_BASE) $(EXE_DIR_BASE)
+.PHONY: clean
+
+ifndef CK_ARCH
+allarch:
+ifeq ($(CK_TARGET_OS),android)
+	@for arch in $(CK_ARCH_LIST); \
+    do \
+	   $(MAKE) -f $(firstword $(MAKEFILE_LIST)) --no-print-directory CK_CONFIG=$(CK_CONFIG) CK_ARCH=$$arch; \
+    done
+else
+	@$(MAKE) -f $(firstword $(MAKEFILE_LIST)) --no-print-directory CK_CONFIG=$(CK_CONFIG) CK_ARCH=x86
+	@$(MAKE) -f $(firstword $(MAKEFILE_LIST)) --no-print-directory CK_CONFIG=$(CK_CONFIG) CK_ARCH=x64
+endif
+
+# allpost is for targets that need all architectures as prereqs (e.g. ck/jni)
+allpost: allarch
+.PHONY: allarch allpost
+.DEFAULT_GOAL := allpost
+else
+.DEFAULT_GOAL := all
+
+buildmsg = echo [$(CK_CONFIG), $(CK_TARGET_OS) $(CK_ARCH)] $1
+
+$(CK_MAKEFILE_DEPS):
+	@$(call buildmsg,"executing makefile $@")
+	@$(MAKE) -C $(@D) -f $(@F) --no-print-directory CK_CONFIG=$(CK_CONFIG) CK_TARGET_OS=$(CK_TARGET_OS) CK_ARCH=$(CK_ARCH)
+.PHONY: $(CK_MAKEFILE_DEPS)
+
+ifneq ($(CK_LIB_NAME),)
+$(LIB_FILE): $(CK_MAKEFILE_DEPS) $(OBJ_FILES) | $(LIB_DIR) $(LIB_DIR_SDK)
+	@$(call buildmsg,"building library $@")
+	@rm -f $@  #prevents orphaned object files from staying in archive
+	@$(AR) crsD $@ $(OBJ_FILES) 
+else ifneq ($(CK_EXE_NAME),)
+$(EXE_FILE): $(CK_MAKEFILE_DEPS) $(OBJ_FILES) | $(EXE_DIR)
+	@$(call buildmsg,"linking $@")
+	@$(CXX) -o $@ $(C_ARCH_FLAGS) $(OBJ_FILES) \
+       $(CPP_LINK_FLAGS) \
+       $(foreach lib,$(CK_LINK_LIBS),-l$(lib)) 
+	@cp $@ $(EXE_DIR)/../$(EXE_NAME)
+endif
+
+$(LIB_DIR) $(LIB_DIR_SDK) $(EXE_DIR) $(OBJ_DIRS):
+	@mkdir -p $@
+
+# object files depend on makefiles, so changes in makefiles require recompiling all sources.
+$(OBJ_FILES) $(PCH_OBJ_FILE): $(firstword $(MAKEFILE_LIST)) $(CK_ROOT)/build/Makefile-common $(CK_ROOT)/build/Makefile-defs $(CK_ROOT)/build/android_abis.txt 
+
+$(PCH_OBJ_FILE): $(CK_PCH_FILE) | $(OBJ_DIRS)
+	$(eval DEP := $(addsuffix .d,$(basename $@)))
+	@$(call buildmsg,"compiling C++ header $(CK_PCH_FILE)")
+	@$(CXX) \
+       -MMD -MP -MF $(DEP) \
+       $(CPP_FLAGS) \
+       -x c++-header -c $< -o $@
+	@$(call fixdep,$(DEP))
+
+$(CPP_S_FILES): $(OBJ_DIR)/%.s : %.$(CK_CPP_SUFFIX) $(PCH_OBJ_FILE) | $(CPP_OBJ_DIRS)
+	$(eval DEP := $(addsuffix .d,$(basename $@)))
+	@$(call buildmsg,"generating assembly for C++ $<")
+	@$(CXX) \
+       -MMD -MP -MF $(DEP) \
+       $(if $(CK_PCH_FILE), -include $(OBJ_DIR)/$(CK_PCH_FILE)) \
+       $(CPP_FLAGS) \
+       $(ASM_FLAGS) \
+       -S -c $< -o $@
+	@$(call fixdep,$(DEP))
+
+# Files with .neon. in their name (e.g. audioutil.neon.cpp) are compiled with -mfpu=neon (and don't use precompiled header, since that was compiled without -mfpu=neon)
+$(CPP_OBJ_FILES): $(OBJ_DIR)/%.o : %.$(CK_CPP_SUFFIX) $(PCH_OBJ_FILE) | $(CPP_OBJ_DIRS)
+	$(eval DEP := $(addsuffix .d,$(basename $@)))
+ifeq ($(CK_ARCH),armeabi-v7a)
+	@$(call buildmsg,"compiling C++ $(if $(findstring .neon.,$<),neon )$<")
+	@$(CXX) \
+       -MMD -MP -MF $(DEP) \
+       $(CPP_FLAGS) $(if $(findstring .neon.,$<),-mfpu=neon,$(if $(CK_PCH_FILE), -include $(OBJ_DIR)/$(CK_PCH_FILE))) \
+       $(ASM_FLAGS) \
+       -c $< -o $@
+else
+	@$(call buildmsg,"compiling C++ $<")
+	@$(CXX) \
+       -MMD -MP -MF $(DEP) \
+       $(if $(CK_PCH_FILE), -include $(OBJ_DIR)/$(CK_PCH_FILE)) \
+       $(CPP_FLAGS) \
+       $(ASM_FLAGS) \
+       -c $< -o $@
+endif
+	@$(call fixdep,$(DEP))
+
+$(C_S_FILES): $(OBJ_DIR)/%.s : %.c $(PCH_OBJ_FILE) | $(C_OBJ_DIRS)
+	$(eval DEP := $(addsuffix .d,$(basename $@)))
+	@$(call buildmsg,"generating assembly for C $<")
+	@$(CC) \
+       -MMD -MP -MF $(DEP) \
+       $(if $(CK_PCH_FILE), -include $(OBJ_DIR)/$(CK_PCH_FILE)) \
+       $(C_FLAGS) \
+       $(ASM_FLAGS) \
+       -S -c $< -o $@
+	@$(call fixdep,$(DEP))
+
+$(C_OBJ_FILES): $(OBJ_DIR)/%.o : %.c $(PCH_OBJ_FILE) | $(C_OBJ_DIRS)
+	$(eval DEP := $(addsuffix .d,$(basename $@)))
+	@$(call buildmsg,"compiling C $<")
+	@$(CC) \
+       -MMD -MP -MF $(DEP) \
+       $(if $(CK_PCH_FILE), -include $(OBJ_DIR)/$(CK_PCH_FILE)) \
+       $(C_FLAGS) \
+       $(ASM_FLAGS) \
+       -c $< -o $@
+	@$(call fixdep,$(DEP))
+
+
+
+ifneq ($(CK_LIB_NAME),)
+all: $(LIB_FILE)
+else ifneq ($(CK_EXE_NAME),)
+all: $(EXE_FILE)
+else
+all: $(OBJ_FILES)
+endif
+.PHONY: all 
+
+
+# suppress "nothing to be done for 'all'"
+all:
+	@:
+
+endif
+
+

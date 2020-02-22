@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <title>Cricket Audio: building from source</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Building Cricket Audio from source</h1>
+    Users who have purchased a source license can build Cricket Audio from
+    source. <br>
+    <h2>iOS</h2>
+    <p>The iOS version is built with Xcode on OS X. The Xcode workspace is in <span
+        class="filename">src/ck.xcworkspace</span>.</p>
+    <h2>Android</h2>
+    <p>The Android version can be built on OS X, Windows, or Linux using GNU
+      make. On Windows, you will need to install <a href="http://www.cygwin.com">Cygwin</a>.</p>
+    <p>You will need to download and install the Android NDK and Android SDK,
+      and set the environment variables CK_ANDROID_NDK_DIR and
+      CK_ANDROID_SDK_DIR to those directories.</p>
+    <p>To build, first change to the <span class="filename">ck/src/ck</span>
+      directory, then run</p>
+    <p class="filename">&nbsp;&nbsp;&nbsp; ./gradlew build</p>
+    <h2>OS X</h2>
+    <p>The OS X version is built with Xcode on OS X. The Xcode workspace is in <span
+        class="filename">src/ck.xcworkspace</span>.</p>
+    <h2>Windows</h2>
+    <p>The Windows version is built with Visual Studio on Windows 10. The
+      solution files are in <span class="filename">src/ck</span>; choose the
+      version that corresponds to the version of Visual Studio you are
+      using.&nbsp; For example, use <span class="filename">ck_win_vs2017.sln</span>
+      for Visual Studio 2017.</p>
+    <h2>Linux</h2>
+    The Linux version can be built using GNU make.<br>
+    <p>To build, first change to the <span class="filename">ck/src/ck</span>
+      directory, then run</p>
+    <p class="filename">&nbsp;&nbsp;&nbsp; make CK_TARGET_OS=linux</p>
+    <p>which will build the debug version for all available architectures.</p>
+    <p>To build the release version, run</p>
+    <p class="filename">&nbsp;&nbsp;&nbsp; make CK_TARGET_OS=linux
+      CK_CONFIG=release</p>
+    <p>To build for only one architecture, run</p>
+    <p class="filename">&nbsp;&nbsp;&nbsp; make CK_TARGET_OS=linux CK_ARCH=<em>arch</em></p>
+    <p>where <em class="filename">arch</em> is one of the supported
+      architectures (x86 or x64).</p>
+  </body>
+</html>

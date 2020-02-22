@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <title>Cricket Audio: building with Cricket Audio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Building with Cricket Audio</h1>
+    <a name="arm_instruction_sets"></a>
+    <h2>ARM instruction sets</h2>
+    All iOS devices, and most Android devices, run on processors that use some
+    variant of the ARM instruction set, such as armv5TE, armv6, or armv7.&nbsp;
+    Devices that support the armv7 instruction can support specialized
+    instructions (called NEON instructions) that can significantly speed up
+    audio processing.<br>
+    <h3>iOS</h3>
+    Most recent iOS devices currently use the armv7, armv7s, or arm64
+    instruction set.&nbsp; The Cricket Audio library for iOS contains code for
+    all three instruction sets plus the x86_64 code for the iPhone simulator,
+    packed into a single library (a "fat binary").&nbsp; When you link your app
+    to the Cricket Audio library, the linker will automatically choose the
+    correct version.&nbsp; <br>
+    <br>
+    Older iOS devices, prior to the iPhone 4 and 3rd generation iPod Touch, used
+    the armv6 instruction set; however, Cricket Audio no longer supports armv6,
+    because Xcode no longer generates armv6 code.<br>
+    <h3>Android</h3>
+    Android native code can be built for armv5 (referred to as "armeabi"), armv7
+    ("armeabi-v7a"), or armv8 ("arm64-v8a").&nbsp; Code built for armv5 can run
+    on all devices, but armv7 and armv8 code will run faster on processors that
+    support those architectures.&nbsp; Typically you want to provide all
+    versions in your .apk; at runtime, the operating system will load the
+    library with the appropriate architecture.<br>
+    <br>
+    If you are using the Android Java interface (the Android SDK), you will just
+    need to install all versions of the native Cricket Audio library (<span class="filename">libckjava.so</span>)
+    with your app. (See <a href="#building_for_android_sdk">Building for the
+      Android SDK</a> below.)<br>
+    <br>
+    If you are using the Android native interface (the Android NDK), you will
+    want to build your native code for all instruction sets, linking each
+    version to the appropriate version of the Cricket Audio library.&nbsp; By
+    default, native code built for Android targets only the armv5 instruction
+    set; while this will work, your code will not run as quickly as it could on
+    armv7 or armv8 devices.&nbsp; To build for both instruction sets, you need
+    to specify them in the&nbsp;<span class="filename">APP_ABI</span> variable
+    in your&nbsp;<span class="filename">Application.mk</span> file.&nbsp; (See <a
+      href="#building_for_android_ndk">Building for the Android NDK</a> below.)<br>
+    <br>
+    Some Android devices use Intel processors instead of ARM; to support those
+    devices, you can build for the x86 and x86_64 architectures.&nbsp; Building
+    for x86 and x86_64 also allows you to take advantage of Intel HAXM
+    acceleration when running on the Android emulator.<br>
+    <br>
+    Cricket Audio does not support MIPS builds of Android; if you are targeting
+    this architecture, please contact Cricket Audio support for more
+    information.<br>
+    <br>
+    <br>
+    <a name="building_for_ios_or_osx"></a>
+    <h2>Building for iOS, tvOS, or OS X</h2>
+    Select your project in the Project Navigator.&nbsp; In the Project Editor,
+    select the Build Settings tab.<br>
+    <br>
+    In the "Search Paths" section, add the path to the Cricket Audio <span class="filename">inc</span>
+    directory to the "Header Search Paths" setting.&nbsp; (For example, if the
+    Cricket Audio distribution is in&nbsp;<span class="filename">../../cricket</span>,
+    the header search path would be <span class="filename">../../cricket/inc</span>.)<br>
+    <br>
+    In the "Search Paths" section, add the path to the Cricket&nbsp;<span class="filename">lib</span>
+    directory to the "Library Search Paths" setting.&nbsp; To specify the
+    configuration (debug or release), you can use the<span class="filename"></span>
+    <span class="filename">${CONFIGURATION}</span> variable.&nbsp; (For example,
+    if the Cricket Audio distribution is in&nbsp;<span class="filename">../../cricket</span>,
+    the library search path for iOS would be <span class="filename">../../cricket/lib/ios/${CONFIGURATION}</span>.)<br>
+    <br>
+    In the "Linking" section, add&nbsp;<span class="filename">-lck</span> to the
+    "Other Linker Flags" setting.&nbsp; If you are using the Objective-C
+    interface, and you have no C++ code in your project, you may also need to
+    add&nbsp;<span class="filename">-lstdc++</span> also.<br>
+    <br>
+    You will also probably want to make sure that any data files (bank files or
+    stream files) are added to the project and set to be added as resources to
+    your application bundle.<br>
+    <br>
+    If you are not already doing so, you will need to link to the AudioUnit,
+    AudioToolbox, AVFoundation, CoreMedia, and MediaPlayer frameworks.<br>
+    <br>
+    For an example using Objective-C, take a look at the <a href="examples.html">hellocricket</a>
+    sample, in&nbsp;<span class="filename">src/samples/hellocricket/ios-objc</span>.&nbsp;
+(There
+    is an analogous OS X project in&nbsp;<span class="filename">osx-objc</span>.)&nbsp;
+This
+    app was generated from the Xcode template for a window-based iOS app, with
+    just a few minor changes to play a sound using Cricket Audio.&nbsp; A "Run
+    Script" build phase was added to the target, which uses the&nbsp;<a href="cktool.html"><span
+        class="filename">cktool</span></a> utility to build the binary bank file
+    from the bank description file.&nbsp; Finally, the binary bank file&nbsp;<span
+      class="filename">hellocricket.ckb</span> was added to the project, which
+    automatically added it to the "Copy Bundle Resources" build phase.<br>
+    <br>
+    For an example using C++, take a look at the <a href="examples.html">hellocricket</a>
+    sample, in&nbsp;<span class="filename">src/samples/hellocricket/ios-cpp</span>.&nbsp;
+(There
+    is an analogous OS X project in&nbsp;<span class="filename">osx-cpp</span>.)
+    This app is identical to the Objective-C version, except the app delegate
+    class uses the C++ Cricket Audio interface instead of Objective-C.&nbsp; The
+    file containing the app delegate class,&nbsp;<span class="filename">hellocricketAppDelegate.mm</span>,
+    was renamed from&nbsp;<span class="filename">hellocricketAppDelegate.m</span>,
+    so the Objective-C++ compiler, rather than the Objective-C compiler, would
+    be used to build it.&nbsp; (Alternatively, we could have changed the type of
+    the source file from "Objective-C source" to "Objective-C++ source" in the
+    File Inspector.)<br>
+    <a name="building_for_android_sdk"></a>
+    <h2>Building for the Android SDK with Android Studio</h2>
+    Cricket Audio for the Android SDK consists of a .aar file (<span class="filename">ck.aar</span>)
+    which contains both the Java interface and the native code. <br>
+    <br>
+    For an example, look at the <a href="examples.html">hellocricket</a>
+    sample, in&nbsp;<span class="filename">src/samples/hellocricket/android-sdk</span>.&nbsp;&nbsp;
+In
+    particular, look at <span class="filename">src/samples/hellocricket/android-sdk/app/build.gradle</span>
+    for an example of how to specify the path to the ck.aar file.<br>
+    <br>
+    <a name="building_for_android_ndk"></a>
+    <h2>Building for the Android NDK </h2>
+    <p>Cricket Audio for the Android NDK consists of static libraries and
+      headers. </p>
+    <p> For an example, look at the NDK <a href="examples.html">hellocricket</a>
+      sample, at&nbsp; <span class="filename">src/samples/hellocricket/android-ndk.</span>
+      This example uses a Java activity class that calls the native Cricket
+      Audio code using a JNI call; there is a similar example in <span class="filename">android-ndk-native</span>
+      that uses a native activity instead.&nbsp; </p>
+    <br>
+    <a name="building_for_windows"></a>
+    <h2>Building for Windows</h2>
+    Right-click on the project in the Solution Explorer, and choose Properties.<br>
+    <br>
+    Under C++ » General » Additional Include Directories, add the path to the
+    Cricket Audio <span class="filename">inc</span> directory.&nbsp; (For
+    example, if the Cricket Audio distribution is in&nbsp;<span class="filename">../../cricket</span>,
+    the header search path would be <span class="filename">../../cricket/inc</span>.)<br>
+    <br>
+    Under Linker » General » Additional Library Directories, add the path to the
+    appropriate Cricket Audio library directory.&nbsp; The correct path relative
+    to the Cricket Audio distribution is:<br>
+    <br>
+    <div style="margin-left: 40px;" class="filename">lib/win/<span style="font-style: italic;">VisualStudioVersion</span>/<span
+        style="font-style: italic;">Platform</span>/<span style="font-style: italic;">Configuration</span><br>
+    </div>
+    <br>
+    where<br>
+    <br>
+    <div style="margin-left: 40px;"><span style="font-style: italic;" class="filename">VisualStudioVersion</span>
+      is one of:<br>
+      <ul>
+        <li><span class="filename">vs12.0</span> (Visual Studio 2013)</li>
+        <li><span class="filename">vs14.0</span> (Visual Studio 2015)<span class="filename"></span></li>
+        <li><span class="filename">vs15.0</span> (Visual Studio 2017)</li>
+      </ul>
+      <span style="font-style: italic;" class="filename">Platform</span> is one
+      of:<br>
+      <ul>
+        <li><span class="filename">x86</span></li>
+        <li><span class="filename">x64</span></li>
+      </ul>
+      and <span style="font-style: italic;" class="filename">Configuration</span>
+      is one of:<br>
+      <ul>
+        <li class="filename">DebugStatic</li>
+        <li class="filename">DebugDynamic</li>
+        <li class="filename">ReleaseStatic</li>
+        <li class="filename"> ReleaseDynamic</li>
+      </ul>
+    </div>
+    If your program is linking to the Microsoft runtime statically (i.e. is
+    compiled with <span class="filename">/MT</span> or <span class="filename">/MTd</span>),
+    then use one of the "Static" configurations; if it is linking to the
+    Microsoft runtime dynamically (i.e. is compiled with <span class="filename">/MD</span>
+    or <span class="filename">/MDd</span>), then use one of the "Dynamic"
+    configurations.<br>
+    <br>
+    On Windows 8.0 and later, Cricket Audio will use XAudio2 2.8, which comes
+    preinstalled with Windows.&nbsp; In earlier versions of Windows, it will use
+    XAudio2 2.7; the DirectX runtime may need to be installed separately on the
+    target system.<br>
+    <br>
+    If your program is a Windows Store app (formerly called a Metro app), you
+    must use either the <span class="filename">DebugDynamic</span> or <span class="filename">ReleaseDynamic</span>
+    library.<br>
+    <br>
+    You can use the Visual Studio macros&nbsp;<span class="filename">$(Configuration)</span>,&nbsp;<span
+      class="filename">$(VisualStudioVersion)</span>, and&nbsp;<span class="filename">$(PlatformShortName)</span>
+    to specify the correct path for your program.&nbsp; For example, if the
+    Cricket Audio distribution is in&nbsp;<span class="filename">../../cricket</span>,
+    and you are linking statically to the runtime, the library search path would
+    be <span class="filename">../../cricket/lib/vs$(VisualStudioVersion)/$(PlatformShortName)/$(Configuration)Static</span>.<br>
+    <br>
+    Under Linker » Input » Additional Dependencies, add&nbsp;<span class="filename">ck.lib</span>
+    to the list of libraries.<br>
+    <h2><a id="building_for_linux" name="building_for_linux"></a>Building for
+      Linux</h2>
+    <p>Make sure you add the path to the Cricket Audio header files to the list
+      of include directories, and the path to the Cricket Audio libraries to the
+      list of library directories.&nbsp; In addition to the Cricket Audio
+      library (<span class="filename">libck.a</span>), you will need to link to
+      the ALSA shared library (<span class="filename">libasound.so</span>).&nbsp;
+      </p>
+    <p>For example, to build the 64-bit debug version of the hellocricket
+      sample, the command line is:</p>
+    <p class="filename">g++ hellocricket.cpp -o hellocricket -I../../../../inc
+      -L../../../../lib/linux/x64/debug -L/usr/lib/x86_64-linux-gnu -lck
+      -lasound</p>
+    <p><br>
+    </p>
+  </body>
+</html>

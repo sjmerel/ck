@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>Cricket Audio: using cktool</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Using cktool</h1>
+    The&nbsp;<span class="filename">cktool</span> utility is located
+    in&nbsp;<span class="filename">bin/macosx</span> and&nbsp;<span class="filename">bin/win</span><br>
+    <br>
+    Its usage is:<br>
+    <br>
+    <pre>Usage:<br><br> cktool buildbank   [common_options] &lt;infile&gt; [&lt;outfile&gt;]<br>   builds a bank file (.ckb) from an xml bank description file (.ckbx)<br><br> cktool buildbank   [common_options] -single [sound_attributes] &lt;infile&gt; [&lt;outfile&gt;]<br>   builds a bank file (.ckb) containing one sound<br><br> cktool buildstream [common_options] [sound_attributes] &lt;infile&gt; [&lt;outfile&gt;]<br>   builds a stream file (.cks)<br><br> cktool info [common_options] &lt;file&gt;<br>   prints info about a bank (.ckb) or stream (.cks) file<br><br> cktool extract [common_options] &lt;infile&gt;
+   extracts sounds from bank (.ckb) or stream (.cks) into .wav files<br><br><br>Available common options are:<br>  -verbose<br><br>Available sound attribute options are:<br>  -format &lt;format&gt;<br>  -volume &lt;volume&gt;<br>  -pan &lt;pan&gt;<br>  -loopStart &lt;frame&gt;<br>  -loopEnd &lt;frame&gt;<br>  -loopCount &lt;count&gt;</pre>
+
+<a name="building_bank_files"></a><h2>Building bank files</h2>
+<h3>Creating a bank file from a bank description file<br>
+</h3>
+To create a bank file, first
+create an XML bank description file.&nbsp;
+A sample bank description file used by the hellocricket sample projects
+can be found at <span class="filename">src/samples/hellocricket/common/hellocricket.ckbx</span>:<br>
+<br>
+
+<code>
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;<br>
+&lt;bank name="test"&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;sound name="hello" source="hellocricket.wav"
+/&gt;<br>
+&lt;/bank&gt;<br>
+</code>
+<br>
+
+The first line (which is optional) just indicates that this is
+an XML file.<br>
+<br>
+The second line starts the "bank" block.&nbsp; Each bank description
+file must contain one bank block.&nbsp; Each bank should have a name,
+which should be 31 characters or less.<br>
+<br>The third line is a "sound" block, which defines one sound.&nbsp;
+There
+should be at least one sound in a bank, though typically there will be
+more.&nbsp; Each sound has a name (which, like the bank name, should be
+31 characters or less) and a source file (which must be a WAV or AIFF
+file).&nbsp; The source file can be an absolute path (such as&nbsp;<span class="filename">/Users/steve/sound.wav</span> or&nbsp;<span
+class="filename">C:/sounds/sound.wav</span>) or a relative path (such as&nbsp;<span
+class="filename">sounds/sound.wav</span>).&nbsp; If it's a relative path, it is assumed to be relative to the bank description file.<br>
+<br>
+
+
+To create the binary bank file (.ckb) from this XML bank description
+file (.ckbx), run <br>
+
+
+<pre>cktool buildbank infile.ckbx outfile.ckb</pre>
+
+
+where&nbsp;<span class="filename">infile.ckbx</span> is the input bank
+description file and&nbsp;<span class="filename">outfile.ckb</span> is
+the output binary bank file.&nbsp; If the output file is omitted, the
+output will be written to a file with the same name as the input file
+but with the&nbsp;<span class="filename">.ckb</span> file extension, in
+the same directory as the input file.<br>
+<h3>Creating a bank file from a single audio file</h3>
+
+If you are building a bank file containing only one sound, you can do so without creating an XML file; simply specify the&nbsp;<span
+class="filename">-single</span> option, and pass in the source audio file as the input file.&nbsp; For example:<br>
+
+<pre>cktool buildbank -single explosion.wav explosion.ckb</pre>
+
+will create a bank called&nbsp;<span class="filename">explosion.ckb</span> from the file&nbsp;<span
+class="filename">explosion.wav</span>.<br>
+<h3>Sound attributes</h3>
+You can also specify some optional attributes for each sound:<br>
+<br>
+<table style="text-align: left; width: 864px; height: 100px; margin-left: 50px;"
+border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>attribute<br>
+      </th>
+      <th>description<br>
+      </th>
+      <th>default value<br>
+      </th>
+    </tr>
+    <tr>
+      <td>format<br>
+      </td>
+      <td>The format of the audio data; can be one of pcm8, pcm16, or adpcm.<br>
+      </td>
+      <td>pcm16<br>
+      </td>
+    </tr>
+    <tr>
+      <td>volume<br>
+      </td>
+      <td>Default volume of the sound, in the range from 0.0 to 1.0.&nbsp; <br>
+      </td>
+      <td>1.0<br>
+      </td>
+    </tr>
+    <tr>
+      <td>pan<br>
+      </td>
+      <td>Default pan of the sound, in the range from -1.0 (pan left) to 1.0 (pan right).<br>
+      </td>
+      <td>0.0 (center)<br>
+      </td>
+    </tr>
+    <tr>
+      <td>loopStart<br>
+      </td>
+      <td>Default starting sample frame
+for looping, in the range from 0 (loop from the first sample) to one
+less than the number of sample frames in the sound.<br>
+      </td>
+      <td>0<br>
+      </td>
+    </tr>
+    <tr>
+      <td>loopEnd<br>
+      </td>
+      <td>Default ending sample frame for
+looping in the range from 1 to the number of sample frames in the
+sound, or -1 to indicate the end of the sound.&nbsp;(The sample frame specified here is the sample  <span
+style="font-style: italic;">after</span> the end of the loop.)<br>
+      </td>
+      <td>number of sample frames<br>
+      </td>
+    </tr>
+    <tr>
+      <td>loopCount<br>
+      </td>
+      <td>Number of times the sound
+loops.&nbsp; 0 means no looping; -1 means loop indefinitely; 1 means it
+will play twice, 2 means it will play three times, etc.<br>
+      </td>
+      <td>0 (no looping), or -1 (infinite looping) if either loopStart or loopEnd were set<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<br>
+If you are using a bank description file, those attributes are
+specified as XML attributes on the sound elements.&nbsp; For example, here is a more complex bank description file:<br>
+<br>
+
+<code>
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;<br>
+&lt;bank name="sound effects"&gt;<br>&nbsp;&nbsp;&nbsp;
+&lt;sound name="explosion"
+source="explosion.wav"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+format="adpcm"&nbsp; volume="0.72" /&gt;<br>&nbsp;&nbsp;&nbsp;
+&lt;sound name="hooray"&nbsp;&nbsp;&nbsp;
+source="/Users/steve/sounds/hooray.aif" format="pcm8"&nbsp;&nbsp;
+loopStart="1200" loopEnd="-1"/&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;sound name="buzz"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+source="moresounds/buzzsound.wav"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; volume="0.3" pan="-1" /&gt;<br>
+
+&lt;/bank&gt;</code><br>If you are building a single-sound bank using the&nbsp;<span
+class="filename">-single</span>
+option, the attributes are specified as command-line options.&nbsp; For
+example, here is how you would create the "explosion" sound from the
+bank description file above:<br>
+<pre>cktool buildbank -format adpcm -volume 0.72 explosion.wav expl<span class="filename"></span>osion.ckb<span
+class="filename"></span></pre>
+
+
+
+<a name="building_stream_files"></a><h2>Building stream files</h2>
+
+To create a .cks stream file, run<br>
+
+<pre>cktool buildstream infile.wav outfile.cks</pre>
+
+where&nbsp;<span class="filename">infile.wav</span> is the input audio
+file, and&nbsp;<span class="filename">outfile.cks</span>
+is the output stream file.&nbsp; If the output file is omitted, the
+output will be written to a file with the same name as the input file
+but with the .cks file extension, in the same directory as the input
+file.<br>
+<br>
+When creating a stream, you can specify sound attributes on the command line:<br>
+<pre>cktool buildstream -format adpcm -pan -1 infile.wav outfile.cks</pre>
+<br>
+
+</body></html>

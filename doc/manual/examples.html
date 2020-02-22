@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <title>Cricket Audio: example code</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Example code</h1>
+    <h2>Hello Cricket</h2>
+    The "hellocricket" example, in&nbsp;<span class="filename">src/samples/hellocricket</span>,
+    is a very simple example that plays a single bank sound when it
+    starts.&nbsp; There are several versions:<br>
+    <br>
+    Android:<br>
+    <ul>
+      <li>android-ndk: Uses the NDK and the C++ Cricket Audio interface in a
+        Java activity.</li>
+      <li>android-ndk-native: Uses the NDK and the C++ Cricket Audio interface
+        in a native activity</li>
+      <li>android-sdk: Uses the SDK and the Java Cricket Audio interface</li>
+    </ul>
+    iOS:<br>
+    <ul>
+      <li>ios-objc: Uses the Objective-C Cricket Audio interface</li>
+      <li>ios-cpp: Uses the C++ Cricket Audio interface</li>
+    </ul>
+    <p>OS X:</p>
+    <ul>
+      <li>osx-objc: Uses the Objective-C Cricket Audio interface</li>
+      <li>osx-cpp: Uses the C++ Cricket Audio interface</li>
+    </ul>
+    <p>Windows:</p>
+    <ul>
+      <li>win: Uses the C++ Cricket Audio interface</li>
+    </ul>
+    Linux:
+    <ul>
+      <li>linux: Uses the C++ Cricket Audio interface</li>
+    </ul>
+    <h2>Game</h2>
+    The "game" example is a simple demonstration of how to use Cricket Audio
+    with C++ to write cross-platform iOS and Android OpenGL apps.&nbsp; Most of
+    the code, in&nbsp;<span class="filename">src/samples/game</span>, is
+    cross-platform; the platform-specific code and data files are in the&nbsp;<span
+      class="filename">android</span> and&nbsp;<span class="filename">ios</span>
+    subdirectories.<br>
+    <br>
+    To build the game for iOS, use the Xcode project in&nbsp;<span class="filename">src/samples/game/ios</span>.<br>
+    To build the game for Android, open the <span class="filename">src/samples/game/android</span>
+    directory with Android Studio.
+    <p>Navigate around by moving your finger on the screen; drag left or right
+      to turn, and drag forward or back to move forward or backward.&nbsp; Try
+      to poke the spinning cubes with the orange pointer.</p>
+    <br>
+    <h2><a id="dsptouch" name="dsptouch"></a>DspTouch</h2>
+    The "dsptouch" example is a simple app that demonstrates how to use DSP
+    effects and how to share C++ code across platforms.&nbsp; The code that uses
+    Cricket Audio is a cross-platform C++ file, <span class="filename">dsptouch.cpp</span>,
+    which is used by each platform.<br>
+    <br>
+    Note that unlike the "game" example, this is not an OpenGL (or DirectX) app,
+    so there is no explicit render loop.&nbsp; Instead, CkUpdate() is called
+    from a timer callback on each platform, on the main thread.<br>
+    <br>
+    When the app starts, a sound starts looping.&nbsp; When you touch the
+    screen, the effects are applied.&nbsp; Moving your finger along the X or Y
+    axes adjusts one of two parameters.&nbsp; You can edit the code in <span class="filename">DspTouch.cpp</span>
+    to change which sample is played, which effect is applied, and which effect
+    parameters are modified.<br>
+    <br>
+    One of the effects is a custom "stutter" effect, defined in <span class="filename">stutterprocessor.cpp</span>,
+    which provides a simple example of how to implement custom DSP effects.<br>
+    <br>
+    To build for iOS, use the Xcode project in <span class="filename">src/samples/dsptouch/ios</span>.<br>
+    To build for Android, open the <span class="filename">src/samples/dsptouch/android</span>
+    directory with Android Studio.<br>
+  </body>
+</html>

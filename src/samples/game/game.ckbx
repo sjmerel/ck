@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<bank name="game">
+    <sound name="point"   source="point.wav" />
+    <sound name="engine"  source="engine.wav" />
+    <sound name="target"  source="target.wav" />
+</bank>

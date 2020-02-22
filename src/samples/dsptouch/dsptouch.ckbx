@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<bank name="dspTouch">
+    <sound name="trance" source="sounds/32257__zin__trance-pulse-2-140bpm.wav" />
+    <sound name="hiphoppiano" source="sounds/69606__redhouse91__hiphoppiano0186bpm.wav" />
+    <sound name="countdown" source="sounds/82986__corsica-s__countdown.wav" />
+</bank>

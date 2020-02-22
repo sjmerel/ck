@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">HelloCricketNDKNative</string>
+    <string name="hello">Hello Cricket!</string>
+</resources>

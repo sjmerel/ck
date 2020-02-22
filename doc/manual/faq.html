@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>Cricket Audio: FAQ</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>FAQ</h1>
+    <h2>How can I minimize CPU and battery usage?</h2>
+    In general, try to reduce the amount of audio data being pushed through the
+    system.&nbsp; Using mono instead of stereo, and lower sample rate source
+    data, will decrease the amount of data that needs to be processed; this will
+    lower your CPU usage, as well as decrease the size of your bank files, but
+    there may be a loss of audio quality.<br>
+    <br>
+    Increasing the audio update interval (with <span class="filename">Config.audioUpdateMs</span>)
+    to something greater than the default of 5ms will decrease CPU usage
+    somewhat, but will increase latency (the amount of time between when you
+    make an API call and when you hear the results of that call). <br>
+    <br>
+    Also, your choice of audio encoding is important.&nbsp; PCM16 and PCM8 are
+    the most efficient; ADPCM is less efficient; and stream formats such as MP3,
+    MP4, or Ogg Vorbis are the least efficient.&nbsp; (However, depending on
+    your target platform, there may be hardware support for decoding some of
+    these stream formats; see <a href="#hardware_support">this FAQ entry</a>.)<br>
+    <h2><a id="stream_formats" name="stream_formats"></a>What audio format
+      should I use for my streams?</h2>
+    <p>This will depend, of course, on the requirements of your app, but in
+      general, we recommend either .cks or .ogg streams.&nbsp; These formats are
+      decoded in software by Cricket Audio, so they will work identically on all
+      platforms and all devices, and do not require any licensing fees.</p>
+    <p>Streams in the .ogg format are compressed much more than .cks streams, so
+      they take up less storage space, but require significantly more CPU to
+      decode.&nbsp; </p>
+    <h2><a id="hardware_support" name="hardware_support"></a>Is there support
+      for hardware acceleration of decoding?</h2>
+    This depends on the particular audio encoding, and your platform.<br>
+    <h3> iOS</h3>
+    On iOS, at time of writing, there is hardware support for decoding streams
+    in the following formats:<br>
+    <ul>
+      <li>AAC (MPEG-4 Advanced Audio Coding)</li>
+      <li>ALAC (Apple Lossless)</li>
+      <li>HE-AAC (MPEG-4 High-Efficiency AAC)</li>
+      <li>MP3 (MPEG-1 audio layer 3)</li>
+    </ul>
+    For more information on the hardware decoders provided by iOS, see the iOS <a
+      href="http://developer.apple.com/LIBRARY/IOS/#documentation/AudioVideo/Conceptual/MultimediaPG/UsingAudio/UsingAudio.html">Multimedia
+      Programming Guide</a>.<br>
+    <br>
+    In Cricket Audio, hardware decoding support is only enabled if <span class="filename">CkConfig.enableHardwareDecoding</span>
+    is true.&nbsp; Note that this is set to false by default, because streams
+    that use the hardware decoder take slightly longer (about 300ms) to
+    initialize, we have found the difference in CPU usage between hardware and
+    software decoding as measured by Instruments to be negligible.<br>
+    <br>
+    Hardware support is limited to a single stream, and may not be available at
+    all depending on the audio session category and whether the hardware decoder
+    is in use by another app.&nbsp; If the hardware decoder is not available, a
+    software decoder will be used.&nbsp; If the hardware decoder is available
+    when a stream is created, that stream will keep ownership of the decoder
+    until the stream is destroyed.<br>
+    <h3> Android</h3>
+    On Android, there are no guarantees about hardware support; it is entirely
+    up to the device manufacturer.<br>
+    <h2>Why can't I load my large bank file on Android?&nbsp; I get an error
+      message about "UNCOMPRESS_DATA_MAX".<br>
+    </h2>
+    Android versions prior to 2.3 cannot read compressed assets with an
+    uncompressed size greater than 1 MB.&nbsp;&nbsp; To get around this
+    restriction, you can try to break up your bank file into multiple smaller
+    banks with uncompressed size less than 1 MB, or you can disable compression
+    for your bank.&nbsp; <br>
+    <br>
+    To disable compression, if you are building your .apk manually using
+    the&nbsp;<span class="filename">aapt</span> tool, you can use the&nbsp;<span
+      class="filename">-0</span> flag (e.g. "<span class="filename">-0 ckb</span>"
+    to disable compression for bank files with the&nbsp;<span class="filename">.ckb</span>
+    file extension).&nbsp; However, if you are building your .apk automatically
+    from Eclipse, there is currently no way to specify this flag; a workaround
+    is to give your bank file a file extension for which&nbsp;<span class="filename">aapt</span>
+    already disables compression, such as&nbsp;<span class="filename">.jpg</span>
+    or&nbsp;<span class="filename">.wma</span>.<br>
+    <br>
+    See this <a href="http://ponystyle.com/blog/2010/03/26/dealing-with-asset-compression-in-android-apps/">link</a>
+    for a more detailed description of this problem and its workarounds.&nbsp;
+    Note that Android versions 2.3 and later do not have this restriction.<br>
+    <h2>Why can't I set a pitch shift or apply effects to MP3 streams on
+      Android?</h2>
+    Whenever possible, we try to use the Android platform (using the OpenSL ES
+    API) for decoding of audio, so we can take advantage of any hardware
+    acceleration present on the device.&nbsp; While the Android platform
+    provides a way to play compressed streams (e.g. MP3, etc), it does not
+    provide a way to decompress them into memory.&nbsp; This means we cannot
+    decompress the data using the Android platform, and then perform our own
+    processing with them, so we are limited to using the features provided by
+    Android itself for compressed streams.<br>
+    <br>
+    Cricket Audio can decode Ogg Vorbis audio files using a software decoder on
+    all platforms, if&nbsp;<span class="filename">CkConfig.enableOggVorbis</span>
+    is set to true (which is the default), so pitch adjustment and other
+    processing can be done with those files.<br>
+    <h2> Which iOS and Android versions do you support?</h2>
+    On iOS, Cricket Audio is tested for versions 6.1 and later.<br>
+    <br>
+    On Android, Cricket Audio is tested for versions 2.2 and later.&nbsp; <br>
+    <h2> How do I determine the URL for an item in the iTunes library for use
+      with CkSound::newAssetStreamSound()?<br>
+    </h2>
+    Here's some sample code that will create a sound to play an item with a
+    particular title in the iTunes library:<br>
+    <code> #import &lt;MediaPlayer/MediaPlayer.h&gt;<br>
+      <br>
+      MPMediaQuery *query = [[MPMediaQuery alloc] init];<br>
+      [query addFilterPredicate:[MPMediaPropertyPredicate
+      predicateWithValue:@"Some Song Title"
+      forProperty:MPMediaItemPropertyTitle]];<br>
+      CkSound* sound = NULL;<br>
+      if ([query.items count] &gt; 0)<br>
+      {<br>
+      &nbsp;&nbsp;&nbsp; MPMediaItem* item = [query.items objectAtIndex:0]; <br>
+      &nbsp;&nbsp;&nbsp; NSURL* assetUrl = [item
+      valueForProperty:MPMediaItemPropertyAssetURL];<br>
+      &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; // assetUrl will be nil if track is protected with DRM<br>
+      &nbsp;&nbsp;&nbsp; if (assetUrl)<br>
+      &nbsp;&nbsp;&nbsp; {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sound =
+      CkSound::newAssetStreamSound([assetUrl.absoluteString UTF8String]);<br>
+      &nbsp;&nbsp;&nbsp; }<br>
+      } </code> <br>
+    <br>
+    For full details, see the <a href="http://developer.apple.com/library/ios/#DOCUMENTATION/Audio/Conceptual/iPodLibraryAccess_Guide/UsingTheiPodLibrary/UsingTheiPodLibrary.html">iPod
+      Library Access Programming Guide</a> in the iOS Developer Library.<br>
+    <h2>I'm writing a music app for iOS, and am supporting remote control
+      events.&nbsp; How do I make the play icon in the status bar disappear when
+      I'm not playing music?</h2>
+    If your app calls the <span class="filename">beginReceivingRemoteControlEvents</span>
+    method on its <span class="filename">UIApplication</span> instance, the
+    play icon will show up as long as Cricket Audio is active.<br>
+    <br>
+    After calling&nbsp;<span class="filename">CkInit()</span>, call&nbsp;<span class="filename">CkSuspend()</span>.&nbsp;
+This
+    suspends Cricket Audio, causing iOS to hide the play icon in the status
+    bar.&nbsp; When you start to play music, call&nbsp;<span class="filename">CkResume()</span>
+    to show the icon; when the music stops, call&nbsp;<span class="filename">CkSuspend()</span>
+    again to hide it.<br>
+    <span style="font-weight: bold;"></span>
+    <h2>Why are my banks/streams loading on the iPhone/iPad Simulator, but not
+      on the device?</h2>
+    File paths are case-sensitive on iOS devices, but not on the simulator; make
+    sure your file paths have the correct case.<br>
+    <h2>How can I stream audio that is in a proprietary or unsupported data
+      format?</h2>
+    First, create a subclass of&nbsp;<span class="filename">CkCustomStream</span>
+    that decodes your data into 16-bit signed integer PCM audio data; then
+    register a factory function that returns an instance of that class with <span
+      class="filename">CkSound::setCustomStreamHandler()</span>.<br>
+  </body>
+</html>

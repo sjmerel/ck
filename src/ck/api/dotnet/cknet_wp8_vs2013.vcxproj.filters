@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>5fd0e509-b6ae-4f29-bd2a-4d2cc10f3aa0</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="attenuationmode.cpp" />
+    <ClCompile Include="bank.cpp" />
+    <ClCompile Include="ck.cpp" />
+    <ClCompile Include="config.cpp" />
+    <ClCompile Include="effect.cpp" />
+    <ClCompile Include="effectbus.cpp" />
+    <ClCompile Include="effectparam.cpp" />
+    <ClCompile Include="effecttype.cpp" />
+    <ClCompile Include="mixer.cpp" />
+    <ClCompile Include="pathtype.cpp" />
+    <ClCompile Include="proxy.cpp" />
+    <ClCompile Include="sound.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="attenuationmode.h" />
+    <ClInclude Include="bank.h" />
+    <ClInclude Include="ck.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="effect.h" />
+    <ClInclude Include="effectbus.h" />
+    <ClInclude Include="effectparam.h" />
+    <ClInclude Include="effecttype.h" />
+    <ClInclude Include="stringconvert.h" />
+    <ClInclude Include="mixer.h" />
+    <ClInclude Include="pathtype.h" />
+    <ClInclude Include="proxy.h" />
+    <ClInclude Include="sound.h" />
+  </ItemGroup>
+</Project>

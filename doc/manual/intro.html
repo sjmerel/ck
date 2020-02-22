@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>Cricket Audio: introduction</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Introduction to Cricket Audio</h1>
+    <a name="the_cricket_audio_interface"></a>
+    <h2>The Cricket Audio interface</h2>
+    The basic Cricket Audio interface is C++, which means that cross-platform
+    native code can be written for iOS, tvOS, OSX, Android, Windows, and
+    Linux.&nbsp; However, each platform may also have alternative interfaces
+    available; there is a Java interface for Android and an Objective-C
+    interface for iOS/tvOS/OSX.<br>
+    <h3>Android</h3>
+    On Android, you may use either the C++ interface or the Java
+    interface.&nbsp; If you are developing in Java with the SDK, you must use
+    the Java interface; if you are developing with the NDK, you must use the C++
+    interface. (Note that both interfaces are not designed to be used together
+    in the same app; if you initialize Cricket Audio from Java, you should not
+    use the C++ interface, and vice versa.)<br>
+    <br>
+    The names of the classes and methods in the Java interface are mostly the
+    same as those in the C++ interface, except class names do not have the "Ck"
+    prefix.&nbsp; All classes are in the <span class="filename">com.crickettechnology.audio</span>
+    package.<br>
+    <br>
+    Since Java cannot pass method parameters by reference, the Java interface
+    uses the&nbsp;<span class="filename">FloatRef</span> and&nbsp;<span class="filename">IntRef</span>
+    classes to emulate reference parameters.&nbsp; For example, this C++ code:<br>
+    <br>
+    <code> int loopStart, loopEnd;<br>
+      sound-&gt;getLoop(loopStart, loopEnd);<br>
+    </code> <br>
+    corresponds to this code in Java:<br>
+    <br>
+    <code> IntRef loopStartRef = new IntRef();<br>
+      IntRef loopEndRef = new IntRef();<br>
+      sound.getLoop(loopStartRef, loopEndRef);<br>
+      int loopStart = loopStartRef.get();<br>
+      int loopEnd = loopEndRef.get();<br>
+    </code> <br>
+    <h3>iOS/tvOS/OSX</h3>
+    On iOS/tvOS/OSX, you may use either the C++ interface or the Objective-C
+    interface.&nbsp; If you use the C++ interface, source files that use the
+    Cricket Audio API should be either C++ files (<span class="filename">.cpp</span>)
+    or Objective-C++ files (<span class="filename">.mm</span>).&nbsp; <br>
+    <br>
+    The names of the classes and methods in the Objective-C interface are mostly
+    the same as those in the C++ interface, except:<br>
+    <ul>
+      <li>Class names are prefixed with "Cko" instead of "Ck".</li>
+      <li>For simple getter functions, the "get" prefix has been removed, to
+        follow Objective-C conventions; for example,&nbsp;<span class="filename">[mixer
+          name]</span> instead of&nbsp;<span class="filename">[mixer getName]</span>.</li>
+      <li>Where appropriate, properties have been defined for simple set/get
+        functions, so the property syntax can be used: for example, <span class="filename">mixer.name
+          </span>instead of&nbsp;<span class="filename">[mixer name]</span>.</li>
+      <li>To create an object, use one of the class factory methods (such
+        as&nbsp;<span class="filename">newMixer</span>,&nbsp;<span class="filename">newStreamSound</span>,&nbsp;<span
+          class="filename">newBank</span>, etc), rather than calling&nbsp;<span
+          class="filename">alloc</span> and&nbsp;<span class="filename">init</span>.&nbsp;
+        As you would expect following the "NARC" conventions, the returned
+        object has a retain count of 1.</li>
+    </ul>
+    The method names occasionally deviate from the Apple Objective-C naming
+    conventions to make it clearer to which functions in the C++ interface they
+    correspond.<br>
+    <br>
+    <br>
+    <a name="types_of_sounds"></a>
+    <h2>Types of sounds</h2>
+    There are two types of sounds in Cricket Audio: <span style="font-style: italic;">stream
+      sounds</span> and <span style="font-style: italic;">bank sounds</span>.&nbsp;
+    Bank sounds are fully loaded into memory before they are played, while
+    stream sounds read their data from the device's file storage (or from the
+    network) as needed.<br>
+    <br>
+    <h3>Bank sounds</h3>
+    Bank sounds are created from a bank description file, which is created
+    offline using the&nbsp;<a href="cktool.html"><span class="filename">cktool</span></a>
+    utility.&nbsp; Each bank can contain one or more sounds.&nbsp; The bank must
+    be loaded completely into memory before any sounds are created from
+    it.&nbsp; Once&nbsp; a bank is loaded, bank sounds can be played instantly
+    (unlike stream sounds, which must read data from storage before they can be
+    played).&nbsp; Typically, bank sounds are used for short sound effects. <br>
+    <br>
+    Bank sounds can be stored in several data formats:<span class="todo"></span><br>
+    <ul>
+      <li>16-bit PCM: This is the default format.&nbsp; The data is
+        uncompressed, so it requires very few CPU cycles to play, but uses 2
+        bytes per sample per channel (about the same as a typical uncompressed
+        .wav or .aiff file).</li>
+      <li>8-bit PCM: Also uncompressed, but only uses 1 byte per sample per
+        channel (half the space of 16-bit PCM), and lower audio quality.<br>
+      </li>
+      <li>ADPCM: A compressed format that requires somewhat more CPU cycles to
+        play, but requires 1/3 of the space of 16-bit PCM.&nbsp; Audio quality
+        is typically somewhat worse than 16-bit PCM but better than 8-bit
+        PCM.&nbsp; Samples are packed in blocks of 36 samples (24 bytes).<br>
+      </li>
+    </ul>
+    The format for each sound is specified in the bank description file.&nbsp;
+    Deciding which format to use for a particular sound requires making a
+    tradeoff between CPU load, memory, and sound quality.&nbsp; (We recommend
+    that you start with 16-bit PCM, and then switch some or all of your sounds
+    to one of the other formats if necessary to reduce the size of your banks,
+    paying attention to the changes in sound quality.)<br>
+    <br>
+    More information on how to create banks using cktool, and how to create a
+    bank description file, is in the <a href="cktool.html">cktool</a> section.<br>
+    <br>
+    <h3>Stream sounds</h3>
+    Stream sounds are typically used for long sounds that are too large to fit
+    in memory, such as music or ambient sounds; rather than having the entire
+    sound in memory, the audio data is read from storage or the network as
+    needed.&nbsp; While this can use less memory than placing a large sound in a
+    bank, it does require file and network resources, and the sound is not ready
+    immediately after it is created.<br>
+    <br>
+    The most portable formats for a stream sound are:<br>
+    <ul>
+      <li>.ogg (Ogg Vorbis)<br>
+      </li>
+      <li>.cks<br>
+      </li>
+    </ul>
+    These formats are supported on all platforms, including Windows and OS X,
+    and we recommend that you use them for most purposes.<br>
+    <br>
+    Files in the .cks format are created using <a href="cktool.html">cktool</a>;
+    the audio data can be in the same formats supported by bank sounds (16-bit
+    PCM, 8-bit PCM, or ADPCM).<br>
+    <br>
+    Streams can also be in other audio file formats; support for these varies by
+    platform.&nbsp; Currently, the following additional formats are supported on
+    both iOS and Android:<br>
+    <ul>
+      <li>.wav (uncompressed, or with µ-law or a-law compression)</li>
+      <li>.mp3</li>
+      <li>.mp4 (AAC compression)</li>
+      <li>.m4a (AAC compression)</li>
+    </ul>
+    The iOS version can read the following additional audio file formats:<br>
+    <ul>
+      <li>.aac, .adts (AAC compression)</li>
+      <li>.aiff, .aif, .aifc</li>
+      <li>.caf</li>
+      <li>.m4a (Apple Lossless compression)</li>
+      <li>.snd, .au (uncompressed, or µ-law compression)</li>
+      <li>.sd2</li>
+    </ul>
+    The Android version can read the following additional audio file formats:<br>
+    <ul>
+      <li>.amr</li>
+    </ul>
+    Android devices may be able to read additional audio file formats, such as
+    FLAC, depending on the particular device and the version of Android on it.<br>
+    <br>
+    You may need to purchase a license from Technicolor to play .mp3 content in
+    your app; see the <a target="_top" href="http://www.mp3licensing.com">mp3licensing.com</a>
+    website for more information.<br>
+    <br>
+    Be aware that some of these formats (such as .mp3, .ogg, and .m4a) require
+    significant CPU cycles to decode.&nbsp; The target device may have hardware
+    acceleration for decoding of some formats, but typically this can only be
+    used on one stream at a time; see the corresponding <a href="faq.html#hardware_support">FAQ
+      entry</a>.<br>
+    <br>
+    <a name="initializing"></a>
+    <h2>Initializing</h2>
+    Before making any other calls to the Cricket Audio library, you must
+    initialize it.<br>
+    <br>
+    C++: <code> #include &lt;ck/ck.h&gt;<br>
+      #include &lt;ck/config.h&gt;<br>
+      <br>
+      // ...<br>
+      // then, in your initialization code:<br>
+      <br>
+      #if CK_PLATFORM_ANDROID<br>
+      CkConfig config(env, activity);<br>
+      #else<br>
+      CkConfig config;<br>
+      #endif<br>
+      <br>
+      CkInit(&amp;config);<br>
+    </code> <br>
+    Java: <code> import com.crickettechnology.audio.*;<br>
+      <br>
+      // then, in your initialization code:<br>
+      Config config = new Config();<br>
+      Ck.init(this, config);<br>
+    </code> <br>
+    Objective-C: <code> #import "ck/objc/ck.h"<br>
+      #import "ck/objc/config.h"<br>
+      <br>
+      // then, in your initialization code:<br>
+      CkConfig config;<br>
+      CkConfigInit(&amp;config); // set to defaults<br>
+      <br>
+      CkInit(&amp;config);<br>
+    </code> <br>
+    <br>
+    The <span class="filename">CkConfig</span> class contains some
+    initialization options; for example, you can specify a custom memory
+    allocator.&nbsp; They can be left at their defaults or set according to your
+    needs.<br>
+    <br>
+    In the C++ code, note that on Android you must pass a&nbsp;<span class="filename">JNIEnv</span>
+    pointer and a&nbsp;<span class="filename">jobject</span> reference to your
+    activity.&nbsp; If you are initializing Cricket Audio from a JNI function
+    call from a Java activity, the&nbsp;<span class="filename">JNIEnv*</span>
+    and&nbsp;<span class="filename">jobject</span> are passed as the first and
+    second arguments to your native JNI function.&nbsp; If you are initializing
+    Cricket Audio from a native activity, they can be found in the&nbsp;<span class="filename">env</span>
+    and&nbsp;<span class="filename">clazz</span> members of the&nbsp;<span class="filename">ANativeActivity</span>
+    struct.<br>
+    <br>
+    <a name="updating"></a>
+    <h2>Updating</h2>
+    Once per frame, you should update Cricket Audio:<br>
+    <br>
+    C++: <code>CkUpdate();</code> <br>
+    Java: <code>Ck.update();</code> <br>
+    Objective-C: <code>CkUpdate();</code> <br>
+    (If you are not using a frame-based rendering API like OpenGL, then just
+    make sure you update Cricket Audio from the main thread every 30 ms or so.)<br>
+    <a name="playing_bank_sounds"></a>
+    <h2>Playing bank sounds</h2>
+    First, load your bank; then create your sound from the bank, and play it.<br>
+    <br>
+    C++: <code> CkBank* bank = CkBank::newBank("my_bank.ckb");<br>
+      CkSound* sound = CkSound::newBankSound(bank, "my_sound");<br>
+      sound-&gt;play();<br>
+    </code> <br>
+    Java:<code> Bank bank = Bank.newBank("my_bank.ckb");<br>
+      Sound sound = Sound.newBankSound(bank, "my_sound");<br>
+      sound.play();<br>
+    </code> <br>
+    Objective-C:<code> CkoBank* bank = [CkoBank newBank:@"my_bank.ckb"];<br>
+      CkoSound* sound = [CkoSound newBankSound:bank name:"my_sound"];<br>
+      [sound play];<br>
+    </code> <br>
+    By default, paths refer to an asset embedded in your .apk (that is, one that
+    was put in the assets folder of your project) on Android; on iOS, paths are
+    relative to the Resources directory of your application.&nbsp; On either
+    platform, if you want to load a file from somewhere else (for example, on
+    external storage), you can pass in a&nbsp;<span class="filename">CkPathType</span>
+    value that indicates how the path is to be interpreted.&nbsp; For example,
+    to load a bank using a full path to a file on the file system:<br>
+    <br>
+    C++: <code> CkBank* bank = CkBank::newBank("/full/path/to/the/bank.ckb",
+      kCkPathType_FileSystem);<br>
+    </code> <br>
+    Java:<br>
+    <code> Bank bank = Bank.newBank("/full/path/to/the/bank.ckb",
+      PathType.FileSystem);<br>
+    </code> <br>
+    Objective-C: <code> CkoBank* bank = [CkoBank
+      newBank:@"/full/path/to/the/bank.ckb" pathType:kCkPathType_FileSystem];<br>
+    </code> <br>
+    <br>
+    Banks can also be loaded asynchronously using the <span class="filename">newBankAsync()</span>
+    function.&nbsp; This will return immediately, and the bank will load in a
+    separate thread.&nbsp; You should wait until&nbsp;<span class="filename">isLoaded()</span>
+    returns true before calling any other functions on the bank.<br>
+    <br>
+    If the bank cannot be loaded, the returned <span class="filename">CkBank*</span>
+    pointer will be null, or&nbsp;<span class="filename">isFailed()</span> will
+    return true.&nbsp; If the sound cannot be created, the returned <span class="filename">CkSound</span>
+    pointer will be null.<br>
+    <br>
+    When you are finished with your sound, destroy the sound; when you are
+    finished with a bank, destroy the bank.<br>
+    <br>
+    C++: <code> sound-&gt;destroy();<br>
+      bank-&gt;destroy();<br>
+    </code> <br>
+    Java: <code> sound.destroy();<br>
+      bank.destroy();<br>
+    </code> <br>
+    Objective-C: <code> [sound release];<br>
+      [bank release];<br>
+    </code> <br>
+    Do not call any functions on the sound or bank after destroying them.<br>
+    <br>
+    In Java, the&nbsp;<span class="filename">destroy()</span> function releases
+    the native resources used by the object.&nbsp; If you do not call&nbsp;<span
+      class="filename">destroy()</span>, the native resources will be released
+    when the object is garbage collected by the JVM.&nbsp; However, it is much
+    better to call&nbsp;<span class="filename">destroy()</span> and release them
+    explicitly, so you know exactly when it will happen.<br>
+    <br>
+    In Objective-C, rather than destroying the object explicitly, send the <span
+      class="filename">release</span> message; the object will be destroyed when
+    the reference count reaches 0.<br>
+    <br>
+    <a name="playing_stream_sounds"></a>
+    <h2>Playing stream sounds</h2>
+    First, create your sounds:<br>
+    <br>
+    C++: <code> CkSound* sound = CkSound::newStreamSound("my_stream.mp3");<br>
+    </code> <br>
+    Java: <code> Sound sound = Sound.newStreamSound("my_stream.mp3"); </code>
+    <br>
+    Objective-C: <code> CkoSound* sound = [CkoSound
+      newStreamSound:@"my_stream.mp3];<br>
+    </code> <br>
+    Unlike a bank sound, a stream sound may not be ready to play immediately, as
+    it has to load the initial buffers of audio from a file or from the
+    network.&nbsp; If you call&nbsp;<span class="filename">play()</span>
+    before&nbsp;<span class="filename">isReady()</span> returns true, there will
+    be a slight delay before the sound actually starts playing. <br>
+    <br>
+    When you are finished with the sound, call&nbsp;<span class="filename">destroy()</span>
+    (or <span class="filename">release</span>, in Objective-C).<br>
+    <br>
+    <a name="using_mixers"></a>
+    <h2>Using mixers</h2>
+    All sounds are part of a mixer hierarchy, which has a tree structure.&nbsp;
+    By default, there is one master mixer, and all sounds are children of that
+    master mixer.&nbsp; So, to lower the volume on one sound, call&nbsp;<span class="filename">setVolume()</span>
+    on that sound; but if you want to lower the volume on all sounds at once,
+    call&nbsp;<span class="filename">setVolume()</span> on the master mixer:<br>
+    <br>
+    C++: <code> CkMixer* master = CkMixer::getMaster();<br>
+      master-&gt;setVolume(0.1f);<br>
+    </code> <br>
+    Java: <code> Mixer master = Mixer.getMaster();<br>
+      master.setVolume(0.1f);<br>
+    </code> <br>
+    Objective-C: <code> CkoMixer* master = CkoMixer.master;<br>
+      master.volume = 0.1f;<br>
+    </code> <br>
+    To create another mixer, call&nbsp;<span class="filename">Mixer::newMixer()</span>.&nbsp;
+By
+    default, the new mixer is a child of the master mixer; to set its parent to
+    a different mixer, call&nbsp;<span class="filename">setParent()</span>.<br>
+    <br>
+    By default, newly created sounds are assigned to the master mixer.&nbsp; To
+    assign a sound to a different mixer, call&nbsp;<span class="filename">Sound::setMixer()</span>.<br>
+    <br>
+    <br>
+    When calculating the final mixed volume for a sound, the sound's volume is
+    multiplied by the volume of its mixer and of all its mixer's parents.&nbsp;
+    For example, this diagram shows sounds 1 and 2 assigned to a mixer that is
+    parented to the master mixer, and sound 3 assigned to the master mixer
+    itself. If the master mixer volume is 0.8, the child mixer volume is 0.5,
+    and the sound volumes are all 0.9, then sounds 1 and 2 will have final mixed
+    volumes of 0.8 * 0.5 * 0.9 = 0.36, and sound 3 will have a final mix volume
+    of 0.9 * 0.8 = 0.72.&nbsp; By adjusting the volume of the child mixer, you
+    can adjust the volumes of sounds 1 and 2 simultaneously; by adjusting the
+    volume of the master mixer, you can adjust the volumes of all the sounds.<br>
+    <br>
+    <img alt="mixers" src="images/mixers.svg"><br>
+    <br>
+    For example, in a game, when a character says a line of dialog, you may want
+    the volume of other sounds to decrease, so the dialog is more clearly
+    audible.&nbsp; To do this, parent all dialog sounds to one mixer, and parent
+    all other game sounds to another mixer.&nbsp; To duck the volume of the game
+    sounds, just call&nbsp;<span class="filename">setVolume()</span> on their
+    parent mixer.<br>
+    <br>
+    Mixers can also be paused.&nbsp; Pausing a mixer pauses all its sounds and
+    all sounds of descendant mixers.&nbsp; The actual pause state of a sound is
+    the logical OR of the pause state of the sound, its mixer, and any ancestor
+    mixers.<br>
+    <br>
+    Pausing mixers can be useful to pause in-game sound effects separately from
+    other sound effects.&nbsp; For example, in the diagram above, assume that
+    sound 1 and sound 2 are in-game sound effects, but sound 3 is a sound effect
+    for a button press.&nbsp; When the user pauses the game, you can pause the
+    child mixer, and the in-game sound effects will be paused, but the button
+    press sound will not be paused, so it can be played if the user presses some
+    buttons on the pause screen.&nbsp; When the user unpauses the game, you just
+    need to unpause the child mixer.<br>
+    <br>
+    <a name="effects"></a>
+    <h2>Effects</h2>
+    You can also apply real-time audio effects, which can be adjusted
+    dynamically.&nbsp; For example, when a character in a game goes underwater,
+    you can apply a low-pass filter to some of the sounds to make them sound
+    muffled.<br>
+    <br>
+    To apply effects to your audio, you create one or more effects and add them
+    to an effect bus, and then direct a sound's output to that bus:<br>
+    <br>
+    C++: <code>CkEffect* effect =
+      CkEffect::newEffect(kCkEffectType_BitCrusher);<br>
+      CkEffectBus* bus = CkEffectBus::newEffectBus();<br>
+      bus-&gt;addEffect(effect)<br>
+      sound-&gt;setEffectBus(bus);</code> <br>
+    Java: <code>Effect effect = Effect.newEffect(EffectType.BitCrusher);<br>
+      EffectBus bus = EffectBus.newEffectBus();<br>
+      bus.addEffect(effect)<br>
+      sound.setEffectBus(bus);</code><br>
+    Objective-C: <code>CkoEffect* effect = [CkoEffect
+      newEffect:kCkEffectType_BitCrusher];<br>
+      CkoEffectBus* bus = [CkoEffectBus newEffectBus];<br>
+      [bus addEffect:effect];<br>
+      sound.effectBus = bus;</code><br>
+    Effects will typically have several parameters, which can be adjusted while
+    the effects are in use:<br>
+    <br>
+    C++: <code>effect-&gt;setParam(kCkBitCrusherParam_HoldMs, 1.2f);<br>
+    </code><br>
+    Java: <code>effect.setParam(BitCrusherParam.HOLD_MS, 1.2f);</code><br>
+    Objective-C: <code>[effect setParam:kCkBitCrusherParam_HoldMs value:1.2f];</code><br>
+    The output of one or more effect buses can be directed to another effect bus
+    using <span class="filename">CkEffectBus::setOutputBus()</span>.&nbsp; So,
+    for example, all game dialog sounds could be directed to one effect bus with
+    a Biquad Filter effect, and then the output of that bus could be mixed with
+    all the gunshot sounds and directed to another bus with a Bit Crusher
+    effect:<br>
+    <br>
+    <img alt="" src="images/effects.svg"><br>
+    <br>
+    In this diagram, the dialog sounds on the far left will have both the Biquad
+    Filter and the Bit Crusher effects applied to them; the sound in the middle
+    will have only the Bit Crusher effect applied; and the sound on the right
+    which feeds into the global effect bus will have no effects.<br>
+    <br>
+    You can access that global effect bus, through which all audio is directed
+    before output, with <span class="filename">CkEffectBus::getGlobalEffectBus()</span>;
+    any effects added there will be applied to all sounds.<br>
+    <br>
+    You can also (in C++ only) create custom audio effects.&nbsp; Define a class
+    derived from <span class="filename">CkEffectProcessor</span>, and register
+    a factory function that creates an instance of it with <span class="filename">CkEffect::registerCustomEffect</span>;
+    then use <span class="filename">CkEffect::newCustomEffect()</span> to
+    create the new effect.&nbsp; For an example, see the "stutter" effect in the
+    <a href="examples.html#dsptouch">DspTouch example</a>.<br>
+    <br>
+    <a name="suspending_and_resuming"></a>
+    <h2>Suspending and resuming</h2>
+    When your app becomes inactive, suspend Cricket Audio.&nbsp; This pauses
+    playback of all sounds and suspends the audio thread.<br>
+    <br>
+    C++: <code>CkSuspend();</code><br>
+    Java: <code>Ck.suspend();</code><br>
+    Objective-C: <code>CkSuspend();</code><br>
+    <br>
+    When you app becomes active again, resume Cricket Audio:<br>
+    <br>
+    C++: <code>CkResume();</code><br>
+    Java: <code>Ck.resume();</code><br>
+    Objective-C: <code>CkResume();</code><br>
+    <a name="shutting_down"></a>
+    <h2>Shutting down</h2>
+    To shut down Cricket Audio:<br>
+    <br>
+    C++: <code>CkShutdown();</code><br>
+    Java: <code>Ck.shutdown();</code><br>
+    Objective-C: <code>CkShutdown();</code><br>
+    <a name="threading_issues"></a>
+    <h2>Threading issues</h2>
+    All calls to the Cricket Audio API should be made from the same
+    thread.&nbsp; <br>
+    <br>
+    If you have provided a custom log function or custom memory
+    allocation/deallocation functions in&nbsp;<span class="filename">CkConfig</span>,
+    calls to those functions will be made from multiple threads, so they should
+    be written to be thread-safe.<br>
+    <br>
+  </body>
+</html>

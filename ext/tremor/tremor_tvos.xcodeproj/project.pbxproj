@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA0208A71BC7EFB50062132E /* block.c in Sources */ = {isa = PBXBuildFile; fileRef = AA02089A1BC7EFB50062132E /* block.c */; };
+		AA0208A81BC7EFB50062132E /* codebook.c in Sources */ = {isa = PBXBuildFile; fileRef = AA02089B1BC7EFB50062132E /* codebook.c */; };
+		AA0208A91BC7EFB50062132E /* floor0.c in Sources */ = {isa = PBXBuildFile; fileRef = AA02089C1BC7EFB50062132E /* floor0.c */; };
+		AA0208AA1BC7EFB50062132E /* floor1.c in Sources */ = {isa = PBXBuildFile; fileRef = AA02089D1BC7EFB50062132E /* floor1.c */; };
+		AA0208AB1BC7EFB50062132E /* info.c in Sources */ = {isa = PBXBuildFile; fileRef = AA02089E1BC7EFB50062132E /* info.c */; };
+		AA0208AC1BC7EFB50062132E /* mapping0.c in Sources */ = {isa = PBXBuildFile; fileRef = AA02089F1BC7EFB50062132E /* mapping0.c */; };
+		AA0208AD1BC7EFB50062132E /* mdct.c in Sources */ = {isa = PBXBuildFile; fileRef = AA0208A01BC7EFB50062132E /* mdct.c */; };
+		AA0208AE1BC7EFB50062132E /* registry.c in Sources */ = {isa = PBXBuildFile; fileRef = AA0208A11BC7EFB50062132E /* registry.c */; };
+		AA0208AF1BC7EFB50062132E /* res012.c in Sources */ = {isa = PBXBuildFile; fileRef = AA0208A21BC7EFB50062132E /* res012.c */; };
+		AA0208B01BC7EFB50062132E /* sharedbook.c in Sources */ = {isa = PBXBuildFile; fileRef = AA0208A31BC7EFB50062132E /* sharedbook.c */; };
+		AA0208B11BC7EFB50062132E /* synthesis.c in Sources */ = {isa = PBXBuildFile; fileRef = AA0208A41BC7EFB50062132E /* synthesis.c */; };
+		AA0208B21BC7EFB50062132E /* vorbisfile.c in Sources */ = {isa = PBXBuildFile; fileRef = AA0208A51BC7EFB50062132E /* vorbisfile.c */; };
+		AA0208B31BC7EFB50062132E /* window.c in Sources */ = {isa = PBXBuildFile; fileRef = AA0208A61BC7EFB50062132E /* window.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AA0208711BC7EE060062132E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AA0208731BC7EE060062132E /* libtremor_tvos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtremor_tvos.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA02089A1BC7EFB50062132E /* block.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = block.c; sourceTree = "<group>"; };
+		AA02089B1BC7EFB50062132E /* codebook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = codebook.c; sourceTree = "<group>"; };
+		AA02089C1BC7EFB50062132E /* floor0.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = floor0.c; sourceTree = "<group>"; };
+		AA02089D1BC7EFB50062132E /* floor1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = floor1.c; sourceTree = "<group>"; };
+		AA02089E1BC7EFB50062132E /* info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = info.c; sourceTree = "<group>"; };
+		AA02089F1BC7EFB50062132E /* mapping0.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mapping0.c; sourceTree = "<group>"; };
+		AA0208A01BC7EFB50062132E /* mdct.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mdct.c; sourceTree = "<group>"; };
+		AA0208A11BC7EFB50062132E /* registry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = registry.c; sourceTree = "<group>"; };
+		AA0208A21BC7EFB50062132E /* res012.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = res012.c; sourceTree = "<group>"; };
+		AA0208A31BC7EFB50062132E /* sharedbook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sharedbook.c; sourceTree = "<group>"; };
+		AA0208A41BC7EFB50062132E /* synthesis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = synthesis.c; sourceTree = "<group>"; };
+		AA0208A51BC7EFB50062132E /* vorbisfile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vorbisfile.c; sourceTree = "<group>"; };
+		AA0208A61BC7EFB50062132E /* window.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = window.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA0208701BC7EE060062132E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA02086A1BC7EE060062132E = {
+			isa = PBXGroup;
+			children = (
+				AA0208991BC7EF8B0062132E /* Source */,
+				AA0208741BC7EE060062132E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA0208741BC7EE060062132E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA0208731BC7EE060062132E /* libtremor_tvos.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA0208991BC7EF8B0062132E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				AA02089A1BC7EFB50062132E /* block.c */,
+				AA02089B1BC7EFB50062132E /* codebook.c */,
+				AA02089C1BC7EFB50062132E /* floor0.c */,
+				AA02089D1BC7EFB50062132E /* floor1.c */,
+				AA02089E1BC7EFB50062132E /* info.c */,
+				AA02089F1BC7EFB50062132E /* mapping0.c */,
+				AA0208A01BC7EFB50062132E /* mdct.c */,
+				AA0208A11BC7EFB50062132E /* registry.c */,
+				AA0208A21BC7EFB50062132E /* res012.c */,
+				AA0208A31BC7EFB50062132E /* sharedbook.c */,
+				AA0208A41BC7EFB50062132E /* synthesis.c */,
+				AA0208A51BC7EFB50062132E /* vorbisfile.c */,
+				AA0208A61BC7EFB50062132E /* window.c */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA0208721BC7EE060062132E /* tremor_tvos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA02087C1BC7EE060062132E /* Build configuration list for PBXNativeTarget "tremor_tvos" */;
+			buildPhases = (
+				AA02086F1BC7EE060062132E /* Sources */,
+				AA0208701BC7EE060062132E /* Frameworks */,
+				AA0208711BC7EE060062132E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tremor_tvos;
+			productName = tremor_tvos;
+			productReference = AA0208731BC7EE060062132E /* libtremor_tvos.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA02086B1BC7EE060062132E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Cricket Technology";
+				TargetAttributes = {
+					AA0208721BC7EE060062132E = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = AA02086E1BC7EE060062132E /* Build configuration list for PBXProject "tremor_tvos" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AA02086A1BC7EE060062132E;
+			productRefGroup = AA0208741BC7EE060062132E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA0208721BC7EE060062132E /* tremor_tvos */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA02086F1BC7EE060062132E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0208AB1BC7EFB50062132E /* info.c in Sources */,
+				AA0208B01BC7EFB50062132E /* sharedbook.c in Sources */,
+				AA0208AD1BC7EFB50062132E /* mdct.c in Sources */,
+				AA0208AA1BC7EFB50062132E /* floor1.c in Sources */,
+				AA0208A71BC7EFB50062132E /* block.c in Sources */,
+				AA0208B11BC7EFB50062132E /* synthesis.c in Sources */,
+				AA0208AF1BC7EFB50062132E /* res012.c in Sources */,
+				AA0208AE1BC7EFB50062132E /* registry.c in Sources */,
+				AA0208A81BC7EFB50062132E /* codebook.c in Sources */,
+				AA0208A91BC7EFB50062132E /* floor0.c in Sources */,
+				AA0208B31BC7EFB50062132E /* window.c in Sources */,
+				AA0208B21BC7EFB50062132E /* vorbisfile.c in Sources */,
+				AA0208AC1BC7EFB50062132E /* mapping0.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA02087A1BC7EE060062132E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		AA02087B1BC7EE060062132E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA02087D1BC7EE060062132E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = ../libogg/include;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AA02087E1BC7EE060062132E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = ../libogg/include;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA02086E1BC7EE060062132E /* Build configuration list for PBXProject "tremor_tvos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA02087A1BC7EE060062132E /* Debug */,
+				AA02087B1BC7EE060062132E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA02087C1BC7EE060062132E /* Build configuration list for PBXNativeTarget "tremor_tvos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA02087D1BC7EE060062132E /* Debug */,
+				AA02087E1BC7EE060062132E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA02086B1BC7EE060062132E /* Project object */;
+}

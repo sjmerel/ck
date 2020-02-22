@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "container:"
+      name = "tvOS">
+      <FileRef
+         location = "group:ck/ck_tvos.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ext/libogg/ogg_tvos.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ext/tremor/tremor_tvos.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:test/test_tvos.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "OSX">
+      <FileRef
+         location = "group:ck/ck_osx.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ext/libogg/ogg_osx.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ext/tremor/tremor_osx.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ext/tinyxml/tinyxml_osx.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:test/test_osx.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:cktool/cktool.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "iOS">
+      <FileRef
+         location = "group:ck/ck_ios.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ext/libogg/ogg_ios.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ext/tremor/tremor_ios.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ext/tinyxml/tinyxml_ios.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:test/test_ios.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:play/ios/play_ios.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:stress/ios/stress_ios.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:dsptest/ios/dsptest.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>

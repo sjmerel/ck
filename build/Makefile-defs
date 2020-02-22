@@ -1,0 +1,174 @@
+# variables from makefile/command line:
+#  CK_ROOT (required)
+#  CK_API_TARGET
+#  CK_ARCH
+#  CK_TARGET_OS
+#  CK_INCLUDE_DIRS
+#  CK_LIB_NAME
+#  CK_EXE_NAME
+#  CK_LINK_LIBS
+#  CK_MAKEFILE_DEPS
+#  CK_PCH_FILE
+#  CK_C_SRC_FILES
+#  CK_C_FLAGS
+#  CK_CPP_SRC_FILES
+#  CK_CPP_FLAGS
+#  CK_CPP_SUFFIX
+#  CK_OBJ_FILES
+#  CK_ANDROID_NDK_DIR (required for android; usually from environment variable)
+#  CK_ANDROID_SDK_DIR (required for android; usually from environment variable)
+
+ifndef MAKEFILE_DEFS_INC
+MAKEFILE_DEFS_INC := 1
+
+##################################################################3
+# determine host OS
+
+ifeq ($(shell uname),Darwin)
+  HOST_OS := osx
+  fixpath = $1
+  fixdep = 
+else ifeq ($(shell uname),Linux)
+  HOST_OS := linux
+  fixpath = $1
+  fixdep =
+else ifeq ($(shell uname -o),Cygwin)
+  fixpath = $(shell cygpath -m $1)
+  fixdep = sed 's/C:/\/cygdrive\/c/g' $1 | sed 's/\([^ ]\)\\/\1\//g' > $1.tmp; mv $1.tmp $1
+  ifeq (x86_64,$(shell uname -m))
+    HOST_OS := win64
+  else ifeq (WOW64,$(findstring WOW64,$(shell uname)))
+    HOST_OS := win64
+  else
+    HOST_OS := win32
+  endif
+else
+  $(error unknown OS!)
+endif
+
+
+##################################################################3
+# default values
+
+ifndef CK_CONFIG
+CK_CONFIG := debug
+endif
+
+ifndef CK_TARGET_OS
+CK_TARGET_OS := linux
+endif
+
+CK_API_TARGET_32 := 21
+CK_API_TARGET_64 := 21
+
+CK_GCC_VERSION_32 := 4.9
+CK_GCC_VERSION_64 := 4.9
+
+ifndef CK_CPP_SUFFIX
+CK_CPP_SUFFIX := cpp
+endif
+
+
+##################################################################3
+# validate 
+
+checkdef = $(if $($(1)),,$(error $(1) is not defined!))
+$(call checkdef,CK_ROOT)
+ifeq ($(CK_TARGET_OS),android)
+  $(call checkdef,CK_ANDROID_NDK_DIR)
+  $(call checkdef,CK_ANDROID_SDK_DIR)
+endif
+CK_ARCH_LIST := $(shell cat $(CK_ROOT)/build/android_abis.txt)
+
+checkval = $(if $(findstring $($(1)),$(2)),,$(error $(1) must be one of: $(2)))
+$(call checkval,CK_CONFIG,debug release)
+$(call checkval,CK_TARGET_OS,android linux)
+ifdef CK_ARCH
+  ifeq ($(CK_TARGET_OS),android)
+    $(call checkval,CK_ARCH,$(CK_ARCH_LIST))
+  else
+    $(call checkval,CK_ARCH,x86 x64)
+  endif
+endif
+
+
+##################################################################3
+# paths to android NDK tools
+
+ifeq ($(CK_TARGET_OS),android)
+  ifeq ($(HOST_OS),osx)
+    HOST_DIR := darwin-x86_64
+  else ifeq ($(HOST_OS),win64)
+    HOST_DIR = windows-x86_64
+  else ifeq ($(HOST_OS),win32)
+    HOST_DIR = windows-x86
+  else ifeq ($(HOST_OS),linux)
+    HOST_DIR = linux-x86_64
+  endif
+
+  ifeq ($(CK_ARCH),$(filter $(CK_ARCH),armeabi armeabi-v7a))
+    CK_GCC_VERSION := $(CK_GCC_VERSION_32)
+    CK_API_TARGET := $(CK_API_TARGET_32)
+    GCC_DIR  := $(CK_ANDROID_NDK_DIR)/toolchains/arm-linux-androideabi-$(CK_GCC_VERSION)/prebuilt/$(HOST_DIR)
+    GCC_PREFIX := arm-linux-androideabi
+    ARCH_TYPE := arm
+  else ifeq ($(CK_ARCH),arm64-v8a)
+    CK_GCC_VERSION := $(CK_GCC_VERSION_64)
+    CK_API_TARGET := $(CK_API_TARGET_64)
+    GCC_DIR  := $(CK_ANDROID_NDK_DIR)/toolchains/aarch64-linux-android-$(CK_GCC_VERSION)/prebuilt/$(HOST_DIR)
+    GCC_PREFIX := aarch64-linux-android
+    ARCH_TYPE := arm64
+  else ifeq ($(CK_ARCH),x86)
+    CK_GCC_VERSION := $(CK_GCC_VERSION_32)
+    CK_API_TARGET := $(CK_API_TARGET_32)
+    GCC_DIR  := $(CK_ANDROID_NDK_DIR)/toolchains/x86-$(CK_GCC_VERSION)/prebuilt/$(HOST_DIR)
+    GCC_PREFIX := i686-linux-android
+    ARCH_TYPE := x86
+  else ifeq ($(CK_ARCH),x86_64)
+    CK_GCC_VERSION := $(CK_GCC_VERSION_64)
+    CK_API_TARGET := $(CK_API_TARGET_64)
+    GCC_DIR  := $(CK_ANDROID_NDK_DIR)/toolchains/x86_64-$(CK_GCC_VERSION)/prebuilt/$(HOST_DIR)
+    GCC_PREFIX := x86_64-linux-android
+    ARCH_TYPE := x86_64
+  else ifeq ($(CK_ARCH),mips)
+    CK_GCC_VERSION := $(CK_GCC_VERSION_32)
+    CK_API_TARGET := $(CK_API_TARGET_32)
+    GCC_DIR  := $(CK_ANDROID_NDK_DIR)/toolchains/mipsel-linux-android-$(CK_GCC_VERSION)/prebuilt/$(HOST_DIR)
+    GCC_PREFIX := mipsel-linux-android
+    ARCH_TYPE := mips
+  else ifeq ($(CK_ARCH),mips64)
+    CK_GCC_VERSION := $(CK_GCC_VERSION_64)
+    CK_API_TARGET := $(CK_API_TARGET_64)
+    GCC_DIR  := $(CK_ANDROID_NDK_DIR)/toolchains/mips64el-linux-android-$(CK_GCC_VERSION)/prebuilt/$(HOST_DIR)
+    GCC_PREFIX := mips64el-linux-android
+    ARCH_TYPE := mips64
+  else
+    $(error unknown Android architecture!)
+  endif
+
+  LLVM_DIR := $(CK_ANDROID_NDK_DIR)/toolchains/llvm/prebuilt/$(HOST_DIR)
+endif
+
+
+##################################################################3
+# output files
+
+OBJ_DIR_BASE := build/$(CK_TARGET_OS)
+OBJ_DIR := $(OBJ_DIR_BASE)/$(CK_ARCH)/$(CK_CONFIG)
+
+EXE_DIR_BASE := $(CK_ROOT)/bin/$(CK_TARGET_OS)
+EXE_DIR := $(EXE_DIR_BASE)/$(CK_ARCH)/$(CK_CONFIG)
+EXE_FILE := $(EXE_DIR)/$(CK_EXE_NAME)
+
+LIB_DIR_BASE := $(CK_ROOT)/lib/$(CK_TARGET_OS)
+ifeq ($(CK_TARGET_OS),android)
+  LIB_DIR := $(LIB_DIR_BASE)/ndk/$(CK_ARCH)/$(CK_CONFIG)
+  LIB_DIR_SDK := $(LIB_DIR_BASE)/sdk
+else
+  LIB_DIR := $(LIB_DIR_BASE)/$(CK_ARCH)/$(CK_CONFIG)
+  LIB_DIR_SDK := 
+endif
+LIB_FILE := $(LIB_DIR)/$(CK_LIB_NAME)
+
+# MAKEFILE_DEFS_INC
+endif

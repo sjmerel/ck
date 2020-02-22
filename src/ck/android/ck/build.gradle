@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+
+////////////////////////////////////////
+// library installation steps
+
+task copyAarDebug(type:Copy) {
+    from 'build/outputs/aar/ck-debug.aar'
+    into '../../../../lib/android/sdk/debug'
+    rename('ck-debug.aar', 'ck.aar')
+}
+
+task copyAarRelease(type:Copy) {
+    from 'build/outputs/aar/ck-release.aar'
+    into '../../../../lib/android/sdk/release'
+    rename('ck-release.aar', 'ck.aar')
+}
+
+model
+{
+    tasks.assembleDebug { dependsOn copyAarDebug }
+    tasks.assembleRelease { dependsOn copyAarRelease }
+}
+
+
+////////////////////////////////////////
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        ndk { 
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+}
+

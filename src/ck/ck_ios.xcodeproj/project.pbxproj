@@ -1,0 +1,1524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA029CCE148EB44C00C4E70D /* volumematrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA029CCC148EB44C00C4E70D /* volumematrix.cpp */; };
+		AA029CCF148EB44C00C4E70D /* volumematrix.h in Headers */ = {isa = PBXBuildFile; fileRef = AA029CCD148EB44C00C4E70D /* volumematrix.h */; };
+		AA09104A21581E32002929FA /* libogg_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA09104921581E32002929FA /* libogg_ios.a */; };
+		AA09104C21581E32002929FA /* libtremor_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA09104B21581E32002929FA /* libtremor_ios.a */; };
+		AA0F927014F43A0000174284 /* pcmf32decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0F926C14F43A0000174284 /* pcmf32decoder.cpp */; };
+		AA0F927114F43A0000174284 /* pcmf32decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0F926D14F43A0000174284 /* pcmf32decoder.h */; };
+		AA0F927214F43A0000174284 /* vorbisaudiostream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0F926E14F43A0000174284 /* vorbisaudiostream.cpp */; };
+		AA0F927314F43A0000174284 /* vorbisaudiostream.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0F926F14F43A0000174284 /* vorbisaudiostream.h */; };
+		AA10415619548FBD00B341A6 /* audiowriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA10415519548FBD00B341A6 /* audiowriter.cpp */; };
+		AA15D82F17FBD54800B42B12 /* graphoutput_dummy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA15D82D17FBD54800B42B12 /* graphoutput_dummy.cpp */; };
+		AA15D83017FBD54800B42B12 /* graphoutput_dummy.h in Headers */ = {isa = PBXBuildFile; fileRef = AA15D82E17FBD54800B42B12 /* graphoutput_dummy.h */; };
+		AA1D9F8D19EC80CE00F9A5DE /* biquadfilterprocessor_sse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA1D9F8919EC80CE00F9A5DE /* biquadfilterprocessor_sse.cpp */; };
+		AA1D9F8E19EC80CE00F9A5DE /* bitcrusherprocessor_sse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA1D9F8A19EC80CE00F9A5DE /* bitcrusherprocessor_sse.cpp */; };
+		AA1D9F8F19EC80CE00F9A5DE /* distortionprocessor_sse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA1D9F8B19EC80CE00F9A5DE /* distortionprocessor_sse.cpp */; };
+		AA1D9F9019EC80CE00F9A5DE /* ringmodprocessor_sse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA1D9F8C19EC80CE00F9A5DE /* ringmodprocessor_sse.cpp */; };
+		AA286465189AD9EC0097E980 /* substream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA286463189AD9EC0097E980 /* substream.cpp */; };
+		AA286466189AD9EC0097E980 /* substream.h in Headers */ = {isa = PBXBuildFile; fileRef = AA286464189AD9EC0097E980 /* substream.h */; };
+		AA37E6EF15B4A2710025928D /* audioutil.neon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA37E6EE15B4A2710025928D /* audioutil.neon.cpp */; };
+		AA4CF33C172EE03600903D06 /* commandobject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA4CF339172EE03600903D06 /* commandobject.cpp */; };
+		AA4CF33D172EE03600903D06 /* commandobject.h in Headers */ = {isa = PBXBuildFile; fileRef = AA4CF33A172EE03600903D06 /* commandobject.h */; };
+		AA4CF33E172EE03600903D06 /* commandparam.h in Headers */ = {isa = PBXBuildFile; fileRef = AA4CF33B172EE03600903D06 /* commandparam.h */; };
+		AA4CF341172EE07900903D06 /* effectbusnode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA4CF33F172EE07900903D06 /* effectbusnode.cpp */; };
+		AA4CF342172EE07900903D06 /* effectbusnode.h in Headers */ = {isa = PBXBuildFile; fileRef = AA4CF340172EE07900903D06 /* effectbusnode.h */; };
+		AA4CF345172EE90500903D06 /* effect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA4CF343172EE90500903D06 /* effect.cpp */; };
+		AA4CF346172EE90500903D06 /* effect.h in Headers */ = {isa = PBXBuildFile; fileRef = AA4CF344172EE90500903D06 /* effect.h */; };
+		AA56672319473C3A00A812D7 /* audioutil_sse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA56672219473C3A00A812D7 /* audioutil_sse.cpp */; };
+		AA566727194A515300A812D7 /* audiowriter.h in Headers */ = {isa = PBXBuildFile; fileRef = AA566724194A515300A812D7 /* audiowriter.h */; };
+		AA566728194A515300A812D7 /* rawwriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA566725194A515300A812D7 /* rawwriter.cpp */; };
+		AA566729194A515300A812D7 /* rawwriter.h in Headers */ = {isa = PBXBuildFile; fileRef = AA566726194A515300A812D7 /* rawwriter.h */; };
+		AA56672C194A82CE00A812D7 /* wavwriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA56672A194A82CE00A812D7 /* wavwriter.cpp */; };
+		AA56672D194A82CE00A812D7 /* wavwriter.h in Headers */ = {isa = PBXBuildFile; fileRef = AA56672B194A82CE00A812D7 /* wavwriter.h */; };
+		AA634AE31624A5DA0038BBCE /* attenuationmode.h in Headers */ = {isa = PBXBuildFile; fileRef = AA634ADF1624A5DA0038BBCE /* attenuationmode.h */; };
+		AA634AE51624A5DA0038BBCE /* customfile.h in Headers */ = {isa = PBXBuildFile; fileRef = AA634AE11624A5DA0038BBCE /* customfile.h */; };
+		AA634AE61624A5DA0038BBCE /* customstream.h in Headers */ = {isa = PBXBuildFile; fileRef = AA634AE21624A5DA0038BBCE /* customstream.h */; };
+		AA634AEA1624A5EC0038BBCE /* customstream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA634AE81624A5EC0038BBCE /* customstream.cpp */; };
+		AA634AEB1624A5EC0038BBCE /* customstream.h in Headers */ = {isa = PBXBuildFile; fileRef = AA634AE91624A5EC0038BBCE /* customstream.h */; };
+		AA634AED1624A5F80038BBCE /* customfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA634AEC1624A5F80038BBCE /* customfile.cpp */; };
+		AA6778D1173044F3008F6AF1 /* effect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA6778CF173044F3008F6AF1 /* effect.cpp */; };
+		AA6778D2173044F3008F6AF1 /* effectbus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA6778D0173044F3008F6AF1 /* effectbus.cpp */; };
+		AA6778D517304524008F6AF1 /* effectbus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA6778D317304524008F6AF1 /* effectbus.cpp */; };
+		AA6778D617304524008F6AF1 /* effectbus.h in Headers */ = {isa = PBXBuildFile; fileRef = AA6778D417304524008F6AF1 /* effectbus.h */; };
+		AA8982391762599500344FCF /* bitcrusherprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA8982361762599500344FCF /* bitcrusherprocessor.cpp */; };
+		AA89823A1762599500344FCF /* bitcrusherprocessor.h in Headers */ = {isa = PBXBuildFile; fileRef = AA8982371762599500344FCF /* bitcrusherprocessor.h */; };
+		AA89823B1762599500344FCF /* effectprocessor.h in Headers */ = {isa = PBXBuildFile; fileRef = AA8982381762599500344FCF /* effectprocessor.h */; };
+		AA89823E1764431A00344FCF /* deletable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA89823C1764431A00344FCF /* deletable.cpp */; };
+		AA89823F1764431A00344FCF /* deletable.h in Headers */ = {isa = PBXBuildFile; fileRef = AA89823D1764431A00344FCF /* deletable.h */; };
+		AA94467E1587A3A300C82A3B /* customaudiostream.h in Headers */ = {isa = PBXBuildFile; fileRef = AA94467B1587A3A300C82A3B /* customaudiostream.h */; };
+		AA94467F1587A3A300C82A3B /* customstreamsound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA94467C1587A3A300C82A3B /* customstreamsound.cpp */; };
+		AA9446801587A3A300C82A3B /* customstreamsound.h in Headers */ = {isa = PBXBuildFile; fileRef = AA94467D1587A3A300C82A3B /* customstreamsound.h */; };
+		AA9446831587AA9100C82A3B /* customaudiostream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA9446821587AA9100C82A3B /* customaudiostream.cpp */; };
+		AAA0F329147E08ED000CB7A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA0F328147E08ED000CB7A4 /* Foundation.framework */; };
+		AAA0F369147E09C9000CB7A4 /* bank_p.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F35D147E09C9000CB7A4 /* bank_p.h */; };
+		AAA0F36A147E09C9000CB7A4 /* bank.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F35E147E09C9000CB7A4 /* bank.mm */; };
+		AAA0F36B147E09C9000CB7A4 /* cko.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F35F147E09C9000CB7A4 /* cko.h */; };
+		AAA0F36C147E09C9000CB7A4 /* cko.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F360147E09C9000CB7A4 /* cko.mm */; };
+		AAA0F36D147E09C9000CB7A4 /* mixer_p.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F361147E09C9000CB7A4 /* mixer_p.h */; };
+		AAA0F36E147E09C9000CB7A4 /* mixer.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F362147E09C9000CB7A4 /* mixer.mm */; };
+		AAA0F36F147E09C9000CB7A4 /* nsstringref.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F363147E09C9000CB7A4 /* nsstringref.h */; };
+		AAA0F370147E09C9000CB7A4 /* nsstringref.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F364147E09C9000CB7A4 /* nsstringref.mm */; };
+		AAA0F371147E09C9000CB7A4 /* proxy.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F365147E09C9000CB7A4 /* proxy.h */; };
+		AAA0F372147E09C9000CB7A4 /* proxy.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F366147E09C9000CB7A4 /* proxy.mm */; };
+		AAA0F373147E09C9000CB7A4 /* sound_p.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F367147E09C9000CB7A4 /* sound_p.h */; };
+		AAA0F374147E09C9000CB7A4 /* sound.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F368147E09C9000CB7A4 /* sound.mm */; };
+		AAA0F37A147E09D5000CB7A4 /* bank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F375147E09D5000CB7A4 /* bank.cpp */; };
+		AAA0F37B147E09D5000CB7A4 /* ck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F376147E09D5000CB7A4 /* ck.cpp */; };
+		AAA0F37C147E09D5000CB7A4 /* config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F377147E09D5000CB7A4 /* config.cpp */; };
+		AAA0F37D147E09D5000CB7A4 /* mixer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F378147E09D5000CB7A4 /* mixer.cpp */; };
+		AAA0F37E147E09D5000CB7A4 /* sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F379147E09D5000CB7A4 /* sound.cpp */; };
+		AAA0F386147E09E4000CB7A4 /* bank.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F37F147E09E4000CB7A4 /* bank.h */; };
+		AAA0F387147E09E4000CB7A4 /* ck.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F380147E09E4000CB7A4 /* ck.h */; };
+		AAA0F388147E09E4000CB7A4 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F381147E09E4000CB7A4 /* config.h */; };
+		AAA0F389147E09E4000CB7A4 /* mixer.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F382147E09E4000CB7A4 /* mixer.h */; };
+		AAA0F38A147E09E4000CB7A4 /* pathtype.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F383147E09E4000CB7A4 /* pathtype.h */; };
+		AAA0F38B147E09E4000CB7A4 /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F384147E09E4000CB7A4 /* platform.h */; };
+		AAA0F38C147E09E4000CB7A4 /* sound.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F385147E09E4000CB7A4 /* sound.h */; };
+		AAA0F394147E09F2000CB7A4 /* bank.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F38D147E09F2000CB7A4 /* bank.h */; };
+		AAA0F395147E09F2000CB7A4 /* ck.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F38E147E09F2000CB7A4 /* ck.h */; };
+		AAA0F396147E09F2000CB7A4 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F38F147E09F2000CB7A4 /* config.h */; };
+		AAA0F397147E09F2000CB7A4 /* mixer.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F390147E09F2000CB7A4 /* mixer.h */; };
+		AAA0F398147E09F2000CB7A4 /* pathtype.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F391147E09F2000CB7A4 /* pathtype.h */; };
+		AAA0F399147E09F2000CB7A4 /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F392147E09F2000CB7A4 /* platform.h */; };
+		AAA0F39A147E09F2000CB7A4 /* sound.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F393147E09F2000CB7A4 /* sound.h */; };
+		AAA0F3F5147E0A25000CB7A4 /* adpcm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F39B147E0A25000CB7A4 /* adpcm.cpp */; };
+		AAA0F3F6147E0A25000CB7A4 /* adpcm.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F39C147E0A25000CB7A4 /* adpcm.h */; };
+		AAA0F3F7147E0A25000CB7A4 /* adpcmdecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F39D147E0A25000CB7A4 /* adpcmdecoder.cpp */; };
+		AAA0F3F8147E0A25000CB7A4 /* adpcmdecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F39E147E0A25000CB7A4 /* adpcmdecoder.h */; };
+		AAA0F3F9147E0A25000CB7A4 /* audio_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F39F147E0A25000CB7A4 /* audio_ios.mm */; };
+		AAA0F3FA147E0A25000CB7A4 /* audio_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3A0147E0A25000CB7A4 /* audio_ios.h */; };
+		AAA0F3FB147E0A25000CB7A4 /* audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3A1147E0A25000CB7A4 /* audio.cpp */; };
+		AAA0F3FC147E0A25000CB7A4 /* audio.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3A2147E0A25000CB7A4 /* audio.h */; };
+		AAA0F3FD147E0A25000CB7A4 /* audiodebug_ios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3A3147E0A25000CB7A4 /* audiodebug_ios.cpp */; };
+		AAA0F3FE147E0A25000CB7A4 /* audiodebug_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3A4147E0A25000CB7A4 /* audiodebug_ios.h */; };
+		AAA0F3FF147E0A25000CB7A4 /* audiofileinfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3A5147E0A25000CB7A4 /* audiofileinfo.cpp */; };
+		AAA0F400147E0A25000CB7A4 /* audiofileinfo.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3A6147E0A25000CB7A4 /* audiofileinfo.h */; };
+		AAA0F401147E0A25000CB7A4 /* audioformat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3A7147E0A25000CB7A4 /* audioformat.cpp */; };
+		AAA0F402147E0A25000CB7A4 /* audioformat.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3A8147E0A25000CB7A4 /* audioformat.h */; };
+		AAA0F403147E0A25000CB7A4 /* audiograph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3A9147E0A25000CB7A4 /* audiograph.cpp */; };
+		AAA0F404147E0A25000CB7A4 /* audiograph.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3AA147E0A25000CB7A4 /* audiograph.h */; };
+		AAA0F405147E0A25000CB7A4 /* audionode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3AB147E0A25000CB7A4 /* audionode.cpp */; };
+		AAA0F406147E0A25000CB7A4 /* audionode.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3AC147E0A25000CB7A4 /* audionode.h */; };
+		AAA0F408147E0A25000CB7A4 /* audiosource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3AE147E0A25000CB7A4 /* audiosource.cpp */; };
+		AAA0F409147E0A25000CB7A4 /* audiosource.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3AF147E0A25000CB7A4 /* audiosource.h */; };
+		AAA0F40A147E0A25000CB7A4 /* audiostream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3B0147E0A25000CB7A4 /* audiostream.cpp */; };
+		AAA0F40B147E0A25000CB7A4 /* audiostream.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3B1147E0A25000CB7A4 /* audiostream.h */; };
+		AAA0F40C147E0A25000CB7A4 /* audioutil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3B2147E0A25000CB7A4 /* audioutil.cpp */; };
+		AAA0F40D147E0A25000CB7A4 /* audioutil.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3B3147E0A25000CB7A4 /* audioutil.h */; };
+		AAA0F40E147E0A25000CB7A4 /* bank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3B4147E0A25000CB7A4 /* bank.cpp */; };
+		AAA0F40F147E0A25000CB7A4 /* bank.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3B5147E0A25000CB7A4 /* bank.h */; };
+		AAA0F410147E0A25000CB7A4 /* bankdata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3B6147E0A25000CB7A4 /* bankdata.cpp */; };
+		AAA0F411147E0A25000CB7A4 /* bankdata.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3B7147E0A25000CB7A4 /* bankdata.h */; };
+		AAA0F412147E0A25000CB7A4 /* banksound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3B8147E0A25000CB7A4 /* banksound.cpp */; };
+		AAA0F413147E0A25000CB7A4 /* banksound.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3B9147E0A25000CB7A4 /* banksound.h */; };
+		AAA0F414147E0A25000CB7A4 /* bufferhandle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3BA147E0A25000CB7A4 /* bufferhandle.cpp */; };
+		AAA0F415147E0A25000CB7A4 /* bufferhandle.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3BB147E0A25000CB7A4 /* bufferhandle.h */; };
+		AAA0F416147E0A25000CB7A4 /* bufferpool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3BC147E0A25000CB7A4 /* bufferpool.cpp */; };
+		AAA0F417147E0A25000CB7A4 /* bufferpool.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3BD147E0A25000CB7A4 /* bufferpool.h */; };
+		AAA0F418147E0A25000CB7A4 /* buffersource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3BE147E0A25000CB7A4 /* buffersource.cpp */; };
+		AAA0F419147E0A25000CB7A4 /* buffersource.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3BF147E0A25000CB7A4 /* buffersource.h */; };
+		AAA0F41A147E0A25000CB7A4 /* cksaudiostream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3C0147E0A25000CB7A4 /* cksaudiostream.cpp */; };
+		AAA0F41B147E0A25000CB7A4 /* cksaudiostream.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3C1147E0A25000CB7A4 /* cksaudiostream.h */; };
+		AAA0F41C147E0A25000CB7A4 /* cksstreamsound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3C2147E0A25000CB7A4 /* cksstreamsound.cpp */; };
+		AAA0F41D147E0A25000CB7A4 /* cksstreamsound.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3C3147E0A25000CB7A4 /* cksstreamsound.h */; };
+		AAA0F41E147E0A25000CB7A4 /* decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3C4147E0A25000CB7A4 /* decoder.cpp */; };
+		AAA0F41F147E0A25000CB7A4 /* decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3C5147E0A25000CB7A4 /* decoder.h */; };
+		AAA0F420147E0A25000CB7A4 /* decoderbuf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3C6147E0A25000CB7A4 /* decoderbuf.cpp */; };
+		AAA0F421147E0A25000CB7A4 /* decoderbuf.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3C7147E0A25000CB7A4 /* decoderbuf.h */; };
+		AAA0F422147E0A25000CB7A4 /* fileheader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3C8147E0A25000CB7A4 /* fileheader.cpp */; };
+		AAA0F423147E0A25000CB7A4 /* fileheader.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3C9147E0A25000CB7A4 /* fileheader.h */; };
+		AAA0F424147E0A25000CB7A4 /* filetype.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3CA147E0A25000CB7A4 /* filetype.h */; };
+		AAA0F425147E0A25000CB7A4 /* fourcharcode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3CB147E0A25000CB7A4 /* fourcharcode.cpp */; };
+		AAA0F426147E0A25000CB7A4 /* fourcharcode.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3CC147E0A25000CB7A4 /* fourcharcode.h */; };
+		AAA0F427147E0A25000CB7A4 /* graphoutput_ios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3CD147E0A25000CB7A4 /* graphoutput_ios.cpp */; };
+		AAA0F428147E0A25000CB7A4 /* graphoutput_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3CE147E0A25000CB7A4 /* graphoutput_ios.h */; };
+		AAA0F429147E0A25000CB7A4 /* graphoutput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3CF147E0A25000CB7A4 /* graphoutput.cpp */; };
+		AAA0F42A147E0A25000CB7A4 /* graphoutput.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3D0147E0A25000CB7A4 /* graphoutput.h */; };
+		AAA0F42B147E0A25000CB7A4 /* graphsound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3D1147E0A25000CB7A4 /* graphsound.cpp */; };
+		AAA0F42C147E0A25000CB7A4 /* graphsound.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3D2147E0A25000CB7A4 /* graphsound.h */; };
+		AAA0F42D147E0A25000CB7A4 /* mixer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3D3147E0A25000CB7A4 /* mixer.cpp */; };
+		AAA0F42E147E0A25000CB7A4 /* mixer.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3D4147E0A25000CB7A4 /* mixer.h */; };
+		AAA0F42F147E0A25000CB7A4 /* mixnode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3D5147E0A25000CB7A4 /* mixnode.cpp */; };
+		AAA0F430147E0A25000CB7A4 /* mixnode.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3D6147E0A25000CB7A4 /* mixnode.h */; };
+		AAA0F431147E0A25000CB7A4 /* nativeaudiostream_ios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3D7147E0A25000CB7A4 /* nativeaudiostream_ios.cpp */; };
+		AAA0F432147E0A25000CB7A4 /* nativeaudiostream_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3D8147E0A25000CB7A4 /* nativeaudiostream_ios.h */; };
+		AAA0F433147E0A25000CB7A4 /* nativestreamsound_ios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3D9147E0A25000CB7A4 /* nativestreamsound_ios.cpp */; };
+		AAA0F434147E0A25000CB7A4 /* nativestreamsound_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3DA147E0A25000CB7A4 /* nativestreamsound_ios.h */; };
+		AAA0F435147E0A25000CB7A4 /* pcmi8decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3DB147E0A25000CB7A4 /* pcmi8decoder.cpp */; };
+		AAA0F436147E0A25000CB7A4 /* pcmi8decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3DC147E0A25000CB7A4 /* pcmi8decoder.h */; };
+		AAA0F437147E0A25000CB7A4 /* pcmi16decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3DD147E0A25000CB7A4 /* pcmi16decoder.cpp */; };
+		AAA0F438147E0A25000CB7A4 /* pcmi16decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3DE147E0A25000CB7A4 /* pcmi16decoder.h */; };
+		AAA0F43B147E0A25000CB7A4 /* sample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3E1147E0A25000CB7A4 /* sample.cpp */; };
+		AAA0F43C147E0A25000CB7A4 /* sample.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3E2147E0A25000CB7A4 /* sample.h */; };
+		AAA0F43D147E0A25000CB7A4 /* sampleinfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3E3147E0A25000CB7A4 /* sampleinfo.cpp */; };
+		AAA0F43E147E0A25000CB7A4 /* sampleinfo.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3E4147E0A25000CB7A4 /* sampleinfo.h */; };
+		AAA0F43F147E0A25000CB7A4 /* sharedbuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3E5147E0A25000CB7A4 /* sharedbuffer.cpp */; };
+		AAA0F440147E0A25000CB7A4 /* sharedbuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3E6147E0A25000CB7A4 /* sharedbuffer.h */; };
+		AAA0F441147E0A25000CB7A4 /* sinenode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3E7147E0A25000CB7A4 /* sinenode.cpp */; };
+		AAA0F442147E0A25000CB7A4 /* sinenode.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3E8147E0A25000CB7A4 /* sinenode.h */; };
+		AAA0F443147E0A25000CB7A4 /* sinesource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3E9147E0A25000CB7A4 /* sinesource.cpp */; };
+		AAA0F444147E0A25000CB7A4 /* sinesource.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3EA147E0A25000CB7A4 /* sinesource.h */; };
+		AAA0F445147E0A25000CB7A4 /* sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3EB147E0A25000CB7A4 /* sound.cpp */; };
+		AAA0F446147E0A25000CB7A4 /* sound.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3EC147E0A25000CB7A4 /* sound.h */; };
+		AAA0F447147E0A25000CB7A4 /* soundname.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3ED147E0A25000CB7A4 /* soundname.cpp */; };
+		AAA0F448147E0A25000CB7A4 /* soundname.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3EE147E0A25000CB7A4 /* soundname.h */; };
+		AAA0F449147E0A25000CB7A4 /* sourcenode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3EF147E0A25000CB7A4 /* sourcenode.cpp */; };
+		AAA0F44A147E0A25000CB7A4 /* sourcenode.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3F0147E0A25000CB7A4 /* sourcenode.h */; };
+		AAA0F44B147E0A25000CB7A4 /* streamsound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3F1147E0A25000CB7A4 /* streamsound.cpp */; };
+		AAA0F44C147E0A25000CB7A4 /* streamsound.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3F2147E0A25000CB7A4 /* streamsound.h */; };
+		AAA0F44D147E0A25000CB7A4 /* streamsource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F3F3147E0A25000CB7A4 /* streamsource.cpp */; };
+		AAA0F44E147E0A25000CB7A4 /* streamsource.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F3F4147E0A25000CB7A4 /* streamsource.h */; };
+		AAA0F4B3147E0A54000CB7A4 /* allocatable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F44F147E0A54000CB7A4 /* allocatable.cpp */; };
+		AAA0F4B4147E0A54000CB7A4 /* allocatable.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F450147E0A54000CB7A4 /* allocatable.h */; };
+		AAA0F4B5147E0A54000CB7A4 /* allocator.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F451147E0A54000CB7A4 /* allocator.h */; };
+		AAA0F4B6147E0A54000CB7A4 /* array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F452147E0A54000CB7A4 /* array.cpp */; };
+		AAA0F4B7147E0A54000CB7A4 /* array.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F453147E0A54000CB7A4 /* array.h */; };
+		AAA0F4B8147E0A54000CB7A4 /* asyncloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F454147E0A54000CB7A4 /* asyncloader.cpp */; };
+		AAA0F4B9147E0A54000CB7A4 /* asyncloader.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F455147E0A54000CB7A4 /* asyncloader.h */; };
+		AAA0F4BA147E0A54000CB7A4 /* atomic.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F456147E0A54000CB7A4 /* atomic.h */; };
+		AAA0F4BB147E0A54000CB7A4 /* binarystream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F457147E0A54000CB7A4 /* binarystream.cpp */; };
+		AAA0F4BC147E0A54000CB7A4 /* binarystream.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F458147E0A54000CB7A4 /* binarystream.h */; };
+		AAA0F4BD147E0A54000CB7A4 /* binarywriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F459147E0A54000CB7A4 /* binarywriter.cpp */; };
+		AAA0F4BE147E0A54000CB7A4 /* binarywriter.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F45A147E0A54000CB7A4 /* binarywriter.h */; };
+		AAA0F4BF147E0A54000CB7A4 /* bufferstream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F45B147E0A54000CB7A4 /* bufferstream.cpp */; };
+		AAA0F4C0147E0A54000CB7A4 /* bufferstream.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F45C147E0A54000CB7A4 /* bufferstream.h */; };
+		AAA0F4C1147E0A54000CB7A4 /* byteorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F45D147E0A54000CB7A4 /* byteorder.cpp */; };
+		AAA0F4C2147E0A54000CB7A4 /* byteorder.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F45E147E0A54000CB7A4 /* byteorder.h */; };
+		AAA0F4C3147E0A54000CB7A4 /* callback.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F45F147E0A54000CB7A4 /* callback.h */; };
+		AAA0F4C4147E0A54000CB7A4 /* cond.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F460147E0A54000CB7A4 /* cond.cpp */; };
+		AAA0F4C5147E0A54000CB7A4 /* cond.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F461147E0A54000CB7A4 /* cond.h */; };
+		AAA0F4C6147E0A54000CB7A4 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F462147E0A54000CB7A4 /* debug.cpp */; };
+		AAA0F4C7147E0A54000CB7A4 /* debug.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F463147E0A54000CB7A4 /* debug.h */; };
+		AAA0F4C8147E0A54000CB7A4 /* dir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F464147E0A54000CB7A4 /* dir.cpp */; };
+		AAA0F4C9147E0A54000CB7A4 /* dir.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F465147E0A54000CB7A4 /* dir.h */; };
+		AAA0F4CA147E0A54000CB7A4 /* filestream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F466147E0A54000CB7A4 /* filestream.cpp */; };
+		AAA0F4CB147E0A54000CB7A4 /* filestream.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F467147E0A54000CB7A4 /* filestream.h */; };
+		AAA0F4CC147E0A54000CB7A4 /* filewriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F468147E0A54000CB7A4 /* filewriter.cpp */; };
+		AAA0F4CD147E0A54000CB7A4 /* filewriter.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F469147E0A54000CB7A4 /* filewriter.h */; };
+		AAA0F4CE147E0A54000CB7A4 /* fixedarray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F46A147E0A54000CB7A4 /* fixedarray.cpp */; };
+		AAA0F4CF147E0A54000CB7A4 /* fixedarray.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F46B147E0A54000CB7A4 /* fixedarray.h */; };
+		AAA0F4D0147E0A54000CB7A4 /* fixedpoint.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F46C147E0A54000CB7A4 /* fixedpoint.h */; };
+		AAA0F4D1147E0A54000CB7A4 /* fixedstring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F46D147E0A54000CB7A4 /* fixedstring.cpp */; };
+		AAA0F4D2147E0A54000CB7A4 /* fixedstring.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F46E147E0A54000CB7A4 /* fixedstring.h */; };
+		AAA0F4D3147E0A54000CB7A4 /* funcallocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F46F147E0A54000CB7A4 /* funcallocator.cpp */; };
+		AAA0F4D4147E0A54000CB7A4 /* funcallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F470147E0A54000CB7A4 /* funcallocator.h */; };
+		AAA0F4D5147E0A54000CB7A4 /* glitchfinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F471147E0A54000CB7A4 /* glitchfinder.cpp */; };
+		AAA0F4D6147E0A54000CB7A4 /* glitchfinder.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F472147E0A54000CB7A4 /* glitchfinder.h */; };
+		AAA0F4D7147E0A54000CB7A4 /* list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F473147E0A54000CB7A4 /* list.cpp */; };
+		AAA0F4D8147E0A54000CB7A4 /* list.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F474147E0A54000CB7A4 /* list.h */; };
+		AAA0F4D9147E0A54000CB7A4 /* listable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F475147E0A54000CB7A4 /* listable.cpp */; };
+		AAA0F4DA147E0A54000CB7A4 /* listable.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F476147E0A54000CB7A4 /* listable.h */; };
+		AAA0F4DB147E0A54000CB7A4 /* lockfreequeue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F477147E0A54000CB7A4 /* lockfreequeue.cpp */; };
+		AAA0F4DC147E0A54000CB7A4 /* lockfreequeue.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F478147E0A54000CB7A4 /* lockfreequeue.h */; };
+		AAA0F4DD147E0A54000CB7A4 /* logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F479147E0A54000CB7A4 /* logger.cpp */; };
+		AAA0F4DE147E0A54000CB7A4 /* logger.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F47A147E0A54000CB7A4 /* logger.h */; };
+		AAA0F4DF147E0A54000CB7A4 /* math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F47B147E0A54000CB7A4 /* math.cpp */; };
+		AAA0F4E0147E0A54000CB7A4 /* math.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F47C147E0A54000CB7A4 /* math.h */; };
+		AAA0F4E1147E0A54000CB7A4 /* md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F47D147E0A54000CB7A4 /* md5.cpp */; };
+		AAA0F4E2147E0A54000CB7A4 /* md5.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F47E147E0A54000CB7A4 /* md5.h */; };
+		AAA0F4E3147E0A54000CB7A4 /* mem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F47F147E0A54000CB7A4 /* mem.cpp */; };
+		AAA0F4E4147E0A54000CB7A4 /* mem.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F480147E0A54000CB7A4 /* mem.h */; };
+		AAA0F4E5147E0A54000CB7A4 /* memoryfixup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F481147E0A54000CB7A4 /* memoryfixup.cpp */; };
+		AAA0F4E6147E0A54000CB7A4 /* memoryfixup.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F482147E0A54000CB7A4 /* memoryfixup.h */; };
+		AAA0F4E7147E0A54000CB7A4 /* memorystream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F483147E0A54000CB7A4 /* memorystream.cpp */; };
+		AAA0F4E8147E0A54000CB7A4 /* memorystream.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F484147E0A54000CB7A4 /* memorystream.h */; };
+		AAA0F4E9147E0A54000CB7A4 /* mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F485147E0A54000CB7A4 /* mutex.cpp */; };
+		AAA0F4EA147E0A54000CB7A4 /* mutex.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F486147E0A54000CB7A4 /* mutex.h */; };
+		AAA0F4EB147E0A54000CB7A4 /* mutexlock.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F487147E0A54000CB7A4 /* mutexlock.h */; };
+		AAA0F4EC147E0A54000CB7A4 /* path.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F488147E0A54000CB7A4 /* path.cpp */; };
+		AAA0F4ED147E0A54000CB7A4 /* path.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F489147E0A54000CB7A4 /* path.h */; };
+		AAA0F4EE147E0A54000CB7A4 /* pch.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F48A147E0A54000CB7A4 /* pch.h */; };
+		AAA0F4EF147E0A54000CB7A4 /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F48B147E0A54000CB7A4 /* platform.h */; };
+		AAA0F4F0147E0A54000CB7A4 /* pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F48C147E0A54000CB7A4 /* pool.cpp */; };
+		AAA0F4F1147E0A54000CB7A4 /* pool.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F48D147E0A54000CB7A4 /* pool.h */; };
+		AAA0F4F2147E0A54000CB7A4 /* profiler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F48E147E0A54000CB7A4 /* profiler.cpp */; };
+		AAA0F4F3147E0A54000CB7A4 /* profiler.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F48F147E0A54000CB7A4 /* profiler.h */; };
+		AAA0F4F4147E0A54000CB7A4 /* proxied.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F490147E0A54000CB7A4 /* proxied.cpp */; };
+		AAA0F4F5147E0A54000CB7A4 /* proxied.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F491147E0A54000CB7A4 /* proxied.h */; };
+		AAA0F4F6147E0A54000CB7A4 /* readstream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F492147E0A54000CB7A4 /* readstream.cpp */; };
+		AAA0F4F7147E0A54000CB7A4 /* readstream.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F493147E0A54000CB7A4 /* readstream.h */; };
+		AAA0F4F8147E0A54000CB7A4 /* ringbuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F494147E0A54000CB7A4 /* ringbuffer.cpp */; };
+		AAA0F4F9147E0A54000CB7A4 /* ringbuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F495147E0A54000CB7A4 /* ringbuffer.h */; };
+		AAA0F4FA147E0A54000CB7A4 /* staticsingleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F496147E0A54000CB7A4 /* staticsingleton.cpp */; };
+		AAA0F4FB147E0A54000CB7A4 /* staticsingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F497147E0A54000CB7A4 /* staticsingleton.h */; };
+		AAA0F4FC147E0A54000CB7A4 /* stats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F498147E0A54000CB7A4 /* stats.cpp */; };
+		AAA0F4FD147E0A54000CB7A4 /* stats.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F499147E0A54000CB7A4 /* stats.h */; };
+		AAA0F4FE147E0A54000CB7A4 /* string.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F49A147E0A54000CB7A4 /* string.cpp */; };
+		AAA0F4FF147E0A54000CB7A4 /* string.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F49B147E0A54000CB7A4 /* string.h */; };
+		AAA0F500147E0A54000CB7A4 /* stringwriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F49C147E0A54000CB7A4 /* stringwriter.cpp */; };
+		AAA0F501147E0A54000CB7A4 /* stringwriter.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F49D147E0A54000CB7A4 /* stringwriter.h */; };
+		AAA0F502147E0A54000CB7A4 /* swapstream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F49E147E0A54000CB7A4 /* swapstream.cpp */; };
+		AAA0F503147E0A54000CB7A4 /* swapstream.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F49F147E0A54000CB7A4 /* swapstream.h */; };
+		AAA0F504147E0A54000CB7A4 /* system_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F4A0147E0A54000CB7A4 /* system_ios.h */; };
+		AAA0F505147E0A54000CB7A4 /* system_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F4A1147E0A54000CB7A4 /* system_ios.mm */; };
+		AAA0F506147E0A54000CB7A4 /* system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F4A2147E0A54000CB7A4 /* system.cpp */; };
+		AAA0F507147E0A54000CB7A4 /* system.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F4A3147E0A54000CB7A4 /* system.h */; };
+		AAA0F508147E0A54000CB7A4 /* target.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F4A4147E0A54000CB7A4 /* target.cpp */; };
+		AAA0F509147E0A54000CB7A4 /* target.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F4A5147E0A54000CB7A4 /* target.h */; };
+		AAA0F50A147E0A54000CB7A4 /* textwriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F4A6147E0A54000CB7A4 /* textwriter.cpp */; };
+		AAA0F50B147E0A54000CB7A4 /* textwriter.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F4A7147E0A54000CB7A4 /* textwriter.h */; };
+		AAA0F50C147E0A54000CB7A4 /* thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F4A8147E0A54000CB7A4 /* thread.cpp */; };
+		AAA0F50D147E0A54000CB7A4 /* thread.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F4A9147E0A54000CB7A4 /* thread.h */; };
+		AAA0F50E147E0A54000CB7A4 /* timer_ios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F4AA147E0A54000CB7A4 /* timer_ios.cpp */; };
+		AAA0F50F147E0A54000CB7A4 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F4AB147E0A54000CB7A4 /* timer.cpp */; };
+		AAA0F510147E0A54000CB7A4 /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F4AC147E0A54000CB7A4 /* timer.h */; };
+		AAA0F511147E0A54000CB7A4 /* treenode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F4AD147E0A54000CB7A4 /* treenode.cpp */; };
+		AAA0F512147E0A54000CB7A4 /* treenode.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F4AE147E0A54000CB7A4 /* treenode.h */; };
+		AAA0F513147E0A54000CB7A4 /* types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F4AF147E0A54000CB7A4 /* types.cpp */; };
+		AAA0F514147E0A54000CB7A4 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F4B0147E0A54000CB7A4 /* types.h */; };
+		AAA0F515147E0A54000CB7A4 /* version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0F4B1147E0A54000CB7A4 /* version.cpp */; };
+		AAA0F516147E0A54000CB7A4 /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0F4B2147E0A54000CB7A4 /* version.h */; };
+		AAA0FCF218EDC35B00E0575F /* resampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA0FCF018EDC35B00E0575F /* resampler.cpp */; };
+		AAA0FCF318EDC35B00E0575F /* resampler.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA0FCF118EDC35B00E0575F /* resampler.h */; };
+		AAA472221807734C004068E5 /* bitcrusherprocessor.neon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA472211807734C004068E5 /* bitcrusherprocessor.neon.cpp */; };
+		AAAB4A0015128998005FD2AB /* audiohelpers_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = AAAB49FE15128998005FD2AB /* audiohelpers_ios.h */; };
+		AAAB4A0115128998005FD2AB /* audiohelpers_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAAB49FF15128998005FD2AB /* audiohelpers_ios.mm */; };
+		AAB3D6DB1774129B0027ED4B /* ringmodprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB3D6D91774129B0027ED4B /* ringmodprocessor.cpp */; };
+		AAB3D6DC1774129B0027ED4B /* ringmodprocessor.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB3D6DA1774129B0027ED4B /* ringmodprocessor.h */; };
+		AAC5FF54181062DE002E8C70 /* ringmodprocessor.neon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAC5FF53181062DE002E8C70 /* ringmodprocessor.neon.cpp */; };
+		AAC5FF5618108551002E8C70 /* distortionprocessor.neon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAC5FF5518108551002E8C70 /* distortionprocessor.neon.cpp */; };
+		AAC5FF581810E366002E8C70 /* effectprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAC5FF571810E366002E8C70 /* effectprocessor.cpp */; };
+		AACF9E8E177800DB006DAC35 /* effectprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AACF9E8D177800DB006DAC35 /* effectprocessor.cpp */; };
+		AACF9E93177803DE006DAC35 /* biquadfilterprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AACF9E91177803DE006DAC35 /* biquadfilterprocessor.cpp */; };
+		AACF9E94177803DE006DAC35 /* biquadfilterprocessor.h in Headers */ = {isa = PBXBuildFile; fileRef = AACF9E92177803DE006DAC35 /* biquadfilterprocessor.h */; };
+		AAD49D42150EFE51002F1380 /* assetaudiostream_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAD49D40150EFE51002F1380 /* assetaudiostream_ios.mm */; };
+		AAD49D43150EFE51002F1380 /* assetaudiostream_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = AAD49D41150EFE51002F1380 /* assetaudiostream_ios.h */; };
+		AAD58B6D180DF14C003BF956 /* lockingqueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAD58B6B180DF14C003BF956 /* lockingqueue.cpp */; };
+		AAD58B6E180DF14C003BF956 /* lockingqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AAD58B6C180DF14C003BF956 /* lockingqueue.h */; };
+		AAD58B70180E5B30003BF956 /* biquadfilterprocessor.neon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAD58B6F180E5B30003BF956 /* biquadfilterprocessor.neon.cpp */; };
+		AADA47EC14F4AE5D0011C965 /* vorbisstreamsound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AADA47EA14F4AE5D0011C965 /* vorbisstreamsound.cpp */; };
+		AADA47ED14F4AE5D0011C965 /* vorbisstreamsound.h in Headers */ = {isa = PBXBuildFile; fileRef = AADA47EB14F4AE5D0011C965 /* vorbisstreamsound.h */; };
+		AADACFF11800CA2C007CFA3A /* distortionprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AADACFEF1800CA2C007CFA3A /* distortionprocessor.cpp */; };
+		AADACFF21800CA2C007CFA3A /* distortionprocessor.h in Headers */ = {isa = PBXBuildFile; fileRef = AADACFF01800CA2C007CFA3A /* distortionprocessor.h */; };
+		AAEA4998177BEDF9004B4D93 /* runningaverage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAEA4996177BEDF8004B4D93 /* runningaverage.cpp */; };
+		AAEA4999177BEDF9004B4D93 /* runningaverage.h in Headers */ = {isa = PBXBuildFile; fileRef = AAEA4997177BEDF9004B4D93 /* runningaverage.h */; };
+		AAF7954F176CA2900076D65B /* effectbus.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAF7954E176CA2900076D65B /* effectbus.mm */; };
+		AAF79553176CA6130076D65B /* effect_p.h in Headers */ = {isa = PBXBuildFile; fileRef = AAF79550176CA6130076D65B /* effect_p.h */; };
+		AAF79554176CA6130076D65B /* effect.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAF79551176CA6130076D65B /* effect.mm */; };
+		AAF79555176CA6130076D65B /* effectbus_p.h in Headers */ = {isa = PBXBuildFile; fileRef = AAF79552176CA6130076D65B /* effectbus_p.h */; };
+		AAFFDFAE15110B3F007CBB3E /* assetstreamsound_ios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFFDFAC15110B3F007CBB3E /* assetstreamsound_ios.cpp */; };
+		AAFFDFAF15110B3F007CBB3E /* assetstreamsound_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = AAFFDFAD15110B3F007CBB3E /* assetstreamsound_ios.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA029CCC148EB44C00C4E70D /* volumematrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = volumematrix.cpp; path = audio/volumematrix.cpp; sourceTree = "<group>"; };
+		AA029CCD148EB44C00C4E70D /* volumematrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = volumematrix.h; path = audio/volumematrix.h; sourceTree = "<group>"; };
+		AA09104921581E32002929FA /* libogg_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libogg_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA09104B21581E32002929FA /* libtremor_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libtremor_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0F926C14F43A0000174284 /* pcmf32decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pcmf32decoder.cpp; path = audio/pcmf32decoder.cpp; sourceTree = "<group>"; };
+		AA0F926D14F43A0000174284 /* pcmf32decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pcmf32decoder.h; path = audio/pcmf32decoder.h; sourceTree = "<group>"; };
+		AA0F926E14F43A0000174284 /* vorbisaudiostream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vorbisaudiostream.cpp; path = audio/vorbisaudiostream.cpp; sourceTree = "<group>"; };
+		AA0F926F14F43A0000174284 /* vorbisaudiostream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vorbisaudiostream.h; path = audio/vorbisaudiostream.h; sourceTree = "<group>"; };
+		AA0F927514F43A5C00174284 /* libogg_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libogg_ios.a; path = "../../ext/libogg/build/Release-iphoneos/libogg_ios.a"; sourceTree = "<group>"; };
+		AA10415519548FBD00B341A6 /* audiowriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audiowriter.cpp; path = audio/audiowriter.cpp; sourceTree = "<group>"; };
+		AA15D82D17FBD54800B42B12 /* graphoutput_dummy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = graphoutput_dummy.cpp; path = audio/graphoutput_dummy.cpp; sourceTree = "<group>"; };
+		AA15D82E17FBD54800B42B12 /* graphoutput_dummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = graphoutput_dummy.h; path = audio/graphoutput_dummy.h; sourceTree = "<group>"; };
+		AA1D9F8919EC80CE00F9A5DE /* biquadfilterprocessor_sse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = biquadfilterprocessor_sse.cpp; path = audio/biquadfilterprocessor_sse.cpp; sourceTree = "<group>"; };
+		AA1D9F8A19EC80CE00F9A5DE /* bitcrusherprocessor_sse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bitcrusherprocessor_sse.cpp; path = audio/bitcrusherprocessor_sse.cpp; sourceTree = "<group>"; };
+		AA1D9F8B19EC80CE00F9A5DE /* distortionprocessor_sse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = distortionprocessor_sse.cpp; path = audio/distortionprocessor_sse.cpp; sourceTree = "<group>"; };
+		AA1D9F8C19EC80CE00F9A5DE /* ringmodprocessor_sse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ringmodprocessor_sse.cpp; path = audio/ringmodprocessor_sse.cpp; sourceTree = "<group>"; };
+		AA286463189AD9EC0097E980 /* substream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = substream.cpp; path = core/substream.cpp; sourceTree = "<group>"; };
+		AA286464189AD9EC0097E980 /* substream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = substream.h; path = core/substream.h; sourceTree = "<group>"; };
+		AA2D18AA14F58B7900E946FB /* libtremor_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtremor_ios.a; path = "../DerivedData/ck/Build/Products/Release-iphoneos/libtremor_ios.a"; sourceTree = "<group>"; };
+		AA37E6EE15B4A2710025928D /* audioutil.neon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audioutil.neon.cpp; path = audio/audioutil.neon.cpp; sourceTree = "<group>"; };
+		AA4CF339172EE03600903D06 /* commandobject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = commandobject.cpp; path = audio/commandobject.cpp; sourceTree = "<group>"; };
+		AA4CF33A172EE03600903D06 /* commandobject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = commandobject.h; path = audio/commandobject.h; sourceTree = "<group>"; };
+		AA4CF33B172EE03600903D06 /* commandparam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = commandparam.h; path = audio/commandparam.h; sourceTree = "<group>"; };
+		AA4CF33F172EE07900903D06 /* effectbusnode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = effectbusnode.cpp; path = audio/effectbusnode.cpp; sourceTree = "<group>"; };
+		AA4CF340172EE07900903D06 /* effectbusnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = effectbusnode.h; path = audio/effectbusnode.h; sourceTree = "<group>"; };
+		AA4CF343172EE90500903D06 /* effect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = effect.cpp; path = audio/effect.cpp; sourceTree = "<group>"; };
+		AA4CF344172EE90500903D06 /* effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = effect.h; path = audio/effect.h; sourceTree = "<group>"; };
+		AA56672219473C3A00A812D7 /* audioutil_sse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audioutil_sse.cpp; path = audio/audioutil_sse.cpp; sourceTree = "<group>"; };
+		AA566724194A515300A812D7 /* audiowriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audiowriter.h; path = audio/audiowriter.h; sourceTree = "<group>"; };
+		AA566725194A515300A812D7 /* rawwriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rawwriter.cpp; path = audio/rawwriter.cpp; sourceTree = "<group>"; };
+		AA566726194A515300A812D7 /* rawwriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rawwriter.h; path = audio/rawwriter.h; sourceTree = "<group>"; };
+		AA56672A194A82CE00A812D7 /* wavwriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = wavwriter.cpp; path = audio/wavwriter.cpp; sourceTree = "<group>"; };
+		AA56672B194A82CE00A812D7 /* wavwriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wavwriter.h; path = audio/wavwriter.h; sourceTree = "<group>"; };
+		AA634ADF1624A5DA0038BBCE /* attenuationmode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = attenuationmode.h; path = ../../inc/ck/attenuationmode.h; sourceTree = "<group>"; };
+		AA634AE11624A5DA0038BBCE /* customfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = customfile.h; path = ../../inc/ck/customfile.h; sourceTree = "<group>"; };
+		AA634AE21624A5DA0038BBCE /* customstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = customstream.h; path = ../../inc/ck/customstream.h; sourceTree = "<group>"; };
+		AA634AE81624A5EC0038BBCE /* customstream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = customstream.cpp; path = core/customstream.cpp; sourceTree = "<group>"; };
+		AA634AE91624A5EC0038BBCE /* customstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = customstream.h; path = core/customstream.h; sourceTree = "<group>"; };
+		AA634AEC1624A5F80038BBCE /* customfile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = customfile.cpp; path = api/customfile.cpp; sourceTree = "<group>"; };
+		AA6778CF173044F3008F6AF1 /* effect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = effect.cpp; path = api/effect.cpp; sourceTree = "<group>"; };
+		AA6778D0173044F3008F6AF1 /* effectbus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = effectbus.cpp; path = api/effectbus.cpp; sourceTree = "<group>"; };
+		AA6778D317304524008F6AF1 /* effectbus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = effectbus.cpp; path = audio/effectbus.cpp; sourceTree = "<group>"; };
+		AA6778D417304524008F6AF1 /* effectbus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = effectbus.h; path = audio/effectbus.h; sourceTree = "<group>"; };
+		AA8982361762599500344FCF /* bitcrusherprocessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bitcrusherprocessor.cpp; path = audio/bitcrusherprocessor.cpp; sourceTree = "<group>"; };
+		AA8982371762599500344FCF /* bitcrusherprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bitcrusherprocessor.h; path = audio/bitcrusherprocessor.h; sourceTree = "<group>"; };
+		AA8982381762599500344FCF /* effectprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = effectprocessor.h; path = audio/effectprocessor.h; sourceTree = "<group>"; };
+		AA89823C1764431A00344FCF /* deletable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = deletable.cpp; path = core/deletable.cpp; sourceTree = "<group>"; };
+		AA89823D1764431A00344FCF /* deletable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = deletable.h; path = core/deletable.h; sourceTree = "<group>"; };
+		AA94467B1587A3A300C82A3B /* customaudiostream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = customaudiostream.h; path = audio/customaudiostream.h; sourceTree = "<group>"; };
+		AA94467C1587A3A300C82A3B /* customstreamsound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = customstreamsound.cpp; path = audio/customstreamsound.cpp; sourceTree = "<group>"; };
+		AA94467D1587A3A300C82A3B /* customstreamsound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = customstreamsound.h; path = audio/customstreamsound.h; sourceTree = "<group>"; };
+		AA9446821587AA9100C82A3B /* customaudiostream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = customaudiostream.cpp; path = audio/customaudiostream.cpp; sourceTree = "<group>"; };
+		AAA0F325147E08ED000CB7A4 /* libck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libck.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAA0F328147E08ED000CB7A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AAA0F35D147E09C9000CB7A4 /* bank_p.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bank_p.h; path = api/objc/bank_p.h; sourceTree = "<group>"; };
+		AAA0F35E147E09C9000CB7A4 /* bank.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = bank.mm; path = api/objc/bank.mm; sourceTree = "<group>"; };
+		AAA0F35F147E09C9000CB7A4 /* cko.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cko.h; path = api/objc/cko.h; sourceTree = "<group>"; };
+		AAA0F360147E09C9000CB7A4 /* cko.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = cko.mm; path = api/objc/cko.mm; sourceTree = "<group>"; };
+		AAA0F361147E09C9000CB7A4 /* mixer_p.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mixer_p.h; path = api/objc/mixer_p.h; sourceTree = "<group>"; };
+		AAA0F362147E09C9000CB7A4 /* mixer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = mixer.mm; path = api/objc/mixer.mm; sourceTree = "<group>"; };
+		AAA0F363147E09C9000CB7A4 /* nsstringref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nsstringref.h; path = api/objc/nsstringref.h; sourceTree = "<group>"; };
+		AAA0F364147E09C9000CB7A4 /* nsstringref.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = nsstringref.mm; path = api/objc/nsstringref.mm; sourceTree = "<group>"; };
+		AAA0F365147E09C9000CB7A4 /* proxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = proxy.h; path = api/objc/proxy.h; sourceTree = "<group>"; };
+		AAA0F366147E09C9000CB7A4 /* proxy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = proxy.mm; path = api/objc/proxy.mm; sourceTree = "<group>"; };
+		AAA0F367147E09C9000CB7A4 /* sound_p.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sound_p.h; path = api/objc/sound_p.h; sourceTree = "<group>"; };
+		AAA0F368147E09C9000CB7A4 /* sound.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = sound.mm; path = api/objc/sound.mm; sourceTree = "<group>"; };
+		AAA0F375147E09D5000CB7A4 /* bank.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bank.cpp; path = api/bank.cpp; sourceTree = "<group>"; };
+		AAA0F376147E09D5000CB7A4 /* ck.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ck.cpp; path = api/ck.cpp; sourceTree = "<group>"; };
+		AAA0F377147E09D5000CB7A4 /* config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = config.cpp; path = api/config.cpp; sourceTree = "<group>"; };
+		AAA0F378147E09D5000CB7A4 /* mixer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mixer.cpp; path = api/mixer.cpp; sourceTree = "<group>"; };
+		AAA0F379147E09D5000CB7A4 /* sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sound.cpp; path = api/sound.cpp; sourceTree = "<group>"; };
+		AAA0F37F147E09E4000CB7A4 /* bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bank.h; path = ../../inc/ck/objc/bank.h; sourceTree = "<group>"; };
+		AAA0F380147E09E4000CB7A4 /* ck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ck.h; path = ../../inc/ck/objc/ck.h; sourceTree = "<group>"; };
+		AAA0F381147E09E4000CB7A4 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../../inc/ck/objc/config.h; sourceTree = "<group>"; };
+		AAA0F382147E09E4000CB7A4 /* mixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mixer.h; path = ../../inc/ck/objc/mixer.h; sourceTree = "<group>"; };
+		AAA0F383147E09E4000CB7A4 /* pathtype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pathtype.h; path = ../../inc/ck/objc/pathtype.h; sourceTree = "<group>"; };
+		AAA0F384147E09E4000CB7A4 /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = platform.h; path = ../../inc/ck/objc/platform.h; sourceTree = "<group>"; };
+		AAA0F385147E09E4000CB7A4 /* sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sound.h; path = ../../inc/ck/objc/sound.h; sourceTree = "<group>"; };
+		AAA0F38D147E09F2000CB7A4 /* bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bank.h; path = ../../inc/ck/bank.h; sourceTree = "<group>"; };
+		AAA0F38E147E09F2000CB7A4 /* ck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ck.h; path = ../../inc/ck/ck.h; sourceTree = "<group>"; };
+		AAA0F38F147E09F2000CB7A4 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../../inc/ck/config.h; sourceTree = "<group>"; };
+		AAA0F390147E09F2000CB7A4 /* mixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mixer.h; path = ../../inc/ck/mixer.h; sourceTree = "<group>"; };
+		AAA0F391147E09F2000CB7A4 /* pathtype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pathtype.h; path = ../../inc/ck/pathtype.h; sourceTree = "<group>"; };
+		AAA0F392147E09F2000CB7A4 /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = platform.h; path = ../../inc/ck/platform.h; sourceTree = "<group>"; };
+		AAA0F393147E09F2000CB7A4 /* sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sound.h; path = ../../inc/ck/sound.h; sourceTree = "<group>"; };
+		AAA0F39B147E0A25000CB7A4 /* adpcm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adpcm.cpp; path = audio/adpcm.cpp; sourceTree = "<group>"; };
+		AAA0F39C147E0A25000CB7A4 /* adpcm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adpcm.h; path = audio/adpcm.h; sourceTree = "<group>"; };
+		AAA0F39D147E0A25000CB7A4 /* adpcmdecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adpcmdecoder.cpp; path = audio/adpcmdecoder.cpp; sourceTree = "<group>"; };
+		AAA0F39E147E0A25000CB7A4 /* adpcmdecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adpcmdecoder.h; path = audio/adpcmdecoder.h; sourceTree = "<group>"; };
+		AAA0F39F147E0A25000CB7A4 /* audio_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = audio_ios.mm; path = audio/audio_ios.mm; sourceTree = "<group>"; };
+		AAA0F3A0147E0A25000CB7A4 /* audio_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audio_ios.h; path = audio/audio_ios.h; sourceTree = "<group>"; };
+		AAA0F3A1147E0A25000CB7A4 /* audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audio.cpp; path = audio/audio.cpp; sourceTree = "<group>"; };
+		AAA0F3A2147E0A25000CB7A4 /* audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audio.h; path = audio/audio.h; sourceTree = "<group>"; };
+		AAA0F3A3147E0A25000CB7A4 /* audiodebug_ios.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audiodebug_ios.cpp; path = audio/audiodebug_ios.cpp; sourceTree = "<group>"; };
+		AAA0F3A4147E0A25000CB7A4 /* audiodebug_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audiodebug_ios.h; path = audio/audiodebug_ios.h; sourceTree = "<group>"; };
+		AAA0F3A5147E0A25000CB7A4 /* audiofileinfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audiofileinfo.cpp; path = audio/audiofileinfo.cpp; sourceTree = "<group>"; };
+		AAA0F3A6147E0A25000CB7A4 /* audiofileinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audiofileinfo.h; path = audio/audiofileinfo.h; sourceTree = "<group>"; };
+		AAA0F3A7147E0A25000CB7A4 /* audioformat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audioformat.cpp; path = audio/audioformat.cpp; sourceTree = "<group>"; };
+		AAA0F3A8147E0A25000CB7A4 /* audioformat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audioformat.h; path = audio/audioformat.h; sourceTree = "<group>"; };
+		AAA0F3A9147E0A25000CB7A4 /* audiograph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audiograph.cpp; path = audio/audiograph.cpp; sourceTree = "<group>"; };
+		AAA0F3AA147E0A25000CB7A4 /* audiograph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audiograph.h; path = audio/audiograph.h; sourceTree = "<group>"; };
+		AAA0F3AB147E0A25000CB7A4 /* audionode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audionode.cpp; path = audio/audionode.cpp; sourceTree = "<group>"; };
+		AAA0F3AC147E0A25000CB7A4 /* audionode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audionode.h; path = audio/audionode.h; sourceTree = "<group>"; };
+		AAA0F3AE147E0A25000CB7A4 /* audiosource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audiosource.cpp; path = audio/audiosource.cpp; sourceTree = "<group>"; };
+		AAA0F3AF147E0A25000CB7A4 /* audiosource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audiosource.h; path = audio/audiosource.h; sourceTree = "<group>"; };
+		AAA0F3B0147E0A25000CB7A4 /* audiostream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audiostream.cpp; path = audio/audiostream.cpp; sourceTree = "<group>"; };
+		AAA0F3B1147E0A25000CB7A4 /* audiostream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audiostream.h; path = audio/audiostream.h; sourceTree = "<group>"; };
+		AAA0F3B2147E0A25000CB7A4 /* audioutil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audioutil.cpp; path = audio/audioutil.cpp; sourceTree = "<group>"; };
+		AAA0F3B3147E0A25000CB7A4 /* audioutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audioutil.h; path = audio/audioutil.h; sourceTree = "<group>"; };
+		AAA0F3B4147E0A25000CB7A4 /* bank.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bank.cpp; path = audio/bank.cpp; sourceTree = "<group>"; };
+		AAA0F3B5147E0A25000CB7A4 /* bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bank.h; path = audio/bank.h; sourceTree = "<group>"; };
+		AAA0F3B6147E0A25000CB7A4 /* bankdata.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bankdata.cpp; path = audio/bankdata.cpp; sourceTree = "<group>"; };
+		AAA0F3B7147E0A25000CB7A4 /* bankdata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bankdata.h; path = audio/bankdata.h; sourceTree = "<group>"; };
+		AAA0F3B8147E0A25000CB7A4 /* banksound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = banksound.cpp; path = audio/banksound.cpp; sourceTree = "<group>"; };
+		AAA0F3B9147E0A25000CB7A4 /* banksound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = banksound.h; path = audio/banksound.h; sourceTree = "<group>"; };
+		AAA0F3BA147E0A25000CB7A4 /* bufferhandle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bufferhandle.cpp; path = audio/bufferhandle.cpp; sourceTree = "<group>"; };
+		AAA0F3BB147E0A25000CB7A4 /* bufferhandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bufferhandle.h; path = audio/bufferhandle.h; sourceTree = "<group>"; };
+		AAA0F3BC147E0A25000CB7A4 /* bufferpool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bufferpool.cpp; path = audio/bufferpool.cpp; sourceTree = "<group>"; };
+		AAA0F3BD147E0A25000CB7A4 /* bufferpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bufferpool.h; path = audio/bufferpool.h; sourceTree = "<group>"; };
+		AAA0F3BE147E0A25000CB7A4 /* buffersource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = buffersource.cpp; path = audio/buffersource.cpp; sourceTree = "<group>"; };
+		AAA0F3BF147E0A25000CB7A4 /* buffersource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = buffersource.h; path = audio/buffersource.h; sourceTree = "<group>"; };
+		AAA0F3C0147E0A25000CB7A4 /* cksaudiostream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cksaudiostream.cpp; path = audio/cksaudiostream.cpp; sourceTree = "<group>"; };
+		AAA0F3C1147E0A25000CB7A4 /* cksaudiostream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cksaudiostream.h; path = audio/cksaudiostream.h; sourceTree = "<group>"; };
+		AAA0F3C2147E0A25000CB7A4 /* cksstreamsound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cksstreamsound.cpp; path = audio/cksstreamsound.cpp; sourceTree = "<group>"; };
+		AAA0F3C3147E0A25000CB7A4 /* cksstreamsound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cksstreamsound.h; path = audio/cksstreamsound.h; sourceTree = "<group>"; };
+		AAA0F3C4147E0A25000CB7A4 /* decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = decoder.cpp; path = audio/decoder.cpp; sourceTree = "<group>"; };
+		AAA0F3C5147E0A25000CB7A4 /* decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = decoder.h; path = audio/decoder.h; sourceTree = "<group>"; };
+		AAA0F3C6147E0A25000CB7A4 /* decoderbuf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = decoderbuf.cpp; path = audio/decoderbuf.cpp; sourceTree = "<group>"; };
+		AAA0F3C7147E0A25000CB7A4 /* decoderbuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = decoderbuf.h; path = audio/decoderbuf.h; sourceTree = "<group>"; };
+		AAA0F3C8147E0A25000CB7A4 /* fileheader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fileheader.cpp; path = audio/fileheader.cpp; sourceTree = "<group>"; };
+		AAA0F3C9147E0A25000CB7A4 /* fileheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fileheader.h; path = audio/fileheader.h; sourceTree = "<group>"; };
+		AAA0F3CA147E0A25000CB7A4 /* filetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = filetype.h; path = audio/filetype.h; sourceTree = "<group>"; };
+		AAA0F3CB147E0A25000CB7A4 /* fourcharcode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fourcharcode.cpp; path = audio/fourcharcode.cpp; sourceTree = "<group>"; };
+		AAA0F3CC147E0A25000CB7A4 /* fourcharcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fourcharcode.h; path = audio/fourcharcode.h; sourceTree = "<group>"; };
+		AAA0F3CD147E0A25000CB7A4 /* graphoutput_ios.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = graphoutput_ios.cpp; path = audio/graphoutput_ios.cpp; sourceTree = "<group>"; };
+		AAA0F3CE147E0A25000CB7A4 /* graphoutput_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = graphoutput_ios.h; path = audio/graphoutput_ios.h; sourceTree = "<group>"; };
+		AAA0F3CF147E0A25000CB7A4 /* graphoutput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = graphoutput.cpp; path = audio/graphoutput.cpp; sourceTree = "<group>"; };
+		AAA0F3D0147E0A25000CB7A4 /* graphoutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = graphoutput.h; path = audio/graphoutput.h; sourceTree = "<group>"; };
+		AAA0F3D1147E0A25000CB7A4 /* graphsound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = graphsound.cpp; path = audio/graphsound.cpp; sourceTree = "<group>"; };
+		AAA0F3D2147E0A25000CB7A4 /* graphsound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = graphsound.h; path = audio/graphsound.h; sourceTree = "<group>"; };
+		AAA0F3D3147E0A25000CB7A4 /* mixer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mixer.cpp; path = audio/mixer.cpp; sourceTree = "<group>"; };
+		AAA0F3D4147E0A25000CB7A4 /* mixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mixer.h; path = audio/mixer.h; sourceTree = "<group>"; };
+		AAA0F3D5147E0A25000CB7A4 /* mixnode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mixnode.cpp; path = audio/mixnode.cpp; sourceTree = "<group>"; };
+		AAA0F3D6147E0A25000CB7A4 /* mixnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mixnode.h; path = audio/mixnode.h; sourceTree = "<group>"; };
+		AAA0F3D7147E0A25000CB7A4 /* nativeaudiostream_ios.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = nativeaudiostream_ios.cpp; path = audio/nativeaudiostream_ios.cpp; sourceTree = "<group>"; };
+		AAA0F3D8147E0A25000CB7A4 /* nativeaudiostream_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nativeaudiostream_ios.h; path = audio/nativeaudiostream_ios.h; sourceTree = "<group>"; };
+		AAA0F3D9147E0A25000CB7A4 /* nativestreamsound_ios.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = nativestreamsound_ios.cpp; path = audio/nativestreamsound_ios.cpp; sourceTree = "<group>"; };
+		AAA0F3DA147E0A25000CB7A4 /* nativestreamsound_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nativestreamsound_ios.h; path = audio/nativestreamsound_ios.h; sourceTree = "<group>"; };
+		AAA0F3DB147E0A25000CB7A4 /* pcmi8decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pcmi8decoder.cpp; path = audio/pcmi8decoder.cpp; sourceTree = "<group>"; };
+		AAA0F3DC147E0A25000CB7A4 /* pcmi8decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pcmi8decoder.h; path = audio/pcmi8decoder.h; sourceTree = "<group>"; };
+		AAA0F3DD147E0A25000CB7A4 /* pcmi16decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pcmi16decoder.cpp; path = audio/pcmi16decoder.cpp; sourceTree = "<group>"; };
+		AAA0F3DE147E0A25000CB7A4 /* pcmi16decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pcmi16decoder.h; path = audio/pcmi16decoder.h; sourceTree = "<group>"; };
+		AAA0F3E1147E0A25000CB7A4 /* sample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sample.cpp; path = audio/sample.cpp; sourceTree = "<group>"; };
+		AAA0F3E2147E0A25000CB7A4 /* sample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sample.h; path = audio/sample.h; sourceTree = "<group>"; };
+		AAA0F3E3147E0A25000CB7A4 /* sampleinfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sampleinfo.cpp; path = audio/sampleinfo.cpp; sourceTree = "<group>"; };
+		AAA0F3E4147E0A25000CB7A4 /* sampleinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sampleinfo.h; path = audio/sampleinfo.h; sourceTree = "<group>"; };
+		AAA0F3E5147E0A25000CB7A4 /* sharedbuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sharedbuffer.cpp; path = audio/sharedbuffer.cpp; sourceTree = "<group>"; };
+		AAA0F3E6147E0A25000CB7A4 /* sharedbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sharedbuffer.h; path = audio/sharedbuffer.h; sourceTree = "<group>"; };
+		AAA0F3E7147E0A25000CB7A4 /* sinenode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sinenode.cpp; path = audio/sinenode.cpp; sourceTree = "<group>"; };
+		AAA0F3E8147E0A25000CB7A4 /* sinenode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sinenode.h; path = audio/sinenode.h; sourceTree = "<group>"; };
+		AAA0F3E9147E0A25000CB7A4 /* sinesource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sinesource.cpp; path = audio/sinesource.cpp; sourceTree = "<group>"; };
+		AAA0F3EA147E0A25000CB7A4 /* sinesource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sinesource.h; path = audio/sinesource.h; sourceTree = "<group>"; };
+		AAA0F3EB147E0A25000CB7A4 /* sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sound.cpp; path = audio/sound.cpp; sourceTree = "<group>"; };
+		AAA0F3EC147E0A25000CB7A4 /* sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sound.h; path = audio/sound.h; sourceTree = "<group>"; };
+		AAA0F3ED147E0A25000CB7A4 /* soundname.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = soundname.cpp; path = audio/soundname.cpp; sourceTree = "<group>"; };
+		AAA0F3EE147E0A25000CB7A4 /* soundname.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = soundname.h; path = audio/soundname.h; sourceTree = "<group>"; };
+		AAA0F3EF147E0A25000CB7A4 /* sourcenode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sourcenode.cpp; path = audio/sourcenode.cpp; sourceTree = "<group>"; };
+		AAA0F3F0147E0A25000CB7A4 /* sourcenode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sourcenode.h; path = audio/sourcenode.h; sourceTree = "<group>"; };
+		AAA0F3F1147E0A25000CB7A4 /* streamsound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = streamsound.cpp; path = audio/streamsound.cpp; sourceTree = "<group>"; };
+		AAA0F3F2147E0A25000CB7A4 /* streamsound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = streamsound.h; path = audio/streamsound.h; sourceTree = "<group>"; };
+		AAA0F3F3147E0A25000CB7A4 /* streamsource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = streamsource.cpp; path = audio/streamsource.cpp; sourceTree = "<group>"; };
+		AAA0F3F4147E0A25000CB7A4 /* streamsource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = streamsource.h; path = audio/streamsource.h; sourceTree = "<group>"; };
+		AAA0F44F147E0A54000CB7A4 /* allocatable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = allocatable.cpp; path = core/allocatable.cpp; sourceTree = "<group>"; };
+		AAA0F450147E0A54000CB7A4 /* allocatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = allocatable.h; path = core/allocatable.h; sourceTree = "<group>"; };
+		AAA0F451147E0A54000CB7A4 /* allocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = allocator.h; path = core/allocator.h; sourceTree = "<group>"; };
+		AAA0F452147E0A54000CB7A4 /* array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = array.cpp; path = core/array.cpp; sourceTree = "<group>"; };
+		AAA0F453147E0A54000CB7A4 /* array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = array.h; path = core/array.h; sourceTree = "<group>"; };
+		AAA0F454147E0A54000CB7A4 /* asyncloader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = asyncloader.cpp; path = core/asyncloader.cpp; sourceTree = "<group>"; };
+		AAA0F455147E0A54000CB7A4 /* asyncloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = asyncloader.h; path = core/asyncloader.h; sourceTree = "<group>"; };
+		AAA0F456147E0A54000CB7A4 /* atomic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atomic.h; path = core/atomic.h; sourceTree = "<group>"; };
+		AAA0F457147E0A54000CB7A4 /* binarystream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = binarystream.cpp; path = core/binarystream.cpp; sourceTree = "<group>"; };
+		AAA0F458147E0A54000CB7A4 /* binarystream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = binarystream.h; path = core/binarystream.h; sourceTree = "<group>"; };
+		AAA0F459147E0A54000CB7A4 /* binarywriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = binarywriter.cpp; path = core/binarywriter.cpp; sourceTree = "<group>"; };
+		AAA0F45A147E0A54000CB7A4 /* binarywriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = binarywriter.h; path = core/binarywriter.h; sourceTree = "<group>"; };
+		AAA0F45B147E0A54000CB7A4 /* bufferstream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bufferstream.cpp; path = core/bufferstream.cpp; sourceTree = "<group>"; };
+		AAA0F45C147E0A54000CB7A4 /* bufferstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bufferstream.h; path = core/bufferstream.h; sourceTree = "<group>"; };
+		AAA0F45D147E0A54000CB7A4 /* byteorder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = byteorder.cpp; path = core/byteorder.cpp; sourceTree = "<group>"; };
+		AAA0F45E147E0A54000CB7A4 /* byteorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = byteorder.h; path = core/byteorder.h; sourceTree = "<group>"; };
+		AAA0F45F147E0A54000CB7A4 /* callback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = callback.h; path = core/callback.h; sourceTree = "<group>"; };
+		AAA0F460147E0A54000CB7A4 /* cond.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cond.cpp; path = core/cond.cpp; sourceTree = "<group>"; };
+		AAA0F461147E0A54000CB7A4 /* cond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cond.h; path = core/cond.h; sourceTree = "<group>"; };
+		AAA0F462147E0A54000CB7A4 /* debug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = debug.cpp; path = core/debug.cpp; sourceTree = "<group>"; };
+		AAA0F463147E0A54000CB7A4 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = debug.h; path = core/debug.h; sourceTree = "<group>"; };
+		AAA0F464147E0A54000CB7A4 /* dir.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dir.cpp; path = core/dir.cpp; sourceTree = "<group>"; };
+		AAA0F465147E0A54000CB7A4 /* dir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dir.h; path = core/dir.h; sourceTree = "<group>"; };
+		AAA0F466147E0A54000CB7A4 /* filestream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = filestream.cpp; path = core/filestream.cpp; sourceTree = "<group>"; };
+		AAA0F467147E0A54000CB7A4 /* filestream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = filestream.h; path = core/filestream.h; sourceTree = "<group>"; };
+		AAA0F468147E0A54000CB7A4 /* filewriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = filewriter.cpp; path = core/filewriter.cpp; sourceTree = "<group>"; };
+		AAA0F469147E0A54000CB7A4 /* filewriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = filewriter.h; path = core/filewriter.h; sourceTree = "<group>"; };
+		AAA0F46A147E0A54000CB7A4 /* fixedarray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fixedarray.cpp; path = core/fixedarray.cpp; sourceTree = "<group>"; };
+		AAA0F46B147E0A54000CB7A4 /* fixedarray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fixedarray.h; path = core/fixedarray.h; sourceTree = "<group>"; };
+		AAA0F46C147E0A54000CB7A4 /* fixedpoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fixedpoint.h; path = core/fixedpoint.h; sourceTree = "<group>"; };
+		AAA0F46D147E0A54000CB7A4 /* fixedstring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fixedstring.cpp; path = core/fixedstring.cpp; sourceTree = "<group>"; };
+		AAA0F46E147E0A54000CB7A4 /* fixedstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fixedstring.h; path = core/fixedstring.h; sourceTree = "<group>"; };
+		AAA0F46F147E0A54000CB7A4 /* funcallocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = funcallocator.cpp; path = core/funcallocator.cpp; sourceTree = "<group>"; };
+		AAA0F470147E0A54000CB7A4 /* funcallocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = funcallocator.h; path = core/funcallocator.h; sourceTree = "<group>"; };
+		AAA0F471147E0A54000CB7A4 /* glitchfinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = glitchfinder.cpp; path = core/glitchfinder.cpp; sourceTree = "<group>"; };
+		AAA0F472147E0A54000CB7A4 /* glitchfinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glitchfinder.h; path = core/glitchfinder.h; sourceTree = "<group>"; };
+		AAA0F473147E0A54000CB7A4 /* list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = list.cpp; path = core/list.cpp; sourceTree = "<group>"; };
+		AAA0F474147E0A54000CB7A4 /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = list.h; path = core/list.h; sourceTree = "<group>"; };
+		AAA0F475147E0A54000CB7A4 /* listable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = listable.cpp; path = core/listable.cpp; sourceTree = "<group>"; };
+		AAA0F476147E0A54000CB7A4 /* listable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = listable.h; path = core/listable.h; sourceTree = "<group>"; };
+		AAA0F477147E0A54000CB7A4 /* lockfreequeue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lockfreequeue.cpp; path = core/lockfreequeue.cpp; sourceTree = "<group>"; };
+		AAA0F478147E0A54000CB7A4 /* lockfreequeue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lockfreequeue.h; path = core/lockfreequeue.h; sourceTree = "<group>"; };
+		AAA0F479147E0A54000CB7A4 /* logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = logger.cpp; path = core/logger.cpp; sourceTree = "<group>"; };
+		AAA0F47A147E0A54000CB7A4 /* logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = logger.h; path = core/logger.h; sourceTree = "<group>"; };
+		AAA0F47B147E0A54000CB7A4 /* math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = math.cpp; path = core/math.cpp; sourceTree = "<group>"; };
+		AAA0F47C147E0A54000CB7A4 /* math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = math.h; path = core/math.h; sourceTree = "<group>"; };
+		AAA0F47D147E0A54000CB7A4 /* md5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = md5.cpp; path = core/md5.cpp; sourceTree = "<group>"; };
+		AAA0F47E147E0A54000CB7A4 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = md5.h; path = core/md5.h; sourceTree = "<group>"; };
+		AAA0F47F147E0A54000CB7A4 /* mem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mem.cpp; path = core/mem.cpp; sourceTree = "<group>"; };
+		AAA0F480147E0A54000CB7A4 /* mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mem.h; path = core/mem.h; sourceTree = "<group>"; };
+		AAA0F481147E0A54000CB7A4 /* memoryfixup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = memoryfixup.cpp; path = core/memoryfixup.cpp; sourceTree = "<group>"; };
+		AAA0F482147E0A54000CB7A4 /* memoryfixup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = memoryfixup.h; path = core/memoryfixup.h; sourceTree = "<group>"; };
+		AAA0F483147E0A54000CB7A4 /* memorystream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = memorystream.cpp; path = core/memorystream.cpp; sourceTree = "<group>"; };
+		AAA0F484147E0A54000CB7A4 /* memorystream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = memorystream.h; path = core/memorystream.h; sourceTree = "<group>"; };
+		AAA0F485147E0A54000CB7A4 /* mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mutex.cpp; path = core/mutex.cpp; sourceTree = "<group>"; };
+		AAA0F486147E0A54000CB7A4 /* mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mutex.h; path = core/mutex.h; sourceTree = "<group>"; };
+		AAA0F487147E0A54000CB7A4 /* mutexlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mutexlock.h; path = core/mutexlock.h; sourceTree = "<group>"; };
+		AAA0F488147E0A54000CB7A4 /* path.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = path.cpp; path = core/path.cpp; sourceTree = "<group>"; };
+		AAA0F489147E0A54000CB7A4 /* path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = path.h; path = core/path.h; sourceTree = "<group>"; };
+		AAA0F48A147E0A54000CB7A4 /* pch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pch.h; path = core/pch.h; sourceTree = "<group>"; };
+		AAA0F48B147E0A54000CB7A4 /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = platform.h; path = core/platform.h; sourceTree = "<group>"; };
+		AAA0F48C147E0A54000CB7A4 /* pool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pool.cpp; path = core/pool.cpp; sourceTree = "<group>"; };
+		AAA0F48D147E0A54000CB7A4 /* pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pool.h; path = core/pool.h; sourceTree = "<group>"; };
+		AAA0F48E147E0A54000CB7A4 /* profiler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = profiler.cpp; path = core/profiler.cpp; sourceTree = "<group>"; };
+		AAA0F48F147E0A54000CB7A4 /* profiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = profiler.h; path = core/profiler.h; sourceTree = "<group>"; };
+		AAA0F490147E0A54000CB7A4 /* proxied.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = proxied.cpp; path = core/proxied.cpp; sourceTree = "<group>"; };
+		AAA0F491147E0A54000CB7A4 /* proxied.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = proxied.h; path = core/proxied.h; sourceTree = "<group>"; };
+		AAA0F492147E0A54000CB7A4 /* readstream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = readstream.cpp; path = core/readstream.cpp; sourceTree = "<group>"; };
+		AAA0F493147E0A54000CB7A4 /* readstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = readstream.h; path = core/readstream.h; sourceTree = "<group>"; };
+		AAA0F494147E0A54000CB7A4 /* ringbuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ringbuffer.cpp; path = core/ringbuffer.cpp; sourceTree = "<group>"; };
+		AAA0F495147E0A54000CB7A4 /* ringbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ringbuffer.h; path = core/ringbuffer.h; sourceTree = "<group>"; };
+		AAA0F496147E0A54000CB7A4 /* staticsingleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = staticsingleton.cpp; path = core/staticsingleton.cpp; sourceTree = "<group>"; };
+		AAA0F497147E0A54000CB7A4 /* staticsingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = staticsingleton.h; path = core/staticsingleton.h; sourceTree = "<group>"; };
+		AAA0F498147E0A54000CB7A4 /* stats.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stats.cpp; path = core/stats.cpp; sourceTree = "<group>"; };
+		AAA0F499147E0A54000CB7A4 /* stats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stats.h; path = core/stats.h; sourceTree = "<group>"; };
+		AAA0F49A147E0A54000CB7A4 /* string.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = string.cpp; path = core/string.cpp; sourceTree = "<group>"; };
+		AAA0F49B147E0A54000CB7A4 /* string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = string.h; path = core/string.h; sourceTree = "<group>"; };
+		AAA0F49C147E0A54000CB7A4 /* stringwriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stringwriter.cpp; path = core/stringwriter.cpp; sourceTree = "<group>"; };
+		AAA0F49D147E0A54000CB7A4 /* stringwriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stringwriter.h; path = core/stringwriter.h; sourceTree = "<group>"; };
+		AAA0F49E147E0A54000CB7A4 /* swapstream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swapstream.cpp; path = core/swapstream.cpp; sourceTree = "<group>"; };
+		AAA0F49F147E0A54000CB7A4 /* swapstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swapstream.h; path = core/swapstream.h; sourceTree = "<group>"; };
+		AAA0F4A0147E0A54000CB7A4 /* system_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = system_ios.h; path = core/system_ios.h; sourceTree = "<group>"; };
+		AAA0F4A1147E0A54000CB7A4 /* system_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = system_ios.mm; path = core/system_ios.mm; sourceTree = "<group>"; };
+		AAA0F4A2147E0A54000CB7A4 /* system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = system.cpp; path = core/system.cpp; sourceTree = "<group>"; };
+		AAA0F4A3147E0A54000CB7A4 /* system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = system.h; path = core/system.h; sourceTree = "<group>"; };
+		AAA0F4A4147E0A54000CB7A4 /* target.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = target.cpp; path = core/target.cpp; sourceTree = "<group>"; };
+		AAA0F4A5147E0A54000CB7A4 /* target.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = target.h; path = core/target.h; sourceTree = "<group>"; };
+		AAA0F4A6147E0A54000CB7A4 /* textwriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = textwriter.cpp; path = core/textwriter.cpp; sourceTree = "<group>"; };
+		AAA0F4A7147E0A54000CB7A4 /* textwriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = textwriter.h; path = core/textwriter.h; sourceTree = "<group>"; };
+		AAA0F4A8147E0A54000CB7A4 /* thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = thread.cpp; path = core/thread.cpp; sourceTree = "<group>"; };
+		AAA0F4A9147E0A54000CB7A4 /* thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = thread.h; path = core/thread.h; sourceTree = "<group>"; };
+		AAA0F4AA147E0A54000CB7A4 /* timer_ios.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = timer_ios.cpp; path = core/timer_ios.cpp; sourceTree = "<group>"; };
+		AAA0F4AB147E0A54000CB7A4 /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = timer.cpp; path = core/timer.cpp; sourceTree = "<group>"; };
+		AAA0F4AC147E0A54000CB7A4 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = timer.h; path = core/timer.h; sourceTree = "<group>"; };
+		AAA0F4AD147E0A54000CB7A4 /* treenode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = treenode.cpp; path = core/treenode.cpp; sourceTree = "<group>"; };
+		AAA0F4AE147E0A54000CB7A4 /* treenode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = treenode.h; path = core/treenode.h; sourceTree = "<group>"; };
+		AAA0F4AF147E0A54000CB7A4 /* types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = types.cpp; path = core/types.cpp; sourceTree = "<group>"; };
+		AAA0F4B0147E0A54000CB7A4 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = types.h; path = core/types.h; sourceTree = "<group>"; };
+		AAA0F4B1147E0A54000CB7A4 /* version.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = version.cpp; path = core/version.cpp; sourceTree = "<group>"; };
+		AAA0F4B2147E0A54000CB7A4 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = version.h; path = core/version.h; sourceTree = "<group>"; };
+		AAA0FCF018EDC35B00E0575F /* resampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = resampler.cpp; path = audio/resampler.cpp; sourceTree = "<group>"; };
+		AAA0FCF118EDC35B00E0575F /* resampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = resampler.h; path = audio/resampler.h; sourceTree = "<group>"; };
+		AAA472211807734C004068E5 /* bitcrusherprocessor.neon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bitcrusherprocessor.neon.cpp; path = audio/bitcrusherprocessor.neon.cpp; sourceTree = "<group>"; };
+		AAAB49FE15128998005FD2AB /* audiohelpers_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audiohelpers_ios.h; path = audio/audiohelpers_ios.h; sourceTree = "<group>"; };
+		AAAB49FF15128998005FD2AB /* audiohelpers_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = audiohelpers_ios.mm; path = audio/audiohelpers_ios.mm; sourceTree = "<group>"; };
+		AAB3D6D91774129B0027ED4B /* ringmodprocessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ringmodprocessor.cpp; path = audio/ringmodprocessor.cpp; sourceTree = "<group>"; };
+		AAB3D6DA1774129B0027ED4B /* ringmodprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ringmodprocessor.h; path = audio/ringmodprocessor.h; sourceTree = "<group>"; };
+		AAC5FF53181062DE002E8C70 /* ringmodprocessor.neon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ringmodprocessor.neon.cpp; path = audio/ringmodprocessor.neon.cpp; sourceTree = "<group>"; };
+		AAC5FF5518108551002E8C70 /* distortionprocessor.neon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = distortionprocessor.neon.cpp; path = audio/distortionprocessor.neon.cpp; sourceTree = "<group>"; };
+		AAC5FF571810E366002E8C70 /* effectprocessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = effectprocessor.cpp; path = audio/effectprocessor.cpp; sourceTree = "<group>"; };
+		AACF9E8D177800DB006DAC35 /* effectprocessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = effectprocessor.cpp; path = api/effectprocessor.cpp; sourceTree = "<group>"; };
+		AACF9E91177803DE006DAC35 /* biquadfilterprocessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = biquadfilterprocessor.cpp; path = audio/biquadfilterprocessor.cpp; sourceTree = "<group>"; };
+		AACF9E92177803DE006DAC35 /* biquadfilterprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = biquadfilterprocessor.h; path = audio/biquadfilterprocessor.h; sourceTree = "<group>"; };
+		AAD49D40150EFE51002F1380 /* assetaudiostream_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = assetaudiostream_ios.mm; path = audio/assetaudiostream_ios.mm; sourceTree = "<group>"; };
+		AAD49D41150EFE51002F1380 /* assetaudiostream_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = assetaudiostream_ios.h; path = audio/assetaudiostream_ios.h; sourceTree = "<group>"; };
+		AAD58B6B180DF14C003BF956 /* lockingqueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lockingqueue.cpp; path = core/lockingqueue.cpp; sourceTree = "<group>"; };
+		AAD58B6C180DF14C003BF956 /* lockingqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lockingqueue.h; path = core/lockingqueue.h; sourceTree = "<group>"; };
+		AAD58B6F180E5B30003BF956 /* biquadfilterprocessor.neon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = biquadfilterprocessor.neon.cpp; path = audio/biquadfilterprocessor.neon.cpp; sourceTree = "<group>"; };
+		AADA47EA14F4AE5D0011C965 /* vorbisstreamsound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vorbisstreamsound.cpp; path = audio/vorbisstreamsound.cpp; sourceTree = "<group>"; };
+		AADA47EB14F4AE5D0011C965 /* vorbisstreamsound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vorbisstreamsound.h; path = audio/vorbisstreamsound.h; sourceTree = "<group>"; };
+		AADACFEF1800CA2C007CFA3A /* distortionprocessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = distortionprocessor.cpp; path = audio/distortionprocessor.cpp; sourceTree = "<group>"; };
+		AADACFF01800CA2C007CFA3A /* distortionprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = distortionprocessor.h; path = audio/distortionprocessor.h; sourceTree = "<group>"; };
+		AAEA4996177BEDF8004B4D93 /* runningaverage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = runningaverage.cpp; path = core/runningaverage.cpp; sourceTree = "<group>"; };
+		AAEA4997177BEDF9004B4D93 /* runningaverage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = runningaverage.h; path = core/runningaverage.h; sourceTree = "<group>"; };
+		AAF7954E176CA2900076D65B /* effectbus.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = effectbus.mm; path = api/objc/effectbus.mm; sourceTree = "<group>"; };
+		AAF79550176CA6130076D65B /* effect_p.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = effect_p.h; path = api/objc/effect_p.h; sourceTree = "<group>"; };
+		AAF79551176CA6130076D65B /* effect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = effect.mm; path = api/objc/effect.mm; sourceTree = "<group>"; };
+		AAF79552176CA6130076D65B /* effectbus_p.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = effectbus_p.h; path = api/objc/effectbus_p.h; sourceTree = "<group>"; };
+		AAFFDFAC15110B3F007CBB3E /* assetstreamsound_ios.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = assetstreamsound_ios.cpp; path = audio/assetstreamsound_ios.cpp; sourceTree = "<group>"; };
+		AAFFDFAD15110B3F007CBB3E /* assetstreamsound_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = assetstreamsound_ios.h; path = audio/assetstreamsound_ios.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAA0F322147E08ED000CB7A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA09104A21581E32002929FA /* libogg_ios.a in Frameworks */,
+				AA09104C21581E32002929FA /* libtremor_ios.a in Frameworks */,
+				AAA0F329147E08ED000CB7A4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAA0F31A147E08ED000CB7A4 = {
+			isa = PBXGroup;
+			children = (
+				AAA0F357147E0977000CB7A4 /* Source */,
+				AAA0F327147E08ED000CB7A4 /* Frameworks */,
+				AAA0F326147E08ED000CB7A4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AAA0F326147E08ED000CB7A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAA0F325147E08ED000CB7A4 /* libck.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAA0F327147E08ED000CB7A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA09104921581E32002929FA /* libogg_ios.a */,
+				AA09104B21581E32002929FA /* libtremor_ios.a */,
+				AA2D18AA14F58B7900E946FB /* libtremor_ios.a */,
+				AA0F927514F43A5C00174284 /* libogg_ios.a */,
+				AAA0F328147E08ED000CB7A4 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAA0F357147E0977000CB7A4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				AAA0F35B147E09A9000CB7A4 /* api */,
+				AAA0F35A147E09A6000CB7A4 /* audio */,
+				AAA0F359147E09A2000CB7A4 /* core */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		AAA0F359147E09A2000CB7A4 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				AAA0F44F147E0A54000CB7A4 /* allocatable.cpp */,
+				AAA0F450147E0A54000CB7A4 /* allocatable.h */,
+				AAA0F451147E0A54000CB7A4 /* allocator.h */,
+				AAA0F452147E0A54000CB7A4 /* array.cpp */,
+				AAA0F453147E0A54000CB7A4 /* array.h */,
+				AAA0F454147E0A54000CB7A4 /* asyncloader.cpp */,
+				AAA0F455147E0A54000CB7A4 /* asyncloader.h */,
+				AAA0F456147E0A54000CB7A4 /* atomic.h */,
+				AAA0F457147E0A54000CB7A4 /* binarystream.cpp */,
+				AAA0F458147E0A54000CB7A4 /* binarystream.h */,
+				AAA0F459147E0A54000CB7A4 /* binarywriter.cpp */,
+				AAA0F45A147E0A54000CB7A4 /* binarywriter.h */,
+				AAA0F45B147E0A54000CB7A4 /* bufferstream.cpp */,
+				AAA0F45C147E0A54000CB7A4 /* bufferstream.h */,
+				AAA0F45D147E0A54000CB7A4 /* byteorder.cpp */,
+				AAA0F45E147E0A54000CB7A4 /* byteorder.h */,
+				AAA0F45F147E0A54000CB7A4 /* callback.h */,
+				AAA0F460147E0A54000CB7A4 /* cond.cpp */,
+				AAA0F461147E0A54000CB7A4 /* cond.h */,
+				AA634AE81624A5EC0038BBCE /* customstream.cpp */,
+				AA634AE91624A5EC0038BBCE /* customstream.h */,
+				AAA0F462147E0A54000CB7A4 /* debug.cpp */,
+				AAA0F463147E0A54000CB7A4 /* debug.h */,
+				AA89823C1764431A00344FCF /* deletable.cpp */,
+				AA89823D1764431A00344FCF /* deletable.h */,
+				AAA0F464147E0A54000CB7A4 /* dir.cpp */,
+				AAA0F465147E0A54000CB7A4 /* dir.h */,
+				AAA0F466147E0A54000CB7A4 /* filestream.cpp */,
+				AAA0F467147E0A54000CB7A4 /* filestream.h */,
+				AAA0F468147E0A54000CB7A4 /* filewriter.cpp */,
+				AAA0F469147E0A54000CB7A4 /* filewriter.h */,
+				AAA0F46A147E0A54000CB7A4 /* fixedarray.cpp */,
+				AAA0F46B147E0A54000CB7A4 /* fixedarray.h */,
+				AAA0F46C147E0A54000CB7A4 /* fixedpoint.h */,
+				AAA0F46D147E0A54000CB7A4 /* fixedstring.cpp */,
+				AAA0F46E147E0A54000CB7A4 /* fixedstring.h */,
+				AAA0F46F147E0A54000CB7A4 /* funcallocator.cpp */,
+				AAA0F470147E0A54000CB7A4 /* funcallocator.h */,
+				AAA0F471147E0A54000CB7A4 /* glitchfinder.cpp */,
+				AAA0F472147E0A54000CB7A4 /* glitchfinder.h */,
+				AAA0F473147E0A54000CB7A4 /* list.cpp */,
+				AAA0F474147E0A54000CB7A4 /* list.h */,
+				AAA0F475147E0A54000CB7A4 /* listable.cpp */,
+				AAA0F476147E0A54000CB7A4 /* listable.h */,
+				AAA0F477147E0A54000CB7A4 /* lockfreequeue.cpp */,
+				AAA0F478147E0A54000CB7A4 /* lockfreequeue.h */,
+				AAD58B6B180DF14C003BF956 /* lockingqueue.cpp */,
+				AAD58B6C180DF14C003BF956 /* lockingqueue.h */,
+				AAA0F479147E0A54000CB7A4 /* logger.cpp */,
+				AAA0F47A147E0A54000CB7A4 /* logger.h */,
+				AAA0F47B147E0A54000CB7A4 /* math.cpp */,
+				AAA0F47C147E0A54000CB7A4 /* math.h */,
+				AAA0F47D147E0A54000CB7A4 /* md5.cpp */,
+				AAA0F47E147E0A54000CB7A4 /* md5.h */,
+				AAA0F47F147E0A54000CB7A4 /* mem.cpp */,
+				AAA0F480147E0A54000CB7A4 /* mem.h */,
+				AAA0F481147E0A54000CB7A4 /* memoryfixup.cpp */,
+				AAA0F482147E0A54000CB7A4 /* memoryfixup.h */,
+				AAA0F483147E0A54000CB7A4 /* memorystream.cpp */,
+				AAA0F484147E0A54000CB7A4 /* memorystream.h */,
+				AAA0F485147E0A54000CB7A4 /* mutex.cpp */,
+				AAA0F486147E0A54000CB7A4 /* mutex.h */,
+				AAA0F487147E0A54000CB7A4 /* mutexlock.h */,
+				AAA0F488147E0A54000CB7A4 /* path.cpp */,
+				AAA0F489147E0A54000CB7A4 /* path.h */,
+				AAA0F48A147E0A54000CB7A4 /* pch.h */,
+				AAA0F48B147E0A54000CB7A4 /* platform.h */,
+				AAA0F48C147E0A54000CB7A4 /* pool.cpp */,
+				AAA0F48D147E0A54000CB7A4 /* pool.h */,
+				AAA0F48E147E0A54000CB7A4 /* profiler.cpp */,
+				AAA0F48F147E0A54000CB7A4 /* profiler.h */,
+				AAA0F490147E0A54000CB7A4 /* proxied.cpp */,
+				AAA0F491147E0A54000CB7A4 /* proxied.h */,
+				AAA0F492147E0A54000CB7A4 /* readstream.cpp */,
+				AAA0F493147E0A54000CB7A4 /* readstream.h */,
+				AAA0F494147E0A54000CB7A4 /* ringbuffer.cpp */,
+				AAA0F495147E0A54000CB7A4 /* ringbuffer.h */,
+				AAEA4996177BEDF8004B4D93 /* runningaverage.cpp */,
+				AAEA4997177BEDF9004B4D93 /* runningaverage.h */,
+				AAA0F496147E0A54000CB7A4 /* staticsingleton.cpp */,
+				AAA0F497147E0A54000CB7A4 /* staticsingleton.h */,
+				AAA0F498147E0A54000CB7A4 /* stats.cpp */,
+				AAA0F499147E0A54000CB7A4 /* stats.h */,
+				AAA0F49A147E0A54000CB7A4 /* string.cpp */,
+				AAA0F49B147E0A54000CB7A4 /* string.h */,
+				AAA0F49C147E0A54000CB7A4 /* stringwriter.cpp */,
+				AAA0F49D147E0A54000CB7A4 /* stringwriter.h */,
+				AA286463189AD9EC0097E980 /* substream.cpp */,
+				AA286464189AD9EC0097E980 /* substream.h */,
+				AAA0F49E147E0A54000CB7A4 /* swapstream.cpp */,
+				AAA0F49F147E0A54000CB7A4 /* swapstream.h */,
+				AAA0F4A2147E0A54000CB7A4 /* system.cpp */,
+				AAA0F4A3147E0A54000CB7A4 /* system.h */,
+				AAA0F4A0147E0A54000CB7A4 /* system_ios.h */,
+				AAA0F4A1147E0A54000CB7A4 /* system_ios.mm */,
+				AAA0F4A4147E0A54000CB7A4 /* target.cpp */,
+				AAA0F4A5147E0A54000CB7A4 /* target.h */,
+				AAA0F4A6147E0A54000CB7A4 /* textwriter.cpp */,
+				AAA0F4A7147E0A54000CB7A4 /* textwriter.h */,
+				AAA0F4A8147E0A54000CB7A4 /* thread.cpp */,
+				AAA0F4A9147E0A54000CB7A4 /* thread.h */,
+				AAA0F4AB147E0A54000CB7A4 /* timer.cpp */,
+				AAA0F4AC147E0A54000CB7A4 /* timer.h */,
+				AAA0F4AA147E0A54000CB7A4 /* timer_ios.cpp */,
+				AAA0F4AD147E0A54000CB7A4 /* treenode.cpp */,
+				AAA0F4AE147E0A54000CB7A4 /* treenode.h */,
+				AAA0F4AF147E0A54000CB7A4 /* types.cpp */,
+				AAA0F4B0147E0A54000CB7A4 /* types.h */,
+				AAA0F4B1147E0A54000CB7A4 /* version.cpp */,
+				AAA0F4B2147E0A54000CB7A4 /* version.h */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		AAA0F35A147E09A6000CB7A4 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				AAA0F39B147E0A25000CB7A4 /* adpcm.cpp */,
+				AAA0F39C147E0A25000CB7A4 /* adpcm.h */,
+				AAA0F39D147E0A25000CB7A4 /* adpcmdecoder.cpp */,
+				AAA0F39E147E0A25000CB7A4 /* adpcmdecoder.h */,
+				AAD49D41150EFE51002F1380 /* assetaudiostream_ios.h */,
+				AAD49D40150EFE51002F1380 /* assetaudiostream_ios.mm */,
+				AAFFDFAC15110B3F007CBB3E /* assetstreamsound_ios.cpp */,
+				AAFFDFAD15110B3F007CBB3E /* assetstreamsound_ios.h */,
+				AAA0F3A0147E0A25000CB7A4 /* audio_ios.h */,
+				AAA0F39F147E0A25000CB7A4 /* audio_ios.mm */,
+				AAA0F3A1147E0A25000CB7A4 /* audio.cpp */,
+				AAA0F3A2147E0A25000CB7A4 /* audio.h */,
+				AAA0F3A3147E0A25000CB7A4 /* audiodebug_ios.cpp */,
+				AAA0F3A4147E0A25000CB7A4 /* audiodebug_ios.h */,
+				AAA0F3A5147E0A25000CB7A4 /* audiofileinfo.cpp */,
+				AAA0F3A6147E0A25000CB7A4 /* audiofileinfo.h */,
+				AAA0F3A7147E0A25000CB7A4 /* audioformat.cpp */,
+				AAA0F3A8147E0A25000CB7A4 /* audioformat.h */,
+				AAA0F3A9147E0A25000CB7A4 /* audiograph.cpp */,
+				AAA0F3AA147E0A25000CB7A4 /* audiograph.h */,
+				AAAB49FE15128998005FD2AB /* audiohelpers_ios.h */,
+				AAAB49FF15128998005FD2AB /* audiohelpers_ios.mm */,
+				AAA0F3AB147E0A25000CB7A4 /* audionode.cpp */,
+				AAA0F3AC147E0A25000CB7A4 /* audionode.h */,
+				AAA0F3AE147E0A25000CB7A4 /* audiosource.cpp */,
+				AAA0F3AF147E0A25000CB7A4 /* audiosource.h */,
+				AAA0F3B0147E0A25000CB7A4 /* audiostream.cpp */,
+				AAA0F3B1147E0A25000CB7A4 /* audiostream.h */,
+				AA56672219473C3A00A812D7 /* audioutil_sse.cpp */,
+				AAA0F3B2147E0A25000CB7A4 /* audioutil.cpp */,
+				AAA0F3B3147E0A25000CB7A4 /* audioutil.h */,
+				AA37E6EE15B4A2710025928D /* audioutil.neon.cpp */,
+				AA10415519548FBD00B341A6 /* audiowriter.cpp */,
+				AA566724194A515300A812D7 /* audiowriter.h */,
+				AAA0F3B4147E0A25000CB7A4 /* bank.cpp */,
+				AAA0F3B5147E0A25000CB7A4 /* bank.h */,
+				AAA0F3B6147E0A25000CB7A4 /* bankdata.cpp */,
+				AAA0F3B7147E0A25000CB7A4 /* bankdata.h */,
+				AAA0F3B8147E0A25000CB7A4 /* banksound.cpp */,
+				AAA0F3B9147E0A25000CB7A4 /* banksound.h */,
+				AA1D9F8919EC80CE00F9A5DE /* biquadfilterprocessor_sse.cpp */,
+				AACF9E91177803DE006DAC35 /* biquadfilterprocessor.cpp */,
+				AACF9E92177803DE006DAC35 /* biquadfilterprocessor.h */,
+				AAD58B6F180E5B30003BF956 /* biquadfilterprocessor.neon.cpp */,
+				AA1D9F8A19EC80CE00F9A5DE /* bitcrusherprocessor_sse.cpp */,
+				AA8982361762599500344FCF /* bitcrusherprocessor.cpp */,
+				AA8982371762599500344FCF /* bitcrusherprocessor.h */,
+				AAA472211807734C004068E5 /* bitcrusherprocessor.neon.cpp */,
+				AAA0F3BA147E0A25000CB7A4 /* bufferhandle.cpp */,
+				AAA0F3BB147E0A25000CB7A4 /* bufferhandle.h */,
+				AAA0F3BC147E0A25000CB7A4 /* bufferpool.cpp */,
+				AAA0F3BD147E0A25000CB7A4 /* bufferpool.h */,
+				AAA0F3BE147E0A25000CB7A4 /* buffersource.cpp */,
+				AAA0F3BF147E0A25000CB7A4 /* buffersource.h */,
+				AAA0F3C0147E0A25000CB7A4 /* cksaudiostream.cpp */,
+				AAA0F3C1147E0A25000CB7A4 /* cksaudiostream.h */,
+				AAA0F3C2147E0A25000CB7A4 /* cksstreamsound.cpp */,
+				AAA0F3C3147E0A25000CB7A4 /* cksstreamsound.h */,
+				AA4CF339172EE03600903D06 /* commandobject.cpp */,
+				AA4CF33A172EE03600903D06 /* commandobject.h */,
+				AA4CF33B172EE03600903D06 /* commandparam.h */,
+				AA9446821587AA9100C82A3B /* customaudiostream.cpp */,
+				AA94467B1587A3A300C82A3B /* customaudiostream.h */,
+				AA94467C1587A3A300C82A3B /* customstreamsound.cpp */,
+				AA94467D1587A3A300C82A3B /* customstreamsound.h */,
+				AAA0F3C4147E0A25000CB7A4 /* decoder.cpp */,
+				AAA0F3C5147E0A25000CB7A4 /* decoder.h */,
+				AAA0F3C6147E0A25000CB7A4 /* decoderbuf.cpp */,
+				AAA0F3C7147E0A25000CB7A4 /* decoderbuf.h */,
+				AA1D9F8B19EC80CE00F9A5DE /* distortionprocessor_sse.cpp */,
+				AADACFEF1800CA2C007CFA3A /* distortionprocessor.cpp */,
+				AADACFF01800CA2C007CFA3A /* distortionprocessor.h */,
+				AAC5FF5518108551002E8C70 /* distortionprocessor.neon.cpp */,
+				AA4CF343172EE90500903D06 /* effect.cpp */,
+				AA4CF344172EE90500903D06 /* effect.h */,
+				AA6778D317304524008F6AF1 /* effectbus.cpp */,
+				AA6778D417304524008F6AF1 /* effectbus.h */,
+				AA4CF33F172EE07900903D06 /* effectbusnode.cpp */,
+				AA4CF340172EE07900903D06 /* effectbusnode.h */,
+				AAC5FF571810E366002E8C70 /* effectprocessor.cpp */,
+				AA8982381762599500344FCF /* effectprocessor.h */,
+				AAA0F3C8147E0A25000CB7A4 /* fileheader.cpp */,
+				AAA0F3C9147E0A25000CB7A4 /* fileheader.h */,
+				AAA0F3CA147E0A25000CB7A4 /* filetype.h */,
+				AAA0F3CB147E0A25000CB7A4 /* fourcharcode.cpp */,
+				AAA0F3CC147E0A25000CB7A4 /* fourcharcode.h */,
+				AA15D82D17FBD54800B42B12 /* graphoutput_dummy.cpp */,
+				AA15D82E17FBD54800B42B12 /* graphoutput_dummy.h */,
+				AAA0F3CD147E0A25000CB7A4 /* graphoutput_ios.cpp */,
+				AAA0F3CE147E0A25000CB7A4 /* graphoutput_ios.h */,
+				AAA0F3CF147E0A25000CB7A4 /* graphoutput.cpp */,
+				AAA0F3D0147E0A25000CB7A4 /* graphoutput.h */,
+				AAA0F3D1147E0A25000CB7A4 /* graphsound.cpp */,
+				AAA0F3D2147E0A25000CB7A4 /* graphsound.h */,
+				AAA0F3D3147E0A25000CB7A4 /* mixer.cpp */,
+				AAA0F3D4147E0A25000CB7A4 /* mixer.h */,
+				AAA0F3D5147E0A25000CB7A4 /* mixnode.cpp */,
+				AAA0F3D6147E0A25000CB7A4 /* mixnode.h */,
+				AAA0F3D7147E0A25000CB7A4 /* nativeaudiostream_ios.cpp */,
+				AAA0F3D8147E0A25000CB7A4 /* nativeaudiostream_ios.h */,
+				AAA0F3D9147E0A25000CB7A4 /* nativestreamsound_ios.cpp */,
+				AAA0F3DA147E0A25000CB7A4 /* nativestreamsound_ios.h */,
+				AA0F926C14F43A0000174284 /* pcmf32decoder.cpp */,
+				AA0F926D14F43A0000174284 /* pcmf32decoder.h */,
+				AAA0F3DB147E0A25000CB7A4 /* pcmi8decoder.cpp */,
+				AAA0F3DC147E0A25000CB7A4 /* pcmi8decoder.h */,
+				AAA0F3DD147E0A25000CB7A4 /* pcmi16decoder.cpp */,
+				AAA0F3DE147E0A25000CB7A4 /* pcmi16decoder.h */,
+				AA566725194A515300A812D7 /* rawwriter.cpp */,
+				AA566726194A515300A812D7 /* rawwriter.h */,
+				AAA0FCF018EDC35B00E0575F /* resampler.cpp */,
+				AAA0FCF118EDC35B00E0575F /* resampler.h */,
+				AA1D9F8C19EC80CE00F9A5DE /* ringmodprocessor_sse.cpp */,
+				AAB3D6D91774129B0027ED4B /* ringmodprocessor.cpp */,
+				AAB3D6DA1774129B0027ED4B /* ringmodprocessor.h */,
+				AAC5FF53181062DE002E8C70 /* ringmodprocessor.neon.cpp */,
+				AAA0F3E1147E0A25000CB7A4 /* sample.cpp */,
+				AAA0F3E2147E0A25000CB7A4 /* sample.h */,
+				AAA0F3E3147E0A25000CB7A4 /* sampleinfo.cpp */,
+				AAA0F3E4147E0A25000CB7A4 /* sampleinfo.h */,
+				AAA0F3E5147E0A25000CB7A4 /* sharedbuffer.cpp */,
+				AAA0F3E6147E0A25000CB7A4 /* sharedbuffer.h */,
+				AAA0F3E7147E0A25000CB7A4 /* sinenode.cpp */,
+				AAA0F3E8147E0A25000CB7A4 /* sinenode.h */,
+				AAA0F3E9147E0A25000CB7A4 /* sinesource.cpp */,
+				AAA0F3EA147E0A25000CB7A4 /* sinesource.h */,
+				AAA0F3EB147E0A25000CB7A4 /* sound.cpp */,
+				AAA0F3EC147E0A25000CB7A4 /* sound.h */,
+				AAA0F3ED147E0A25000CB7A4 /* soundname.cpp */,
+				AAA0F3EE147E0A25000CB7A4 /* soundname.h */,
+				AAA0F3EF147E0A25000CB7A4 /* sourcenode.cpp */,
+				AAA0F3F0147E0A25000CB7A4 /* sourcenode.h */,
+				AAA0F3F1147E0A25000CB7A4 /* streamsound.cpp */,
+				AAA0F3F2147E0A25000CB7A4 /* streamsound.h */,
+				AAA0F3F3147E0A25000CB7A4 /* streamsource.cpp */,
+				AAA0F3F4147E0A25000CB7A4 /* streamsource.h */,
+				AA029CCC148EB44C00C4E70D /* volumematrix.cpp */,
+				AA029CCD148EB44C00C4E70D /* volumematrix.h */,
+				AA0F926E14F43A0000174284 /* vorbisaudiostream.cpp */,
+				AA0F926F14F43A0000174284 /* vorbisaudiostream.h */,
+				AADA47EA14F4AE5D0011C965 /* vorbisstreamsound.cpp */,
+				AADA47EB14F4AE5D0011C965 /* vorbisstreamsound.h */,
+				AA56672A194A82CE00A812D7 /* wavwriter.cpp */,
+				AA56672B194A82CE00A812D7 /* wavwriter.h */,
+			);
+			name = audio;
+			sourceTree = "<group>";
+		};
+		AAA0F35B147E09A9000CB7A4 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				AA634ADF1624A5DA0038BBCE /* attenuationmode.h */,
+				AAA0F375147E09D5000CB7A4 /* bank.cpp */,
+				AAA0F38D147E09F2000CB7A4 /* bank.h */,
+				AAA0F376147E09D5000CB7A4 /* ck.cpp */,
+				AAA0F38E147E09F2000CB7A4 /* ck.h */,
+				AAA0F377147E09D5000CB7A4 /* config.cpp */,
+				AAA0F38F147E09F2000CB7A4 /* config.h */,
+				AA634AEC1624A5F80038BBCE /* customfile.cpp */,
+				AA634AE11624A5DA0038BBCE /* customfile.h */,
+				AA634AE21624A5DA0038BBCE /* customstream.h */,
+				AA6778CF173044F3008F6AF1 /* effect.cpp */,
+				AA6778D0173044F3008F6AF1 /* effectbus.cpp */,
+				AACF9E8D177800DB006DAC35 /* effectprocessor.cpp */,
+				AAA0F378147E09D5000CB7A4 /* mixer.cpp */,
+				AAA0F390147E09F2000CB7A4 /* mixer.h */,
+				AAA0F35C147E09B4000CB7A4 /* objc */,
+				AAA0F391147E09F2000CB7A4 /* pathtype.h */,
+				AAA0F392147E09F2000CB7A4 /* platform.h */,
+				AAA0F379147E09D5000CB7A4 /* sound.cpp */,
+				AAA0F393147E09F2000CB7A4 /* sound.h */,
+			);
+			name = api;
+			sourceTree = "<group>";
+		};
+		AAA0F35C147E09B4000CB7A4 /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				AAF79550176CA6130076D65B /* effect_p.h */,
+				AAF79551176CA6130076D65B /* effect.mm */,
+				AAF79552176CA6130076D65B /* effectbus_p.h */,
+				AAF7954E176CA2900076D65B /* effectbus.mm */,
+				AAA0F37F147E09E4000CB7A4 /* bank.h */,
+				AAA0F35E147E09C9000CB7A4 /* bank.mm */,
+				AAA0F35D147E09C9000CB7A4 /* bank_p.h */,
+				AAA0F380147E09E4000CB7A4 /* ck.h */,
+				AAA0F35F147E09C9000CB7A4 /* cko.h */,
+				AAA0F360147E09C9000CB7A4 /* cko.mm */,
+				AAA0F381147E09E4000CB7A4 /* config.h */,
+				AAA0F382147E09E4000CB7A4 /* mixer.h */,
+				AAA0F362147E09C9000CB7A4 /* mixer.mm */,
+				AAA0F361147E09C9000CB7A4 /* mixer_p.h */,
+				AAA0F363147E09C9000CB7A4 /* nsstringref.h */,
+				AAA0F364147E09C9000CB7A4 /* nsstringref.mm */,
+				AAA0F383147E09E4000CB7A4 /* pathtype.h */,
+				AAA0F384147E09E4000CB7A4 /* platform.h */,
+				AAA0F365147E09C9000CB7A4 /* proxy.h */,
+				AAA0F366147E09C9000CB7A4 /* proxy.mm */,
+				AAA0F385147E09E4000CB7A4 /* sound.h */,
+				AAA0F368147E09C9000CB7A4 /* sound.mm */,
+				AAA0F367147E09C9000CB7A4 /* sound_p.h */,
+			);
+			name = objc;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AAA0F323147E08ED000CB7A4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAA0F369147E09C9000CB7A4 /* bank_p.h in Headers */,
+				AAA0F36B147E09C9000CB7A4 /* cko.h in Headers */,
+				AAA0F36D147E09C9000CB7A4 /* mixer_p.h in Headers */,
+				AAA0F36F147E09C9000CB7A4 /* nsstringref.h in Headers */,
+				AAA0F371147E09C9000CB7A4 /* proxy.h in Headers */,
+				AAA0F373147E09C9000CB7A4 /* sound_p.h in Headers */,
+				AAA0F386147E09E4000CB7A4 /* bank.h in Headers */,
+				AAA0F387147E09E4000CB7A4 /* ck.h in Headers */,
+				AAA0F388147E09E4000CB7A4 /* config.h in Headers */,
+				AAA0F389147E09E4000CB7A4 /* mixer.h in Headers */,
+				AAA0F38A147E09E4000CB7A4 /* pathtype.h in Headers */,
+				AAA0F38B147E09E4000CB7A4 /* platform.h in Headers */,
+				AAA0F38C147E09E4000CB7A4 /* sound.h in Headers */,
+				AAA0F394147E09F2000CB7A4 /* bank.h in Headers */,
+				AAA0F395147E09F2000CB7A4 /* ck.h in Headers */,
+				AAA0F396147E09F2000CB7A4 /* config.h in Headers */,
+				AAA0F397147E09F2000CB7A4 /* mixer.h in Headers */,
+				AAA0F398147E09F2000CB7A4 /* pathtype.h in Headers */,
+				AAA0F399147E09F2000CB7A4 /* platform.h in Headers */,
+				AAA0F39A147E09F2000CB7A4 /* sound.h in Headers */,
+				AAA0F3F6147E0A25000CB7A4 /* adpcm.h in Headers */,
+				AAA0F3F8147E0A25000CB7A4 /* adpcmdecoder.h in Headers */,
+				AAA0F3FA147E0A25000CB7A4 /* audio_ios.h in Headers */,
+				AAA0F3FC147E0A25000CB7A4 /* audio.h in Headers */,
+				AAA0F3FE147E0A25000CB7A4 /* audiodebug_ios.h in Headers */,
+				AAA0F400147E0A25000CB7A4 /* audiofileinfo.h in Headers */,
+				AAA0F402147E0A25000CB7A4 /* audioformat.h in Headers */,
+				AAA0F404147E0A25000CB7A4 /* audiograph.h in Headers */,
+				AAA0F406147E0A25000CB7A4 /* audionode.h in Headers */,
+				AAA0F409147E0A25000CB7A4 /* audiosource.h in Headers */,
+				AAA0F40B147E0A25000CB7A4 /* audiostream.h in Headers */,
+				AAA0F40D147E0A25000CB7A4 /* audioutil.h in Headers */,
+				AAA0FCF318EDC35B00E0575F /* resampler.h in Headers */,
+				AAA0F40F147E0A25000CB7A4 /* bank.h in Headers */,
+				AAA0F411147E0A25000CB7A4 /* bankdata.h in Headers */,
+				AAA0F413147E0A25000CB7A4 /* banksound.h in Headers */,
+				AAA0F415147E0A25000CB7A4 /* bufferhandle.h in Headers */,
+				AAA0F417147E0A25000CB7A4 /* bufferpool.h in Headers */,
+				AAA0F419147E0A25000CB7A4 /* buffersource.h in Headers */,
+				AAA0F41B147E0A25000CB7A4 /* cksaudiostream.h in Headers */,
+				AAA0F41D147E0A25000CB7A4 /* cksstreamsound.h in Headers */,
+				AAA0F41F147E0A25000CB7A4 /* decoder.h in Headers */,
+				AA566729194A515300A812D7 /* rawwriter.h in Headers */,
+				AAA0F421147E0A25000CB7A4 /* decoderbuf.h in Headers */,
+				AAA0F423147E0A25000CB7A4 /* fileheader.h in Headers */,
+				AAA0F424147E0A25000CB7A4 /* filetype.h in Headers */,
+				AA566727194A515300A812D7 /* audiowriter.h in Headers */,
+				AAA0F426147E0A25000CB7A4 /* fourcharcode.h in Headers */,
+				AAA0F428147E0A25000CB7A4 /* graphoutput_ios.h in Headers */,
+				AAA0F42A147E0A25000CB7A4 /* graphoutput.h in Headers */,
+				AAA0F42C147E0A25000CB7A4 /* graphsound.h in Headers */,
+				AAA0F42E147E0A25000CB7A4 /* mixer.h in Headers */,
+				AAA0F430147E0A25000CB7A4 /* mixnode.h in Headers */,
+				AAA0F432147E0A25000CB7A4 /* nativeaudiostream_ios.h in Headers */,
+				AAA0F434147E0A25000CB7A4 /* nativestreamsound_ios.h in Headers */,
+				AAA0F436147E0A25000CB7A4 /* pcmi8decoder.h in Headers */,
+				AAA0F438147E0A25000CB7A4 /* pcmi16decoder.h in Headers */,
+				AAD58B6E180DF14C003BF956 /* lockingqueue.h in Headers */,
+				AAA0F43C147E0A25000CB7A4 /* sample.h in Headers */,
+				AAA0F43E147E0A25000CB7A4 /* sampleinfo.h in Headers */,
+				AAA0F440147E0A25000CB7A4 /* sharedbuffer.h in Headers */,
+				AAA0F442147E0A25000CB7A4 /* sinenode.h in Headers */,
+				AAA0F444147E0A25000CB7A4 /* sinesource.h in Headers */,
+				AAA0F446147E0A25000CB7A4 /* sound.h in Headers */,
+				AAA0F448147E0A25000CB7A4 /* soundname.h in Headers */,
+				AAA0F44A147E0A25000CB7A4 /* sourcenode.h in Headers */,
+				AAA0F44C147E0A25000CB7A4 /* streamsound.h in Headers */,
+				AAA0F44E147E0A25000CB7A4 /* streamsource.h in Headers */,
+				AAA0F4B4147E0A54000CB7A4 /* allocatable.h in Headers */,
+				AAA0F4B5147E0A54000CB7A4 /* allocator.h in Headers */,
+				AAA0F4B7147E0A54000CB7A4 /* array.h in Headers */,
+				AAA0F4B9147E0A54000CB7A4 /* asyncloader.h in Headers */,
+				AAA0F4BA147E0A54000CB7A4 /* atomic.h in Headers */,
+				AAA0F4BC147E0A54000CB7A4 /* binarystream.h in Headers */,
+				AAA0F4BE147E0A54000CB7A4 /* binarywriter.h in Headers */,
+				AAA0F4C0147E0A54000CB7A4 /* bufferstream.h in Headers */,
+				AAA0F4C2147E0A54000CB7A4 /* byteorder.h in Headers */,
+				AAA0F4C3147E0A54000CB7A4 /* callback.h in Headers */,
+				AAA0F4C5147E0A54000CB7A4 /* cond.h in Headers */,
+				AADACFF21800CA2C007CFA3A /* distortionprocessor.h in Headers */,
+				AAA0F4C7147E0A54000CB7A4 /* debug.h in Headers */,
+				AAA0F4C9147E0A54000CB7A4 /* dir.h in Headers */,
+				AAA0F4CB147E0A54000CB7A4 /* filestream.h in Headers */,
+				AAA0F4CD147E0A54000CB7A4 /* filewriter.h in Headers */,
+				AAA0F4CF147E0A54000CB7A4 /* fixedarray.h in Headers */,
+				AAA0F4D0147E0A54000CB7A4 /* fixedpoint.h in Headers */,
+				AAA0F4D2147E0A54000CB7A4 /* fixedstring.h in Headers */,
+				AAA0F4D4147E0A54000CB7A4 /* funcallocator.h in Headers */,
+				AA15D83017FBD54800B42B12 /* graphoutput_dummy.h in Headers */,
+				AAA0F4D6147E0A54000CB7A4 /* glitchfinder.h in Headers */,
+				AAA0F4D8147E0A54000CB7A4 /* list.h in Headers */,
+				AAA0F4DA147E0A54000CB7A4 /* listable.h in Headers */,
+				AAA0F4DC147E0A54000CB7A4 /* lockfreequeue.h in Headers */,
+				AAA0F4DE147E0A54000CB7A4 /* logger.h in Headers */,
+				AAA0F4E0147E0A54000CB7A4 /* math.h in Headers */,
+				AAA0F4E2147E0A54000CB7A4 /* md5.h in Headers */,
+				AAA0F4E4147E0A54000CB7A4 /* mem.h in Headers */,
+				AAA0F4E6147E0A54000CB7A4 /* memoryfixup.h in Headers */,
+				AAA0F4E8147E0A54000CB7A4 /* memorystream.h in Headers */,
+				AAA0F4EA147E0A54000CB7A4 /* mutex.h in Headers */,
+				AAA0F4EB147E0A54000CB7A4 /* mutexlock.h in Headers */,
+				AAA0F4ED147E0A54000CB7A4 /* path.h in Headers */,
+				AAA0F4EE147E0A54000CB7A4 /* pch.h in Headers */,
+				AAA0F4EF147E0A54000CB7A4 /* platform.h in Headers */,
+				AAA0F4F1147E0A54000CB7A4 /* pool.h in Headers */,
+				AAA0F4F3147E0A54000CB7A4 /* profiler.h in Headers */,
+				AAA0F4F5147E0A54000CB7A4 /* proxied.h in Headers */,
+				AAA0F4F7147E0A54000CB7A4 /* readstream.h in Headers */,
+				AAA0F4F9147E0A54000CB7A4 /* ringbuffer.h in Headers */,
+				AAA0F4FB147E0A54000CB7A4 /* staticsingleton.h in Headers */,
+				AAA0F4FD147E0A54000CB7A4 /* stats.h in Headers */,
+				AAA0F4FF147E0A54000CB7A4 /* string.h in Headers */,
+				AAA0F501147E0A54000CB7A4 /* stringwriter.h in Headers */,
+				AA286466189AD9EC0097E980 /* substream.h in Headers */,
+				AAA0F503147E0A54000CB7A4 /* swapstream.h in Headers */,
+				AAA0F504147E0A54000CB7A4 /* system_ios.h in Headers */,
+				AAA0F507147E0A54000CB7A4 /* system.h in Headers */,
+				AAA0F509147E0A54000CB7A4 /* target.h in Headers */,
+				AAA0F50B147E0A54000CB7A4 /* textwriter.h in Headers */,
+				AAA0F50D147E0A54000CB7A4 /* thread.h in Headers */,
+				AAA0F510147E0A54000CB7A4 /* timer.h in Headers */,
+				AAA0F512147E0A54000CB7A4 /* treenode.h in Headers */,
+				AAA0F514147E0A54000CB7A4 /* types.h in Headers */,
+				AAA0F516147E0A54000CB7A4 /* version.h in Headers */,
+				AA029CCF148EB44C00C4E70D /* volumematrix.h in Headers */,
+				AA0F927114F43A0000174284 /* pcmf32decoder.h in Headers */,
+				AA0F927314F43A0000174284 /* vorbisaudiostream.h in Headers */,
+				AADA47ED14F4AE5D0011C965 /* vorbisstreamsound.h in Headers */,
+				AAD49D43150EFE51002F1380 /* assetaudiostream_ios.h in Headers */,
+				AA56672D194A82CE00A812D7 /* wavwriter.h in Headers */,
+				AAFFDFAF15110B3F007CBB3E /* assetstreamsound_ios.h in Headers */,
+				AAAB4A0015128998005FD2AB /* audiohelpers_ios.h in Headers */,
+				AA94467E1587A3A300C82A3B /* customaudiostream.h in Headers */,
+				AA9446801587A3A300C82A3B /* customstreamsound.h in Headers */,
+				AA634AE31624A5DA0038BBCE /* attenuationmode.h in Headers */,
+				AA634AE51624A5DA0038BBCE /* customfile.h in Headers */,
+				AA634AE61624A5DA0038BBCE /* customstream.h in Headers */,
+				AA634AEB1624A5EC0038BBCE /* customstream.h in Headers */,
+				AA4CF33D172EE03600903D06 /* commandobject.h in Headers */,
+				AA4CF33E172EE03600903D06 /* commandparam.h in Headers */,
+				AA4CF342172EE07900903D06 /* effectbusnode.h in Headers */,
+				AA4CF346172EE90500903D06 /* effect.h in Headers */,
+				AA6778D617304524008F6AF1 /* effectbus.h in Headers */,
+				AA89823A1762599500344FCF /* bitcrusherprocessor.h in Headers */,
+				AA89823B1762599500344FCF /* effectprocessor.h in Headers */,
+				AA89823F1764431A00344FCF /* deletable.h in Headers */,
+				AAF79553176CA6130076D65B /* effect_p.h in Headers */,
+				AAF79555176CA6130076D65B /* effectbus_p.h in Headers */,
+				AAB3D6DC1774129B0027ED4B /* ringmodprocessor.h in Headers */,
+				AACF9E94177803DE006DAC35 /* biquadfilterprocessor.h in Headers */,
+				AAEA4999177BEDF9004B4D93 /* runningaverage.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AAA0F324147E08ED000CB7A4 /* ck_ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAA0F332147E08ED000CB7A4 /* Build configuration list for PBXNativeTarget "ck_ios" */;
+			buildPhases = (
+				AAA0F321147E08ED000CB7A4 /* Sources */,
+				AAA0F322147E08ED000CB7A4 /* Frameworks */,
+				AAA0F323147E08ED000CB7A4 /* Headers */,
+				AA21C32B149A952E00A49D7D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ck_ios;
+			productName = ck_ios;
+			productReference = AAA0F325147E08ED000CB7A4 /* libck.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAA0F31C147E08ED000CB7A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+			};
+			buildConfigurationList = AAA0F31F147E08ED000CB7A4 /* Build configuration list for PBXProject "ck_ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AAA0F31A147E08ED000CB7A4;
+			productRefGroup = AAA0F326147E08ED000CB7A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AAA0F324147E08ED000CB7A4 /* ck_ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AA21C32B149A952E00A49D7D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". ../../build/ios/combine_lib.sh\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAA0F321147E08ED000CB7A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAA0F36A147E09C9000CB7A4 /* bank.mm in Sources */,
+				AAA0F36C147E09C9000CB7A4 /* cko.mm in Sources */,
+				AAA0F36E147E09C9000CB7A4 /* mixer.mm in Sources */,
+				AAA0F370147E09C9000CB7A4 /* nsstringref.mm in Sources */,
+				AAA0F372147E09C9000CB7A4 /* proxy.mm in Sources */,
+				AA56672C194A82CE00A812D7 /* wavwriter.cpp in Sources */,
+				AAA0F374147E09C9000CB7A4 /* sound.mm in Sources */,
+				AAA0F37A147E09D5000CB7A4 /* bank.cpp in Sources */,
+				AAA0F37B147E09D5000CB7A4 /* ck.cpp in Sources */,
+				AAA0F37C147E09D5000CB7A4 /* config.cpp in Sources */,
+				AAA0F37D147E09D5000CB7A4 /* mixer.cpp in Sources */,
+				AA566728194A515300A812D7 /* rawwriter.cpp in Sources */,
+				AAA0F37E147E09D5000CB7A4 /* sound.cpp in Sources */,
+				AAA0F3F5147E0A25000CB7A4 /* adpcm.cpp in Sources */,
+				AAA0F3F7147E0A25000CB7A4 /* adpcmdecoder.cpp in Sources */,
+				AAA0F3F9147E0A25000CB7A4 /* audio_ios.mm in Sources */,
+				AAA0F3FB147E0A25000CB7A4 /* audio.cpp in Sources */,
+				AAA0F3FD147E0A25000CB7A4 /* audiodebug_ios.cpp in Sources */,
+				AA10415619548FBD00B341A6 /* audiowriter.cpp in Sources */,
+				AAA0F3FF147E0A25000CB7A4 /* audiofileinfo.cpp in Sources */,
+				AAA0F401147E0A25000CB7A4 /* audioformat.cpp in Sources */,
+				AAA0F403147E0A25000CB7A4 /* audiograph.cpp in Sources */,
+				AAA0F405147E0A25000CB7A4 /* audionode.cpp in Sources */,
+				AAA0F408147E0A25000CB7A4 /* audiosource.cpp in Sources */,
+				AA15D82F17FBD54800B42B12 /* graphoutput_dummy.cpp in Sources */,
+				AAA472221807734C004068E5 /* bitcrusherprocessor.neon.cpp in Sources */,
+				AAA0F40A147E0A25000CB7A4 /* audiostream.cpp in Sources */,
+				AAA0F40C147E0A25000CB7A4 /* audioutil.cpp in Sources */,
+				AAA0F40E147E0A25000CB7A4 /* bank.cpp in Sources */,
+				AAA0F410147E0A25000CB7A4 /* bankdata.cpp in Sources */,
+				AAA0F412147E0A25000CB7A4 /* banksound.cpp in Sources */,
+				AAA0F414147E0A25000CB7A4 /* bufferhandle.cpp in Sources */,
+				AAA0F416147E0A25000CB7A4 /* bufferpool.cpp in Sources */,
+				AAA0F418147E0A25000CB7A4 /* buffersource.cpp in Sources */,
+				AAA0F41A147E0A25000CB7A4 /* cksaudiostream.cpp in Sources */,
+				AAA0F41C147E0A25000CB7A4 /* cksstreamsound.cpp in Sources */,
+				AAA0F41E147E0A25000CB7A4 /* decoder.cpp in Sources */,
+				AA1D9F8F19EC80CE00F9A5DE /* distortionprocessor_sse.cpp in Sources */,
+				AAA0F420147E0A25000CB7A4 /* decoderbuf.cpp in Sources */,
+				AAA0F422147E0A25000CB7A4 /* fileheader.cpp in Sources */,
+				AAC5FF5618108551002E8C70 /* distortionprocessor.neon.cpp in Sources */,
+				AAA0F425147E0A25000CB7A4 /* fourcharcode.cpp in Sources */,
+				AAA0F427147E0A25000CB7A4 /* graphoutput_ios.cpp in Sources */,
+				AAC5FF54181062DE002E8C70 /* ringmodprocessor.neon.cpp in Sources */,
+				AAA0F429147E0A25000CB7A4 /* graphoutput.cpp in Sources */,
+				AAA0F42B147E0A25000CB7A4 /* graphsound.cpp in Sources */,
+				AAA0F42D147E0A25000CB7A4 /* mixer.cpp in Sources */,
+				AA1D9F9019EC80CE00F9A5DE /* ringmodprocessor_sse.cpp in Sources */,
+				AAA0F42F147E0A25000CB7A4 /* mixnode.cpp in Sources */,
+				AAA0F431147E0A25000CB7A4 /* nativeaudiostream_ios.cpp in Sources */,
+				AAA0F433147E0A25000CB7A4 /* nativestreamsound_ios.cpp in Sources */,
+				AAA0F435147E0A25000CB7A4 /* pcmi8decoder.cpp in Sources */,
+				AAA0F437147E0A25000CB7A4 /* pcmi16decoder.cpp in Sources */,
+				AAA0F43B147E0A25000CB7A4 /* sample.cpp in Sources */,
+				AADACFF11800CA2C007CFA3A /* distortionprocessor.cpp in Sources */,
+				AAA0F43D147E0A25000CB7A4 /* sampleinfo.cpp in Sources */,
+				AAA0F43F147E0A25000CB7A4 /* sharedbuffer.cpp in Sources */,
+				AAA0F441147E0A25000CB7A4 /* sinenode.cpp in Sources */,
+				AAA0F443147E0A25000CB7A4 /* sinesource.cpp in Sources */,
+				AAA0F445147E0A25000CB7A4 /* sound.cpp in Sources */,
+				AAA0F447147E0A25000CB7A4 /* soundname.cpp in Sources */,
+				AAA0F449147E0A25000CB7A4 /* sourcenode.cpp in Sources */,
+				AAA0F44B147E0A25000CB7A4 /* streamsound.cpp in Sources */,
+				AAA0F44D147E0A25000CB7A4 /* streamsource.cpp in Sources */,
+				AA1D9F8D19EC80CE00F9A5DE /* biquadfilterprocessor_sse.cpp in Sources */,
+				AAA0F4B3147E0A54000CB7A4 /* allocatable.cpp in Sources */,
+				AAA0F4B6147E0A54000CB7A4 /* array.cpp in Sources */,
+				AAA0F4B8147E0A54000CB7A4 /* asyncloader.cpp in Sources */,
+				AAA0F4BB147E0A54000CB7A4 /* binarystream.cpp in Sources */,
+				AAA0F4BD147E0A54000CB7A4 /* binarywriter.cpp in Sources */,
+				AAC5FF581810E366002E8C70 /* effectprocessor.cpp in Sources */,
+				AAA0F4BF147E0A54000CB7A4 /* bufferstream.cpp in Sources */,
+				AAA0F4C1147E0A54000CB7A4 /* byteorder.cpp in Sources */,
+				AAA0F4C4147E0A54000CB7A4 /* cond.cpp in Sources */,
+				AAA0F4C6147E0A54000CB7A4 /* debug.cpp in Sources */,
+				AAA0F4C8147E0A54000CB7A4 /* dir.cpp in Sources */,
+				AAA0F4CA147E0A54000CB7A4 /* filestream.cpp in Sources */,
+				AAA0F4CC147E0A54000CB7A4 /* filewriter.cpp in Sources */,
+				AA286465189AD9EC0097E980 /* substream.cpp in Sources */,
+				AAA0F4CE147E0A54000CB7A4 /* fixedarray.cpp in Sources */,
+				AAA0F4D1147E0A54000CB7A4 /* fixedstring.cpp in Sources */,
+				AAA0F4D3147E0A54000CB7A4 /* funcallocator.cpp in Sources */,
+				AAA0F4D5147E0A54000CB7A4 /* glitchfinder.cpp in Sources */,
+				AAA0F4D7147E0A54000CB7A4 /* list.cpp in Sources */,
+				AAA0F4D9147E0A54000CB7A4 /* listable.cpp in Sources */,
+				AAA0F4DB147E0A54000CB7A4 /* lockfreequeue.cpp in Sources */,
+				AAA0F4DD147E0A54000CB7A4 /* logger.cpp in Sources */,
+				AAA0F4DF147E0A54000CB7A4 /* math.cpp in Sources */,
+				AAA0F4E1147E0A54000CB7A4 /* md5.cpp in Sources */,
+				AAA0F4E3147E0A54000CB7A4 /* mem.cpp in Sources */,
+				AAD58B6D180DF14C003BF956 /* lockingqueue.cpp in Sources */,
+				AAA0F4E5147E0A54000CB7A4 /* memoryfixup.cpp in Sources */,
+				AA1D9F8E19EC80CE00F9A5DE /* bitcrusherprocessor_sse.cpp in Sources */,
+				AAA0F4E7147E0A54000CB7A4 /* memorystream.cpp in Sources */,
+				AAA0F4E9147E0A54000CB7A4 /* mutex.cpp in Sources */,
+				AAA0F4EC147E0A54000CB7A4 /* path.cpp in Sources */,
+				AAA0F4F0147E0A54000CB7A4 /* pool.cpp in Sources */,
+				AAA0F4F2147E0A54000CB7A4 /* profiler.cpp in Sources */,
+				AAA0F4F4147E0A54000CB7A4 /* proxied.cpp in Sources */,
+				AAA0F4F6147E0A54000CB7A4 /* readstream.cpp in Sources */,
+				AAA0F4F8147E0A54000CB7A4 /* ringbuffer.cpp in Sources */,
+				AAA0F4FA147E0A54000CB7A4 /* staticsingleton.cpp in Sources */,
+				AAA0F4FC147E0A54000CB7A4 /* stats.cpp in Sources */,
+				AAA0F4FE147E0A54000CB7A4 /* string.cpp in Sources */,
+				AAA0F500147E0A54000CB7A4 /* stringwriter.cpp in Sources */,
+				AAA0F502147E0A54000CB7A4 /* swapstream.cpp in Sources */,
+				AAA0FCF218EDC35B00E0575F /* resampler.cpp in Sources */,
+				AAA0F505147E0A54000CB7A4 /* system_ios.mm in Sources */,
+				AAA0F506147E0A54000CB7A4 /* system.cpp in Sources */,
+				AAA0F508147E0A54000CB7A4 /* target.cpp in Sources */,
+				AAA0F50A147E0A54000CB7A4 /* textwriter.cpp in Sources */,
+				AAA0F50C147E0A54000CB7A4 /* thread.cpp in Sources */,
+				AAA0F50E147E0A54000CB7A4 /* timer_ios.cpp in Sources */,
+				AAA0F50F147E0A54000CB7A4 /* timer.cpp in Sources */,
+				AAA0F511147E0A54000CB7A4 /* treenode.cpp in Sources */,
+				AAA0F513147E0A54000CB7A4 /* types.cpp in Sources */,
+				AAA0F515147E0A54000CB7A4 /* version.cpp in Sources */,
+				AA029CCE148EB44C00C4E70D /* volumematrix.cpp in Sources */,
+				AA0F927014F43A0000174284 /* pcmf32decoder.cpp in Sources */,
+				AA0F927214F43A0000174284 /* vorbisaudiostream.cpp in Sources */,
+				AADA47EC14F4AE5D0011C965 /* vorbisstreamsound.cpp in Sources */,
+				AAD49D42150EFE51002F1380 /* assetaudiostream_ios.mm in Sources */,
+				AAFFDFAE15110B3F007CBB3E /* assetstreamsound_ios.cpp in Sources */,
+				AAAB4A0115128998005FD2AB /* audiohelpers_ios.mm in Sources */,
+				AA94467F1587A3A300C82A3B /* customstreamsound.cpp in Sources */,
+				AA9446831587AA9100C82A3B /* customaudiostream.cpp in Sources */,
+				AA37E6EF15B4A2710025928D /* audioutil.neon.cpp in Sources */,
+				AA634AEA1624A5EC0038BBCE /* customstream.cpp in Sources */,
+				AA634AED1624A5F80038BBCE /* customfile.cpp in Sources */,
+				AA4CF33C172EE03600903D06 /* commandobject.cpp in Sources */,
+				AA4CF341172EE07900903D06 /* effectbusnode.cpp in Sources */,
+				AA4CF345172EE90500903D06 /* effect.cpp in Sources */,
+				AA6778D1173044F3008F6AF1 /* effect.cpp in Sources */,
+				AA6778D2173044F3008F6AF1 /* effectbus.cpp in Sources */,
+				AAD58B70180E5B30003BF956 /* biquadfilterprocessor.neon.cpp in Sources */,
+				AA6778D517304524008F6AF1 /* effectbus.cpp in Sources */,
+				AA8982391762599500344FCF /* bitcrusherprocessor.cpp in Sources */,
+				AA89823E1764431A00344FCF /* deletable.cpp in Sources */,
+				AAF7954F176CA2900076D65B /* effectbus.mm in Sources */,
+				AAF79554176CA6130076D65B /* effect.mm in Sources */,
+				AAB3D6DB1774129B0027ED4B /* ringmodprocessor.cpp in Sources */,
+				AACF9E8E177800DB006DAC35 /* effectprocessor.cpp in Sources */,
+				AACF9E93177803DE006DAC35 /* biquadfilterprocessor.cpp in Sources */,
+				AA56672319473C3A00A812D7 /* audioutil_sse.cpp in Sources */,
+				AAEA4998177BEDF9004B4D93 /* runningaverage.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AAA0F330147E08ED000CB7A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = core/pch.h;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"CK_DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_CFLAGS[arch=armv6]" = "-mno-thumb";
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = ".. ../../inc";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		AAA0F331147E08ED000CB7A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = core/pch.h;
+				GCC_PREPROCESSOR_DEFINITIONS = "CK_NDEBUG=1";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				"OTHER_CFLAGS[arch=armv6]" = "-mno-thumb";
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = ".. ../../inc";
+				USE_HEADERMAP = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AAA0F333147E08ED000CB7A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				DSTROOT = /tmp/ck_ios.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_THUMB_SUPPORT = NO;
+				HEADER_SEARCH_PATHS = (
+					../../ext/libogg/include,
+					../../ext/,
+				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ck;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = ".. ../../inc";
+			};
+			name = Debug;
+		};
+		AAA0F334147E08ED000CB7A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				DSTROOT = /tmp/ck_ios.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_THUMB_SUPPORT = NO;
+				HEADER_SEARCH_PATHS = (
+					../../ext/libogg/include,
+					../../ext/,
+				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ck;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = ".. ../../inc";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAA0F31F147E08ED000CB7A4 /* Build configuration list for PBXProject "ck_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAA0F330147E08ED000CB7A4 /* Debug */,
+				AAA0F331147E08ED000CB7A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAA0F332147E08ED000CB7A4 /* Build configuration list for PBXNativeTarget "ck_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAA0F333147E08ED000CB7A4 /* Debug */,
+				AAA0F334147E08ED000CB7A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAA0F31C147E08ED000CB7A4 /* Project object */;
+}

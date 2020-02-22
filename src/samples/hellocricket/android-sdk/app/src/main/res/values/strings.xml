@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">HelloCricketSDK</string>
+    <string name="hello">Hello Cricket!</string>
+</resources>

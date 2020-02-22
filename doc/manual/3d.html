@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head><title>Cricket Audio: 3D sound</title>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="style.css"></head><body>
+
+<h1>3D sound</h1>Sounds can be assigned a position in 3D space; the sound will be panned
+and its volume attenuated based on the relative positions and
+orientations of the sound and the listener.<br>
+<br>
+The position and orientation of the listener is specified with&nbsp;<span class="filename">CkSound::set3dListenerPosition()</span>.&nbsp; The arguments are the same as those used by&nbsp;<span class="filename">gluLookAt()</span>:
+the location of the listener, the location of a "look-at" point
+directly in front of the listener, and the listener's up-vector.&nbsp;
+The sound requires only a position.&nbsp; You may interpret the
+position in any distance units (inches, meters, etc.), as long as you
+do so consistently.<br>
+<br>
+By default, 3D positioning is disabled; to enable it, call&nbsp;<span class="filename">CkSound::set3dEnabled(true)</span>.&nbsp;
+Be sure to set the positions of the sound and the listener before
+enabling 3D positioning, or the volume and pan of the sound will be
+momentarily incorrect.<br>
+<h2>Attenuation modes</h2>
+The volume attenuation behavior of the sound with distance can be set using&nbsp;<span class="filename">CkSound::set3dAttenuation()</span>.&nbsp;
+When the distance between the sound and the listener is less than the
+"near distance", the volume is not attenuated.&nbsp; When the distance
+is greater than the "far distance", the volume is attenuated by the
+"far volume".&nbsp; When the distance is between the near distance and
+the far distance, the volume is attenuated based on the attenuation
+mode, as shown in the graph:<br>
+<img alt="" src="images/atten.svg"><br>
+<h2>
+Doppler</h2>
+3D sounds can optionally have a pitch shift applied to simulate the
+Doppler effect (the apparent change in pitch that occurs when an object
+is moving toward or away from the listener).&nbsp; To enable the
+Doppler effect, set the velocity of the sound and/or the listener
+using&nbsp;<span class="filename">CkSound::set3dVelocity()</span> and&nbsp;<span class="filename">CkSound::set3dListenerVelocity()</span>, and set the speed of sound with&nbsp;<span class="filename">CkSound::setSoundSpeed()</span>.&nbsp;&nbsp;
+For the effect to sound physically plausible, you should make sure the
+sound and listener velocities and the sound speed are all interpreted
+using the same units (meters per second, miles per hour, etc.).<br>
+<br>
+For convenience, there are predefined constants for the speed of sound in various units (<span class="filename">CkSound::k_soundSpeed_MetersPerSecond</span>,
+etc), but you may use whatever value you like.&nbsp; By using a
+slightly higher or lower value for the sound speed, you can make the
+Doppler effect more subtle or pronounced.<br>
+<br>
+<br>
+
+<br>
+</body></html>

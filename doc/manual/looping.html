@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>Cricket Audio: looping sounds</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Looping sounds</h1>
+    <h2>Specifying loop parameters</h2>
+    Some sounds are simply played from beginning to end; for example, a
+    line of spoken dialog, a gunshot, or a footstep.&nbsp; For some other
+    sounds, it is useful<br>
+    &nbsp;to be able to play the sound in a loop.&nbsp; For example, in a
+    car racing game, you might want the sound of the engine to play in a
+    continuous loop while the car is in motion.&nbsp; <br>
+    <br>
+    You can simply loop a sound from the beginning to the end; you can also
+    loop just a section of the sound.&nbsp; For example, for our car engine
+    sound, sample frames 0-1000 might contain the sound of the engine
+    starting up; sample frames 1000-2000 might contain the loop of the
+    engine running; and sample frames 2000-3000 might contain the sound of
+    the engine dying.&nbsp; If you set the loop start and end to 1000 and
+    2000 and the loop count to -1, when you play the sound, you would first
+    hear the sound of the car starting up, then the sound of the car
+    running would loop continuously until you explicitly tell it to
+    release, at which point you would hear the sound of the engine dying.<br>
+    <br>
+    There are a few ways to specify loop parameters for a sound: in the source
+    audio file, as sound attributes in&nbsp;<span class="filename">cktool</span>,
+    or at runtime using the API.<br>
+    <h3>Specifying loop parameters in an audio file</h3>
+    Both the WAV and AIFF file formats can store loop information; however,
+    not all audio editors include loop information when they export WAV or
+    AIFF files, so you may wish to test this with your editor of
+    choice.&nbsp; (For example, Sony Sound Forge does export loop
+    information; the free Audacity editor does not.)&nbsp; If&nbsp;<span class="filename">cktool</span>
+    detects a loop in the source audio file when generating a bank sound or
+    stream sound, it automatically sets the loop start, end, and count from
+    the data in the audio file.<br>
+    <br>
+    If you audio editor does not support loops, but does support named
+    regions, you can mark your loop as a region named "loop", and&nbsp;<span class="filename">cktool</span>
+    will set the loop start and end based on the region.<br>
+    <br>
+    Loop settings from the audio file can be overridden by either sound
+    attributes in cktool or by API calls at runtime.<br>
+    <h3>Specifying loop parameters as sound attributes in&nbsp;<span class="filename">cktool</span></h3>
+    You can also specify the loopStart, loopEnd, and loopCount sound attributes
+    to&nbsp;<span class="filename">cktool</span> when creating bank sounds or
+    stream sounds; see the&nbsp;<a href="cktool.html"><span class="filename">cktool</span>
+      documentation</a>
+    for more details on how to use these attributes.&nbsp; Sound attributes
+    will override loop data in the source audio files, but can be
+    overridden by API calls.<br>
+    <h3>Specifying loop parameters at runtime</h3>
+    Finally, you can specify loop parameters at runtime using the API; for
+    example,&nbsp;<span class="filename">CkSound::setLoop()</span>,&nbsp;<span class="filename">CkSound::setLoopCount()</span>,
+    and&nbsp;<span class="filename">CkSound::releaseLoop()</span>.<br>
+    <h2>Creating seamless loops</h2>
+    Creating audio data that loops seamlessly, without pops or clicks at
+    the loop point, is somewhat of an art.&nbsp; In general, you want to
+    minimize the discontinuity between the last sample of the loop and the
+    first sample of the loop.<br>
+    <br>
+    <br>
+    Take a look at this simple example, using a simple sine wave:<br>
+    <br>
+    <img style="width: 556px; height: 146px;" alt="" src="images/loop1.png"><br>
+    <br>
+    <br>
+    If we were to loop over this entire file, the discontinuity between the
+    last and first samples would cause a noticeable click.&nbsp; The
+    resulting waveform would look something like this:<br>
+    <br>
+    <img style="width: 1112px; height: 148px;" alt="" src="images/loop2.png"><br>
+    <br>
+    <br>
+    A solution would be to trim the data off the end, so the audio data looks
+    like this:<br>
+    <br>
+    <img style="width: 455px; height: 147px;" alt="" src="images/loop3.png"><br>
+    <br>
+    <br>
+    Or, rather than loop from beginning to end, set the loop points to minimize
+    the discontinuity, for example, at zero crossings:<br>
+    <br>
+    <img style="width: 556px; height: 146px;" alt="" src="images/loop4.png"><br>
+    <br>
+    <br>
+    If your data is encoded as ADPCM, this is tricker, because the loop
+    points must be at multiples of 36 samples, which is the ADPCM block
+    size.<br>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+
+1.6.7:
+  * Fixed corrupted path on Linux.
+  * Fixed crash in cktool from certain WAV files.
+  * Removed armeabi and mips support for Android.
+
+1.6.6:
+  * Bug fix to prevent crash when buffer sizes are larger than expected
+  * Added support for Visual Studio 2017
+  * Removed support for Eclipse for Android
+  * All Android samples now use the native code support in Android Studio
+
+1.6.5:
+  * Added -extract option to cktool, to extract sounds from streams/banks to .wav files
+  * Bug fix when returning to app after declining a phone call
+
+1.6.4:
+  * Simplify Objective-C headers and add nullability annotations
+  * Bug fix for crash on Android when using Java SDK
+  * Removed support for Eclipse on Android in sample code
+
+1.6.2:
+  * Bug fix for non-ASCII characters in file paths
+  * Bug fix for crash on Windows when no sound card installed
+  * Bug fix for incorrect sampling rate when background music playing from another app
+
+1.6.1:
+  * Added support for tvOS.
+  * Removed support for Windows Phone 8.
+  * Removed support for Visual Studio 2012 on Windows.
+  * Fixed sample rate problem on iPhone 6s.
+
+1.5.0:
+  * Added support for x86 architecture on Android, and preliminary support for x86_64 and arm64-v8a architectures.  (If you need MIPS support, please contact us.)
+  * Added SSE optimizations for x86 processors.  This will speed up audio processing on OS X (including iOS simulators), Windows (including Windows Phone simulators), Linux, and Android x86 devices.
+  * Added some new values to CkPathType enum.
+  * Added CkStartCapture() and CkStopCapture() to allow capturing of final audio to a file.
+  * Added CkLockAudio() and CkUnlockAudio() to force API calls to be processed together (e.g. to play multiple sounds in sync).
+  * Added stutter effect to dsptouch example to show how to implement custom effects.
+  * Windows version no longer has separate libraries for Windows 7 and Windows 8. At runtime, Cricket Audio loads XAudio2 2.8 on Windows 8.0 or later, and loads XAudio2 2.7 on earlier versions of Windows. 
+  * Added Visual Studio 2013 libraries for Windows Phone 8.
+  * Removed Visual Studio 2010 libraries for Windows.
+
+1.4.2:
+  * Allow negative gain on biquad filter.
+  * Source files with floating-point data that are not properly normalized (i.e. that have amplitudes greater than 1) are now normalized when they are converted with cktool.
+  * Fixed buffer underrun on Linux.
+
+1.4.1:
+  * Fixed audio artifact: when sounds were stopping, sometimes other sounds were not rendered for that audio frame.
+  * Fixed error on Linux when ALSA buffer could not be set small enough.
+
+1.4.0:
+  * Fixed occasional hang on Android when rapidly creating and destroying native stream sounds.
+  * Fixed file descriptor resource leak on Android when playing native stream sounds.
+  * Multiple sounds can now be stitched together seamlessly with CkSound::setNextSound().
+  * iOS library now includes arm64 code.
+  * Custom file handlers now take a full path and a data pointer as arguments.
+  * Custom streams are now created by a factory function that is set with CkSound::setCustomStreamHandler().
+  * Custom effects are now created by a factory function that is registered with CkEffect::registerCustomEffect().
+  * Removed CkConfig.audioSessionCategory on iOS. The audio session category should instead be set directly using the AVAudioSession API.
+  * Replaced calls to C AudioSession API (deprecated in iOS 7.0) with Objective-C AVAudioSession API.
+  * Improved robustness when memory allocation fails.
+  * Fixed clicking on some Android devices (e.g. Nexus 7) due to bug in OpenSL ES; output sample rate is now adjusted to match device's native sample rate (44.1k for the Nexus 7)
+  * Output sample rate on iOS is now 44.1 kHz instead of 48 kHz, to match the presumed native hardware sample rate.
+  * Simplified and optimized the mixing pipeline.
+
+1.3.0:
+  * Ported to Linux.
+  * Mixers can now be paused, which pauses all child sounds.
+  * Banks and streams can now be embedded in larger files (e.g. archives).
+  * Added option in CkConfig to enable hardware decoding of streams on iOS.
+  * Print more device information at startup.
+  * Bug fix: fixed occasional freeze on Android.
+  * Bug fix: fixed temporary loss of audio when resuming from background on Android.
+  * Bug fix: crash when destroying mixer before its child sound.
+
+1.2.1:
+  * Added dsptouch example project, showing how to use DSP effects and how to use Cricket Audio to write cross-platform audio code.
+  * Added CkConfig.maxRenderLoad, to reduce CPU usage when audio rendering is taking too long.
+  * CkGetCpuLoad() renamed to CkGetRenderLoad().
+  * When play() is called on stream sounds before they are ready, isReady() will no longer return true before the sound starts playing.
+  * Replaced system calls that caused WP8 store validation to fail. 
+  * Added version of library for Visual Studio 2013 on Windows.
+  * Interfaces are now declared as pure virtual base classes.  This should require no changes to client code, but reduce the maintenance burden for the library.
+  * Added distortion DSP effect.
+  * Greatly optimized all DSP effects.
+  * Bug fix: crash on Android when calling CkShutdown() immediately after destroying a stream sound.
+  * Bug fix: occasional crash on Android due to threading issues.
+
+1.2.0:
+  * Effect parameters have been renamed.
+  * CkEffectParam class has been removed; effect parameters are now all floats.
+  * Windows Phone 8 support added.  You will need to rebuild your banks and stream files with the latest version of cktool if you want the files to be usable on WP8.
+  * 3D sounds which are far enough from the listener to have their volume attenuated to near 0 will now become "virtual" and will not be processed until they become audible again.  
+  * Default audio session category on iOS changed from "media playback" to "solo ambient".
+  * Audio now resumes properly on iOS when iPod music is stopped via the headphone remote control or task bar.
+  * Added CkGetClipFlag() and CkResetClipFlag(), for detecting when the final audio values are clipped.
+  * Added Sound::isLoopReleased().
+  * Removed deprecated CkSetOutputCallback() and CkSound::setAudioCallback().
+  * Android builds for MIPS and x86 architectures can now be built from the source distribution.  These have not yet been thoroughly tested and are not yet part of the binary distribution.  If you are targeting MIPS or x86 Android platforms, please contact us for more assistance.
+  * Bug fix: setting loop count to 0 on a playing, looping, native Android stream will now properly cause the stream to stop looping.
+  * Bug fix: attenuation settings on 3D sounds are now properly initialized by default.
+  * Bug fix: header file comments now properly indicate that the default value of CkConfig.enableOggVorbis is true.
+  * Low-level audio processing optimizations.
+
+1.1.0:
+  * Added CkConfig constructor on Android that takes a JavaVM pointer instead of a JNIEnv pointer, to be used in native activities or other situations when there is no valid JNIEnv pointer.
+  * Added src/samples/hellocricket/android-ndk-native, showing an example of a native activity.
+  * CkSetOutputCallback() and CkSound::setAudioCallback() are deprecated, and will be removed in a future release.  To process audio, use custom effects.
+  * Added CkGetCpuLoad(), for an estimate of the time spent rendering audio.
+  * Added CkEffect and CkEffectBus classes for adding effects; there are 3 predefined effects (Biquad Filter, Bit Crusher, and Ring Mod), or you can write your own.  See the manual for more information on using effects.
+  * Updated libogg to 1.3.1
+  * Fixed intermittent crash on iPhone 5.
+  * Fixed bug when initializing on Android from Java prior to SDK version 10.
+  * Fixed builds of source distributions on Windows.
+  * If a bank is unloaded while a sound is playing, the sound is now stopped and a warning is printed.  Trying to play the sound again will also result in a warning.
+  * The number of audio tasks is now configurable via CkConfig.maxAudioTasks.  This can be increased from the default (500) if you get a warning saying "Couldn't produce task for audio graph thread", which can happen if you have a large number of sounds playing at once.
+
+1.0.31:
+  * Native Android streams are now properly paused by CkSuspend()
+  * Fixed memory leak of Objective-C wrappers on iOS and OS X
+  * Added separate build configurations for Windows 7 and 8 (e.g. DebugStatic7, DebugStatic8, etc).  The 8 versions link to XAudio2 2.8, and will only work on Windows 8.  The 7 versions link to XAudio 2.7, and will work on Windows 7 or 8, as long as the DirectX June 2010 runtime is installed.
+
+1.0.30:
+  * Updated sample code for latest SDKs.
+  * Added support to cktool for WAV files with 32-bit float data and for uncompressed AIFF-C files.
+  * Fixed bug that caused getLoop() and getLoopCount() to not return correct values set from the defaults in the bank XML file.
+
+1.0.29:
+  * Fixed crash on iOS when an MP3 is played in the Music app and mixed with an MP3 stream played by Cricket Audio.
+  * Fixed crash when app is brought back from background after calling CkShutdown()
+
+1.0.28:
+  * Added CkCustomFile base class, used for overriding low-level file reading behavior.
+  * Added armv7s slice to iOS library.
+  * We are dropping support for armv6 devices on iOS, since the latest version of Xcode (4.5) can no longer compile for armv6.
+  * Fixed bug that caused crash on Windows when using wmain() instead of main().
+  * CkInit() now returns a value to indicate when it fails.
+  * Fixed bug that prevented NEON optimizations from being used on Android.
+
+1.0.27:
+  * Fixed audio glitch on Android 4.1 (Jelly Bean)
+  * Windows libraries are now provided for both Visual Studio 2010 (v10.0) and Visual Studio 2012 (v11.0), and for both 32-bit and 64-bit architectures.  The Visual Studio 2012 libraries also include versions for Metro apps.
+
+1.0.26:
+  * Added 64-bit support for Mac OS (the library is a fat binary containing both 32-bit and 64-bit versions).
+  * Fixed crash on Android devices that support the armv7a instruction set but do not support NEON instructions.
+
+1.0.25:
+  * Cricket Audio is now provided as a fat binary for iOS, combining the "iphoneos" (armv6/armv7) and "iphonesimulator" (i386) platforms into one library, in the lib/ios directory.
+  * You can now create custom stream sounds, which is useful for playing audio from proprietary file formats.
+  * Seeking forward in a stream can now be done instantly in some circumstances (i.e. without rebuffering)
+  * Added support for proper management of "now playing" icon on iOS
+  * Added option to set audio session category in CkConfig on iOS
+  * Fixed handling of audio session interruptions on iOS
+  * Streamlined audio output code on iOS
+  * Added setPanMatrix() and getPanMatrix() to CkSound, for setting pan matrix explicitly
+  * Fixed error when suspending app while playing streams from iTunes library on iOS
+  * Fixed crash when destroying an Ogg Vorbis stream sound that was not initialized
+
+1.0.24:
+  * Added support for playing songs from iTunes library on iOS (using CkSound::createAssetStreamSound())
+  * Added Doppler effect for 3D sounds
+  * Added software support for Ogg Vorbis streams
+  * Added volume attenuation modes for 3D sounds (none, linear, inverse distance, inverse square distance)
+  * Fixed volume inconsistency between compressed stereo streams played on Android and other sounds
+  * Compatibility improvements for Android 4.0
+
+1.0.23:
+  * Added support for positioning sounds in 3D space relative to the listener
+  * Changes in volume to playing sounds now occur gradually; the rate of change of the
+     volume can be set with CkSetVolumeRampTime().
+  * Added CkSetOutputCallback() and CkSound::setAudioCallback() to set callbacks for custom audio processing 
+  * More NEON optimizations
+  * Improvements to audio quality of resampled audio
+  * Compatibility improvements for running on Android 4.0
+
+1.0.22:
+  * Compatibility improvements for running on Android 2.2 and earlier
+  * Performance improvements for stream sounds, due to improved threading 
+  * Performance improvements for Android devices using Java audio output
+  * Added NEON optimizations for iOS & Android
+  * Reorganized and expanded documentation
+  * Loop points can now be read from markers or other metadata in the source audio files (.wav and .aiff)
+  * Default values for loop start/end, loop count, volume, and pan can now be 
+     stored with the audio data for both bank sounds and stream sounds
+  * Added CkSound::releaseLoop()
+  * Added CkSound::setLoop() and CkSound::getLoop() to set & get loop points
+  * Added CkSound::getCurrentLoop()
+  * Switched to a new ADPCM format that allows for seeking and looping.  ADPCM data is in 24-byte blocks containing 36 samples (for a compression
+    ratio of 3.0).  ADPCM sounds are padded with zeroes at the end if necessary to make their length a multiple of 36 samples; similarly, seeking
+    will always be performed to the nearest multiple of 36 frames.
+
+1.0.21:
+  * Cleaned up doxygen output
+  * Added functions for setting/getting playback position in ms:
+      CkSound::setPlayPositionMs()
+      CkSound::getPlayPositionMs()
+  * Added CkConfig.audioUpdateMs option, for setting audio update interval
+  * Added CkConfig.streamBufferMs option, for setting stream buffer sizes
+  * Added CkConfig.streamFileUpdateMs option, for setting stream file update interval
+
+1.0.20 beta:
+  * Added support for licensing enforcement
+  * Added functions for querying audio metadata:
+      CkSound::getLength()
+      CkSound::getLengthMs()
+      CkSound::getSampleRate()
+      CkSound::getChannels()
+  * Added functions for setting/getting playback position:
+      CkSound::setPlayPosition()
+      CkSound::getPlayPosition()
+
+1.0.19 beta:
+  * Added -single option to cktool, to create a bank from a single audio file without an XML file
+  * Windows version now comes in separate versions that link either statically or dynamically with the Microsoft runtime
+  * Windows version of cktool now links statically to the Microsoft runtime
+
+1.0.18 beta:
+  * Added support for ADPCM and 8-bit PCM audio formats
+  * Fixed playback of some MP3 files on iOS/MacOS
+  * Fixed problems running cktool on Windows machines that do not have the DirectX SDK installed
+
+1.0.16 beta:
+  * Added ability to specify the number of loops for a looping sound
+  * Added support in cktool for WAVEFORMATEXTENSIBLE format .wav files
+  * Improved error handling for stream sounds
+  * Fixed bug in cktool that caused problems reading certain types of .wav files

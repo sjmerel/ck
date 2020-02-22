@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="405.46063"
+   height="205.64122"
+   id="svg2"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="mixers.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1152"
+     inkscape:window-height="855"
+     id="namedview3114"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.76832845"
+     inkscape:cx="320.52274"
+     inkscape:cy="35.136131"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.61760074px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path3795"
+     d="M 204.52306,32.169475 330.11929,72.660207" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.61760074px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path3789"
+     d="M 207.23378,33.892489 106.03394,96.782344" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.61760074px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
+     id="path3791"
+     d="M 106.03394,132.96555 63.566149,170.01026" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.61760074px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path3793"
+     d="m 106.03394,132.44865 117.46409,36.1832" />
+  <g
+     id="g3818"
+     transform="matrix(0.63249899,0,0,0.60305343,-24.98371,-31.283397)">
+    <rect
+       style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect3007"
+       y="52.362183"
+       x="220"
+       height="60"
+       width="300" />
+    <text
+       sodipodi:linespacing="125%"
+       style="font-size:40px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+       xml:space="preserve"
+       id="text2985"
+       y="96.362183"
+       x="371.91406"><tspan
+         id="tspan2987"
+         y="96.362183"
+         x="371.91406"
+         style="-inkscape-font-specification:Arial;font-family:Arial;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">master mixer</tspan></text>
+  </g>
+  <g
+     id="g3813"
+     transform="matrix(0.63249899,0,0,0.60305343,-24.98371,-31.283397)">
+    <rect
+       style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect3781"
+       y="212.36218"
+       x="80"
+       height="60"
+       width="260" />
+    <text
+       sodipodi:linespacing="125%"
+       style="font-size:40px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+       xml:space="preserve"
+       id="text2989"
+       y="256.36218"
+       x="209.54102"><tspan
+         id="tspan2991"
+         y="256.36218"
+         x="209.54102"
+         style="-inkscape-font-specification:Arial;font-family:Arial;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">child mixer</tspan></text>
+  </g>
+  <g
+     id="g3797"
+     transform="matrix(0.63249899,0,0,0.60305343,-24.98371,-35.283397)">
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;stroke:#000000;stroke-opacity:1"
+       id="path3783"
+       d="m 240,362.36218 a 100,30 0 1 1 -200,0 100,30 0 1 1 200,0 z" />
+    <text
+       sodipodi:linespacing="125%"
+       style="font-size:40px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+       xml:space="preserve"
+       id="text2993"
+       y="374.36218"
+       x="138.9043"><tspan
+         id="tspan2995"
+         y="374.36218"
+         x="138.9043"
+         style="-inkscape-font-specification:Arial;font-family:Arial;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">sound 1</tspan></text>
+  </g>
+  <g
+     id="g4697">
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.5913077;stroke-opacity:1"
+       id="path3785"
+       d="m 291.26578,183.24036 a 69.574889,18.091603 0 0 1 -139.14977,0 69.574889,18.091603 0 1 1 139.14977,0 z" />
+    <text
+       transform="scale(1.0241228,0.97644543)"
+       sodipodi:linespacing="125%"
+       style="font-size:24.70402908px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+       xml:space="preserve"
+       id="text2997"
+       y="194.71892"
+       x="217.35135"><tspan
+         id="tspan2999"
+         y="194.71892"
+         x="217.35135"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial">sound 2</tspan></text>
+  </g>
+  <g
+     id="g3807"
+     transform="matrix(0.63249899,0,0,0.60305343,-24.98371,-31.283397)">
+    <text
+       sodipodi:linespacing="125%"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+       xml:space="preserve"
+       id="text3001"
+       y="215.21933"
+       x="562.86273"><tspan
+         id="tspan3003"
+         y="215.21933"
+         x="562.86273"
+         style="-inkscape-font-specification:Arial;font-family:Arial;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"><tspan
+   style="text-align:center;text-anchor:middle;-inkscape-font-specification:Arial;font-family:Arial;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
+   id="tspan3009">sound</tspan> 3</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-opacity:1"
+       id="path3787"
+       transform="matrix(1.0909092,0,0,1,-61.818215,0)"
+       d="m 680,202.36218 a 110,30 0 1 1 -220,0 110,30 0 1 1 220,0 z" />
+  </g>
+</svg>

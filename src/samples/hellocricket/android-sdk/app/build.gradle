@@ -1,0 +1,24 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "com.crickettechnology.samples.HelloCricketSDK"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+repositories {
+    flatDir {
+        dirs '../../../../../lib/android/sdk/debug'
+    }
+}
+
+dependencies {
+    implementation(name:'ck', ext:'aar')
+}
+
