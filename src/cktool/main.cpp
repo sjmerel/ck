@@ -858,8 +858,6 @@ bool extract(const char* path)
                 // TODO test for overwriting?
                 Path outPath(path);
                 outPath.setExtension(NULL);
-                outPath.append("_");
-                outPath.append(sample.name.getBuffer());
                 outPath.append("_extracted");
                 outPath.setExtension("wav");
 
