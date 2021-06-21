@@ -859,7 +859,11 @@ bool extract(const char* path)
                 Path outPath(path);
                 outPath.setExtension(NULL);
                 outPath.append("_");
-                outPath.append(sample.name.getBuffer());
+                // remove system file separator symbol when using sound bank name in filename
+                String bankName = sample.name.getBuffer();
+                bankName.removeSubstrs('/');
+                bankName.removeSubstrs('\\');
+                outPath.append(bankName.getBuffer());
                 outPath.append("_extracted");
                 outPath.setExtension("wav");
 
