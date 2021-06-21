@@ -80,6 +80,20 @@ public:
     int find(char c, int start) const;
     int rfind(char c) const;
     int rfind(char c, int start) const;
+    
+    int find(const char*) const;
+    int find(const char*, int start) const;
+    int rfind(const char*) const;
+    int rfind(const char*, int start) const;
+    
+    int find(const String&) const;
+    int find(const String&, int start) const;
+    int rfind(const String&) const;
+    int rfind(const String&, int start) const;
+    
+    void removeSubstrs(const String&);
+    void removeSubstrs(const char*);
+    void removeSubstrs(char);
 
     bool operator==(const String&) const;
     bool operator==(const char*) const;
