@@ -457,6 +457,99 @@ int String::rfind(char c, int start) const
     return -1;
 }
 
+int String::find(const String& s) const
+{
+    return find(s.m_buf, 0);
+}
+
+int String::find(const char* s) const
+{
+    return find(s, 0);
+}
+
+int String::find(const char* s, int start) const
+{
+    if (m_length > 0)
+    {
+        CK_ASSERT(start >= 0 && start < m_length);
+        for (int i = start; i < m_length; ++i)
+        {
+            int j;
+            for (j = 0; i + j < m_length; ++j) {
+                if (m_buf[i + j] != s[j])
+                {
+                    break;
+                }
+            }
+            if(s[j] == '\0')
+            {
+                return i;
+            }
+        }
+    }
+    return -1;
+}
+
+int String::rfind(const String& s) const
+{
+    return rfind(s.m_buf, m_length - 1);
+}
+
+int String::rfind(const char* s) const
+{
+    return rfind(s, m_length - 1);
+}
+
+int String::rfind(const char* s, int start) const
+{
+    if (m_length > 0)
+    {
+        CK_ASSERT(start >= 0 && start < m_length);
+        for (int i = start; i >= 0; --i)
+        {
+            int j;
+            for (j = 0; i + j < m_length; ++j) {
+                if (m_buf[i + j] != s[j])
+                {
+                    break;
+                }
+            }
+            if(s[j] == '\0')
+            {
+                return i;
+            }
+        }
+    }
+    return -1;
+}
+
+void String::removeSubstrs(const char* s) {
+    int len;
+    for (len = 0; s[len] != '\0'; ++len)
+    {
+        ;
+    }
+
+    for (int i = find(s); i != -1; i = find(s))
+    {
+        erase(i, len);
+    }
+}
+
+void String::removeSubstrs(const String& s) {
+    for (int i = find(s); i != -1; i = find(s))
+    {
+        erase(i, s.m_length);
+    }
+}
+
+void String::removeSubstrs(char c) {
+    for (int i = find(c); i != -1; i = find(c))
+    {
+        erase(i);
+    }
+}
+
 bool String::operator==(const String& s) const
 {
     return equals(s);

@@ -18,8 +18,8 @@ fi
 
 if [ ! -e $outfile ]
 then
-   echo lipo $infile -create -arch_blank $otherarch -output $outfile
-   lipo $infile -create -arch_blank $otherarch -output $outfile
+   echo lipo $infile -create -output $outfile
+   lipo $infile -create -output $outfile
 else
    echo lipo $outfile -replace $ARCHS $infile -output $outfile
    lipo $outfile -replace $ARCHS $infile -output $outfile

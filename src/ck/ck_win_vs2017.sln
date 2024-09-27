@@ -14,8 +14,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cktool", "..\cktool\cktool_
 		{C7360949-D085-46DE-8A6B-D89A443DEB15} = {C7360949-D085-46DE-8A6B-D89A443DEB15}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "..\test\test_win_vs2017.vcxproj", "{2C004DBE-550A-45E3-A672-5B1A432A8732}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tinyxml", "..\..\ext\tinyxml\tinyxml_win_vs2017.vcxproj", "{C7360949-D085-46DE-8A6B-D89A443DEB15}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tremor", "..\..\ext\tremor\tremor_win_vs2017.vcxproj", "{B764497A-FD7E-43AB-B5EB-CC0E6A952C76}"

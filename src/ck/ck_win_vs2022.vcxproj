@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugDynamic|Win32">
+      <Configuration>DebugDynamic</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugDynamic|x64">
+      <Configuration>DebugDynamic</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugStatic|Win32">
+      <Configuration>DebugStatic</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugStatic|x64">
+      <Configuration>DebugStatic</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseDynamic|Win32">
+      <Configuration>ReleaseDynamic</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseDynamic|x64">
+      <Configuration>ReleaseDynamic</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseStatic|Win32">
+      <Configuration>ReleaseStatic</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseStatic|x64">
+      <Configuration>ReleaseStatic</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="api\bank.cpp" />
+    <ClCompile Include="api\ck.cpp" />
+    <ClCompile Include="api\config.cpp" />
+    <ClCompile Include="api\customfile.cpp" />
+    <ClCompile Include="api\effect.cpp" />
+    <ClCompile Include="api\effectbus.cpp" />
+    <ClCompile Include="api\effectprocessor.cpp" />
+    <ClCompile Include="api\mixer.cpp" />
+    <ClCompile Include="api\sound.cpp" />
+    <ClCompile Include="audio\adpcm.cpp" />
+    <ClCompile Include="audio\adpcmdecoder.cpp" />
+    <ClCompile Include="audio\audio.cpp" />
+    <ClCompile Include="audio\audiofileinfo.cpp" />
+    <ClCompile Include="audio\audioformat.cpp" />
+    <ClCompile Include="audio\audiograph.cpp" />
+    <ClCompile Include="audio\audiohelpers_win7.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|Win32'">..;../../ext/libogg/include;../../ext;../../inc;$(DXSDK_DIR)/Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='DebugStatic|Win32'">..;../../ext/libogg/include;../../ext;../../inc;$(DXSDK_DIR)/Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">..;../../ext/libogg/include;../../ext;../../inc;$(DXSDK_DIR)/Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|Win32'">..;../../ext/libogg/include;../../ext;../../inc;$(DXSDK_DIR)/Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|x64'">..;../../ext/libogg/include;../../ext;../../inc;$(DXSDK_DIR)/Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='DebugStatic|x64'">..;../../ext/libogg/include;../../ext;../../inc;$(DXSDK_DIR)/Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|x64'">..;../../ext/libogg/include;../../ext;../../inc;$(DXSDK_DIR)/Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|x64'">..;../../ext/libogg/include;../../ext;../../inc;$(DXSDK_DIR)/Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="audio\audiohelpers_win8.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|Win32'">..;../../ext/libogg/include;../../ext;../../inc;$(WindowsSdkDir)/include/um;$(WindowsSdkDir)/include/shared</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='DebugStatic|Win32'">..;../../ext/libogg/include;../../ext;../../inc;$(WindowsSdkDir)/include/um;$(WindowsSdkDir)/include/shared</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">..;../../ext/libogg/include;../../ext;../../inc;$(WindowsSdkDir)/include/um;$(WindowsSdkDir)/include/shared</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|Win32'">..;../../ext/libogg/include;../../ext;../../inc;$(WindowsSdkDir)/include/um;$(WindowsSdkDir)/include/shared</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|x64'">..;../../ext/libogg/include;../../ext;../../inc;$(WindowsSdkDir)/include/um;$(WindowsSdkDir)/include/shared</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='DebugStatic|x64'">..;../../ext/libogg/include;../../ext;../../inc;$(WindowsSdkDir)/include/um;$(WindowsSdkDir)/include/shared</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|x64'">..;../../ext/libogg/include;../../ext;../../inc;$(WindowsSdkDir)/include/um;$(WindowsSdkDir)/include/shared</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|x64'">..;../../ext/libogg/include;../../ext;../../inc;$(WindowsSdkDir)/include/um;$(WindowsSdkDir)/include/shared</AdditionalIncludeDirectories>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugStatic|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugStatic|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="audio\audionode.cpp" />
+    <ClCompile Include="audio\audiosource.cpp" />
+    <ClCompile Include="audio\audiostream.cpp" />
+    <ClCompile Include="audio\audioutil.cpp" />
+    <ClCompile Include="audio\audioutil_sse.cpp" />
+    <ClCompile Include="audio\audiowriter.cpp" />
+    <ClCompile Include="audio\audio_win.cpp" />
+    <ClCompile Include="audio\bank.cpp" />
+    <ClCompile Include="audio\bankdata.cpp" />
+    <ClCompile Include="audio\banksound.cpp" />
+    <ClCompile Include="audio\biquadfilterprocessor.cpp" />
+    <ClCompile Include="audio\biquadfilterprocessor.neon.cpp" />
+    <ClCompile Include="audio\biquadfilterprocessor_sse.cpp" />
+    <ClCompile Include="audio\bitcrusherprocessor.cpp" />
+    <ClCompile Include="audio\bitcrusherprocessor.neon.cpp" />
+    <ClCompile Include="audio\bitcrusherprocessor_sse.cpp" />
+    <ClCompile Include="audio\bufferhandle.cpp" />
+    <ClCompile Include="audio\bufferpool.cpp" />
+    <ClCompile Include="audio\buffersource.cpp" />
+    <ClCompile Include="audio\cksaudiostream.cpp" />
+    <ClCompile Include="audio\cksstreamsound.cpp" />
+    <ClCompile Include="audio\commandobject.cpp" />
+    <ClCompile Include="audio\customaudiostream.cpp" />
+    <ClCompile Include="audio\customstreamsound.cpp" />
+    <ClCompile Include="audio\decoder.cpp" />
+    <ClCompile Include="audio\decoderbuf.cpp" />
+    <ClCompile Include="audio\distortionprocessor.cpp" />
+    <ClCompile Include="audio\distortionprocessor.neon.cpp" />
+    <ClCompile Include="audio\distortionprocessor_sse.cpp" />
+    <ClCompile Include="audio\effect.cpp" />
+    <ClCompile Include="audio\effectbus.cpp" />
+    <ClCompile Include="audio\effectbusnode.cpp" />
+    <ClCompile Include="audio\effectprocessor.cpp" />
+    <ClCompile Include="audio\fileheader.cpp" />
+    <ClCompile Include="audio\fourcharcode.cpp" />
+    <ClCompile Include="audio\graphoutput.cpp" />
+    <ClCompile Include="audio\graphoutput_dummy.cpp" />
+    <ClCompile Include="audio\graphoutput_win.cpp" />
+    <ClCompile Include="audio\graphsound.cpp" />
+    <ClCompile Include="audio\mixer.cpp" />
+    <ClCompile Include="audio\mixnode.cpp" />
+    <ClCompile Include="audio\pcmf32decoder.cpp" />
+    <ClCompile Include="audio\pcmi16decoder.cpp" />
+    <ClCompile Include="audio\pcmi8decoder.cpp" />
+    <ClCompile Include="audio\rawwriter.cpp" />
+    <ClCompile Include="audio\resampler.cpp" />
+    <ClCompile Include="audio\ringmodprocessor.cpp" />
+    <ClCompile Include="audio\ringmodprocessor.neon.cpp" />
+    <ClCompile Include="audio\ringmodprocessor_sse.cpp" />
+    <ClCompile Include="audio\sample.cpp" />
+    <ClCompile Include="audio\sampleinfo.cpp" />
+    <ClCompile Include="audio\sharedbuffer.cpp" />
+    <ClCompile Include="audio\sinenode.cpp" />
+    <ClCompile Include="audio\sinesource.cpp" />
+    <ClCompile Include="audio\sound.cpp" />
+    <ClCompile Include="audio\soundname.cpp" />
+    <ClCompile Include="audio\sourcenode.cpp" />
+    <ClCompile Include="audio\streamsound.cpp" />
+    <ClCompile Include="audio\streamsource.cpp" />
+    <ClCompile Include="audio\volumematrix.cpp" />
+    <ClCompile Include="audio\vorbisaudiostream.cpp" />
+    <ClCompile Include="audio\vorbisstreamsound.cpp" />
+    <ClCompile Include="audio\wavwriter.cpp" />
+    <ClCompile Include="core\allocatable.cpp" />
+    <ClCompile Include="core\array.cpp" />
+    <ClCompile Include="core\asyncloader.cpp" />
+    <ClCompile Include="core\binarystream.cpp" />
+    <ClCompile Include="core\binarywriter.cpp" />
+    <ClCompile Include="core\bufferstream.cpp" />
+    <ClCompile Include="core\byteorder.cpp" />
+    <ClCompile Include="core\cond.cpp" />
+    <ClCompile Include="core\customstream.cpp" />
+    <ClCompile Include="core\debug.cpp" />
+    <ClCompile Include="core\deletable.cpp" />
+    <ClCompile Include="core\dir.cpp" />
+    <ClCompile Include="core\filestream.cpp" />
+    <ClCompile Include="core\filewriter.cpp" />
+    <ClCompile Include="core\fixedarray.cpp" />
+    <ClCompile Include="core\fixedstring.cpp" />
+    <ClCompile Include="core\funcallocator.cpp" />
+    <ClCompile Include="core\glitchfinder.cpp" />
+    <ClCompile Include="core\list.cpp" />
+    <ClCompile Include="core\listable.cpp" />
+    <ClCompile Include="core\lockfreequeue.cpp" />
+    <ClCompile Include="core\logger.cpp" />
+    <ClCompile Include="core\math.cpp" />
+    <ClCompile Include="core\md5.cpp" />
+    <ClCompile Include="core\mem.cpp" />
+    <ClCompile Include="core\memoryfixup.cpp" />
+    <ClCompile Include="core\memorystream.cpp" />
+    <ClCompile Include="core\mutex.cpp" />
+    <ClCompile Include="core\path.cpp" />
+    <ClCompile Include="core\pch.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|Win32'">
+      </ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|x64'">
+      </ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='DebugStatic|Win32'">
+      </ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='DebugStatic|x64'">
+      </ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|Win32'">
+      </ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|x64'">
+      </ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">
+      </ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|x64'">
+      </ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugStatic|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugStatic|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="core\pool.cpp" />
+    <ClCompile Include="core\profiler.cpp" />
+    <ClCompile Include="core\proxied.cpp" />
+    <ClCompile Include="core\readstream.cpp" />
+    <ClCompile Include="core\ringbuffer.cpp" />
+    <ClCompile Include="core\runningaverage.cpp" />
+    <ClCompile Include="core\sse.cpp" />
+    <ClCompile Include="core\staticsingleton.cpp" />
+    <ClCompile Include="core\stats.cpp" />
+    <ClCompile Include="core\string.cpp" />
+    <ClCompile Include="core\stringwriter.cpp" />
+    <ClCompile Include="core\substream.cpp" />
+    <ClCompile Include="core\swapstream.cpp" />
+    <ClCompile Include="core\system.cpp" />
+    <ClCompile Include="core\system_win.cpp" />
+    <ClCompile Include="core\target.cpp" />
+    <ClCompile Include="core\textwriter.cpp" />
+    <ClCompile Include="core\thread.cpp" />
+    <ClCompile Include="core\timer.cpp" />
+    <ClCompile Include="core\timer_win.cpp" />
+    <ClCompile Include="core\treenode.cpp" />
+    <ClCompile Include="core\types.cpp" />
+    <ClCompile Include="core\version.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\inc\ck\bank.h" />
+    <ClInclude Include="..\..\inc\ck\config.h" />
+    <ClInclude Include="..\..\inc\ck\mixer.h" />
+    <ClInclude Include="..\..\inc\ck\platform.h" />
+    <ClInclude Include="..\..\inc\ck\sound.h" />
+    <ClInclude Include="audio\adpcm.h" />
+    <ClInclude Include="audio\adpcmdecoder.h" />
+    <ClInclude Include="audio\audio.h" />
+    <ClInclude Include="audio\audiofileinfo.h" />
+    <ClInclude Include="audio\audioformat.h" />
+    <ClInclude Include="audio\audiograph.h" />
+    <ClInclude Include="audio\audionode.h" />
+    <ClInclude Include="audio\audioparam.h" />
+    <ClInclude Include="audio\audiosource.h" />
+    <ClInclude Include="audio\audiostream.h" />
+    <ClInclude Include="audio\audioutil.h" />
+    <ClInclude Include="audio\audiowriter.h" />
+    <ClInclude Include="audio\bank.h" />
+    <ClInclude Include="audio\bankdata.h" />
+    <ClInclude Include="audio\banksound.h" />
+    <ClInclude Include="audio\biquadfilterprocessor.h" />
+    <ClInclude Include="audio\bitcrusherprocessor.h" />
+    <ClInclude Include="audio\bufferhandle.h" />
+    <ClInclude Include="audio\bufferpool.h" />
+    <ClInclude Include="audio\buffersource.h" />
+    <ClInclude Include="audio\cksaudiostream.h" />
+    <ClInclude Include="audio\cksstreamsound.h" />
+    <ClInclude Include="audio\commandobject.h" />
+    <ClInclude Include="audio\commandparam.h" />
+    <ClInclude Include="audio\customaudiostream.h" />
+    <ClInclude Include="audio\customstreamsound.h" />
+    <ClInclude Include="audio\decoder.h" />
+    <ClInclude Include="audio\decoderbuf.h" />
+    <ClInclude Include="audio\delayeddeletable.h" />
+    <ClInclude Include="audio\distortionprocessor.h" />
+    <ClInclude Include="audio\effect.h" />
+    <ClInclude Include="audio\effectbus.h" />
+    <ClInclude Include="audio\effectbusnode.h" />
+    <ClInclude Include="audio\effectprocessor.h" />
+    <ClInclude Include="audio\fileheader.h" />
+    <ClInclude Include="audio\filetype.h" />
+    <ClInclude Include="audio\fourcharcode.h" />
+    <ClInclude Include="audio\graphoutput.h" />
+    <ClInclude Include="audio\graphoutput_dummy.h" />
+    <ClInclude Include="audio\graphoutput_win.h" />
+    <ClInclude Include="audio\graphsound.h" />
+    <ClInclude Include="audio\mixer.h" />
+    <ClInclude Include="audio\mixnode.h" />
+    <ClInclude Include="audio\pcmf32decoder.h" />
+    <ClInclude Include="audio\pcmi16decoder.h" />
+    <ClInclude Include="audio\pcmi8decoder.h" />
+    <ClInclude Include="audio\rawwriter.h" />
+    <ClInclude Include="audio\resampler.h" />
+    <ClInclude Include="audio\ringmodprocessor.h" />
+    <ClInclude Include="audio\sample.h" />
+    <ClInclude Include="audio\sampleinfo.h" />
+    <ClInclude Include="audio\sharedbuffer.h" />
+    <ClInclude Include="audio\sinenode.h" />
+    <ClInclude Include="audio\sinesource.h" />
+    <ClInclude Include="audio\sound.h" />
+    <ClInclude Include="audio\soundname.h" />
+    <ClInclude Include="audio\sourcenode.h" />
+    <ClInclude Include="audio\streamsound.h" />
+    <ClInclude Include="audio\streamsource.h" />
+    <ClInclude Include="audio\volumematrix.h" />
+    <ClInclude Include="audio\vorbisaudiostream.h" />
+    <ClInclude Include="audio\vorbisstreamsound.h" />
+    <ClInclude Include="audio\wavwriter.h" />
+    <ClInclude Include="core\allocatable.h" />
+    <ClInclude Include="core\allocator.h" />
+    <ClInclude Include="core\array.h" />
+    <ClInclude Include="core\asyncloader.h" />
+    <ClInclude Include="core\atomic.h" />
+    <ClInclude Include="core\binarystream.h" />
+    <ClInclude Include="core\binarywriter.h" />
+    <ClInclude Include="core\bufferstream.h" />
+    <ClInclude Include="core\byteorder.h" />
+    <ClInclude Include="core\callback.h" />
+    <ClInclude Include="core\cond.h" />
+    <ClInclude Include="core\customstream.h" />
+    <ClInclude Include="core\debug.h" />
+    <ClInclude Include="core\deletable.h" />
+    <ClInclude Include="core\dir.h" />
+    <ClInclude Include="core\filestream.h" />
+    <ClInclude Include="core\filewriter.h" />
+    <ClInclude Include="core\fixedarray.h" />
+    <ClInclude Include="core\fixedpoint.h" />
+    <ClInclude Include="core\fixedstring.h" />
+    <ClInclude Include="core\funcallocator.h" />
+    <ClInclude Include="core\glitchfinder.h" />
+    <ClInclude Include="core\list.h" />
+    <ClInclude Include="core\listable.h" />
+    <ClInclude Include="core\lockfreequeue.h" />
+    <ClInclude Include="core\logger.h" />
+    <ClInclude Include="core\math.h" />
+    <ClInclude Include="core\md5.h" />
+    <ClInclude Include="core\mem.h" />
+    <ClInclude Include="core\memoryfixup.h" />
+    <ClInclude Include="core\memorystream.h" />
+    <ClInclude Include="core\mutex.h" />
+    <ClInclude Include="core\mutexlock.h" />
+    <ClInclude Include="core\path.h" />
+    <ClInclude Include="core\pch.h" />
+    <ClInclude Include="core\platform.h" />
+    <ClInclude Include="core\pool.h" />
+    <ClInclude Include="core\profiler.h" />
+    <ClInclude Include="core\proxied.h" />
+    <ClInclude Include="core\readstream.h" />
+    <ClInclude Include="core\ringbuffer.h" />
+    <ClInclude Include="core\runningaverage.h" />
+    <ClInclude Include="core\sse.h" />
+    <ClInclude Include="core\staticsingleton.h" />
+    <ClInclude Include="core\stats.h" />
+    <ClInclude Include="core\string.h" />
+    <ClInclude Include="core\stringwriter.h" />
+    <ClInclude Include="core\substream.h" />
+    <ClInclude Include="core\swapstream.h" />
+    <ClInclude Include="core\system.h" />
+    <ClInclude Include="core\system_win.h" />
+    <ClInclude Include="core\target.h" />
+    <ClInclude Include="core\textwriter.h" />
+    <ClInclude Include="core\thread.h" />
+    <ClInclude Include="core\timer.h" />
+    <ClInclude Include="core\treenode.h" />
+    <ClInclude Include="core\types.h" />
+    <ClInclude Include="core\vector3.h" />
+    <ClInclude Include="core\version.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BE2EBA34-1AE8-458E-8000-173DED1F4884}</ProjectGuid>
+    <RootNamespace>ck</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>ck</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugStatic|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugStatic|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugStatic|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugStatic|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|Win32'">$(ProjectDir)..\..\lib\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugStatic|Win32'">$(ProjectDir)..\..\lib\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|Win32'">$(ProjectDir)build\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugStatic|Win32'">$(ProjectDir)build\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|Win32'">$(ProjectDir)..\..\lib\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">$(ProjectDir)..\..\lib\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|Win32'">$(ProjectDir)build\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">$(ProjectDir)build\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|x64'">
+    <OutDir>$(ProjectDir)..\..\lib\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)build\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|x64'">
+    <OutDir>$(ProjectDir)..\..\lib\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)build\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|x64'">
+    <OutDir>$(ProjectDir)..\..\lib\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)build\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugStatic|x64'">
+    <OutDir>$(ProjectDir)..\..\lib\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)build\win\vs$(VisualStudioVersion)\$(PlatformShortName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;CK_DEBUG=1;_WIN32_WINNT=0x0602;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ck/core/pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ForcedIncludeFiles>ck/core/pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>..;../../ext/libogg/include;../../ext;../../inc</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)\%(RelativeDir)</ObjectFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DisableSpecificWarnings>4018</DisableSpecificWarnings>
+      <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>$(OutDir)\ogg.lib;$(OutDir)\tremor.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDynamic|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;CK_DEBUG=1;_WIN32_WINNT=0x0602;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ck/core/pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>ck/core/pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>..;../../ext/libogg/include;../../ext;../../inc</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)\%(RelativeDir)</ObjectFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DisableSpecificWarnings>4018</DisableSpecificWarnings>
+      <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>$(OutDir)\ogg.lib;$(OutDir)\tremor.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugStatic|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;CK_DEBUG=1;_WIN32_WINNT=0x0602;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ck/core/pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ForcedIncludeFiles>ck/core/pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>..;../../ext/libogg/include;../../ext;../../inc</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)\%(RelativeDir)</ObjectFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DisableSpecificWarnings>4018</DisableSpecificWarnings>
+      <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>$(OutDir)\ogg.lib;$(OutDir)\tremor.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugStatic|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;CK_DEBUG=1;_WIN32_WINNT=0x0602;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ck/core/pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>ck/core/pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>..;../../ext/libogg/include;../../ext;../../inc</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)\%(RelativeDir)</ObjectFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DisableSpecificWarnings>4018</DisableSpecificWarnings>
+      <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>$(OutDir)\ogg.lib;$(OutDir)\tremor.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;CK_NDEBUG=1;_WIN32_WINNT=0x0602;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>ck/core/pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>..;../../ext/libogg/include;../../ext;../../inc</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>ck/core/pch.h</PrecompiledHeaderFile>
+      <ObjectFileName>$(IntDir)\%(RelativeDir)</ObjectFileName>
+      <DisableSpecificWarnings>4552;4553;4018</DisableSpecificWarnings>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>$(OutDir)\ogg.lib;$(OutDir)\tremor.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDynamic|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;CK_NDEBUG=1;_WIN32_WINNT=0x0602;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>ck/core/pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>..;../../ext/libogg/include;../../ext;../../inc</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>ck/core/pch.h</PrecompiledHeaderFile>
+      <ObjectFileName>$(IntDir)\%(RelativeDir)</ObjectFileName>
+      <DisableSpecificWarnings>4552;4553;4018</DisableSpecificWarnings>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>$(OutDir)\ogg.lib;$(OutDir)\tremor.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;CK_NDEBUG=1;_WIN32_WINNT=0x0602;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>ck/core/pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>..;../../ext/libogg/include;../../ext;../../inc</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>ck/core/pch.h</PrecompiledHeaderFile>
+      <ObjectFileName>$(IntDir)\%(RelativeDir)</ObjectFileName>
+      <DisableSpecificWarnings>4552;4553;4018</DisableSpecificWarnings>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>$(OutDir)\ogg.lib;$(OutDir)\tremor.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;CK_NDEBUG=1;_WIN32_WINNT=0x0602;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>ck/core/pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>..;../../ext/libogg/include;../../ext;../../inc</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>ck/core/pch.h</PrecompiledHeaderFile>
+      <ObjectFileName>$(IntDir)\%(RelativeDir)</ObjectFileName>
+      <DisableSpecificWarnings>4552;4553;4018</DisableSpecificWarnings>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>$(OutDir)\ogg.lib;$(OutDir)\tremor.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

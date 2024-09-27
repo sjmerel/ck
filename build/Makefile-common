@@ -91,16 +91,16 @@ ifeq ($(CK_TARGET_OS),android)
   endif
 else ifeq ($(CK_TARGET_OS),linux)
   ifeq ($(CK_ARCH),x86)
-    C_ARCH_FLAGS := -m32
+    C_ARCH_FLAGS := -m32 -msse3 -mfpmath=sse
   else ifeq ($(CK_ARCH),x64)
-    C_ARCH_FLAGS := -m64
+    C_ARCH_FLAGS := -m64 -msse3 -mfpmath=sse
   endif
 else
   $(error unknown target OS!)
 endif
 
 
-C_DEBUG_FLAGS   := -O0 -Os -DCK_DEBUG=1 
+C_DEBUG_FLAGS   := -O0 -DCK_DEBUG=1 
 C_RELEASE_FLAGS := -O2 -Os -fomit-frame-pointer -DCK_NDEBUG=1 -DNDEBUG 
 ifeq ($(CK_CONFIG),debug)
   C_FLAGS := $(C_COMMON_FLAGS) $(C_ARCH_FLAGS) $(C_DEBUG_FLAGS)

@@ -20,7 +20,7 @@ public:
     SoundName& operator=(const char*);
     SoundName& operator=(const SoundName&);
 
-    enum { k_len = 32 };
+    enum { k_len = 256 };
 
     void set(const char*);
 

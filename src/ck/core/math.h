@@ -206,7 +206,7 @@ namespace Math
 
     inline float randomFloat(float min, float max)
     {
-        return rand() * (max-min) / RAND_MAX;
+        return rand() * (max-min) / float(RAND_MAX);
     }
 
     ////////////////////////////////////////

@@ -1,0 +1,8 @@
+.vs/
+/bin
+/lib
+/ext/libogg/build
+/ext/tinyxml/build
+/ext/tremor/build
+/src/ck/build
+/src/cktool/build

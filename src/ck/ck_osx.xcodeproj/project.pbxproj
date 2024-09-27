@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43FB241129BF1BD000923AC1 /* audioutil.neon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 43FB241029BF1BD000923AC1 /* audioutil.neon.cpp */; };
 		AA03E4B41512FC90009D5131 /* audiohelpers_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = AA03E4B21512FC90009D5131 /* audiohelpers_ios.h */; };
 		AA03E4B51512FC90009D5131 /* audiohelpers_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA03E4B31512FC90009D5131 /* audiohelpers_ios.mm */; };
 		AA09104E21581F46002929FA /* libogg_osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA09104D21581F46002929FA /* libogg_osx.a */; };
@@ -285,6 +286,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43FB241029BF1BD000923AC1 /* audioutil.neon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audioutil.neon.cpp; path = audio/audioutil.neon.cpp; sourceTree = "<group>"; };
 		AA03E4B21512FC90009D5131 /* audiohelpers_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audiohelpers_ios.h; path = audio/audiohelpers_ios.h; sourceTree = "<group>"; };
 		AA03E4B31512FC90009D5131 /* audiohelpers_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = audiohelpers_ios.mm; path = audio/audiohelpers_ios.mm; sourceTree = "<group>"; };
 		AA09104D21581F46002929FA /* libogg_osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libogg_osx.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -328,8 +330,6 @@
 		AA2D18B014F58D3100E946FB /* vorbisaudiostream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vorbisaudiostream.h; path = audio/vorbisaudiostream.h; sourceTree = "<group>"; };
 		AA2D18B114F58D3100E946FB /* vorbisstreamsound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vorbisstreamsound.cpp; path = audio/vorbisstreamsound.cpp; sourceTree = "<group>"; };
 		AA2D18B214F58D3100E946FB /* vorbisstreamsound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vorbisstreamsound.h; path = audio/vorbisstreamsound.h; sourceTree = "<group>"; };
-		AA2D191D14F58DFC00E946FB /* libogg_osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libogg_osx.a; path = ../DerivedData/ck/Build/Products/Debug/libogg_osx.a; sourceTree = "<group>"; };
-		AA2D192014F58E0300E946FB /* libtremor_osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtremor_osx.a; path = ../../ext/tremor/build/Release/libtremor_osx.a; sourceTree = "<group>"; };
 		AA348171177D55EC00715F31 /* runningaverage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = runningaverage.cpp; path = core/runningaverage.cpp; sourceTree = "<group>"; };
 		AA348172177D55EC00715F31 /* runningaverage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = runningaverage.h; path = core/runningaverage.h; sourceTree = "<group>"; };
 		AA4AD390141C7B210047A90E /* md5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = md5.cpp; path = core/md5.cpp; sourceTree = "<group>"; };
@@ -747,6 +747,7 @@
 		AA9FB1F4132AA76E00710C6E /* audio */ = {
 			isa = PBXGroup;
 			children = (
+				43FB241029BF1BD000923AC1 /* audioutil.neon.cpp */,
 				AA710B6613CE32D500151CFD /* adpcm.cpp */,
 				AA710B6713CE32D500151CFD /* adpcm.h */,
 				AA710B6813CE32D500151CFD /* adpcmdecoder.cpp */,
@@ -912,8 +913,6 @@
 			children = (
 				AA09104D21581F46002929FA /* libogg_osx.a */,
 				AA09104F21581F46002929FA /* libtremor_osx.a */,
-				AA2D192014F58E0300E946FB /* libtremor_osx.a */,
-				AA2D191D14F58DFC00E946FB /* libogg_osx.a */,
 				AAE9355A132AB88F00521966 /* Foundation.framework */,
 				AAE9355B132AB88F00521966 /* AudioUnit.framework */,
 				AAE9355C132AB88F00521966 /* AudioToolbox.framework */,
@@ -1087,14 +1086,15 @@
 		AA9FB1D4132AA70500710C6E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1420;
 			};
 			buildConfigurationList = AA9FB1D7132AA70500710C6E /* Build configuration list for PBXProject "ck_osx" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = AA9FB1D2132AA70500710C6E;
 			productRefGroup = AA9FB1DE132AA70500710C6E /* Products */;
@@ -1235,6 +1235,7 @@
 				AA710B8A13CE430B00151CFD /* decoderbuf.cpp in Sources */,
 				AA4AD394141C7B210047A90E /* md5.cpp in Sources */,
 				AA74823A142B9DA900D0CFAD /* audioformat.cpp in Sources */,
+				43FB241129BF1BD000923AC1 /* audioutil.neon.cpp in Sources */,
 				AA56673A194ABD1600A812D7 /* rawwriter.cpp in Sources */,
 				AA74823B142B9DA900D0CFAD /* audiostream.cpp in Sources */,
 				AAC5FF611811966D002E8C70 /* distortionprocessor.cpp in Sources */,
@@ -1278,6 +1279,7 @@
 		AA9FB1E9132AA70500710C6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -1290,11 +1292,13 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1310,7 +1314,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -1319,6 +1323,7 @@
 		AA9FB1EA132AA70500710C6E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -1331,11 +1336,13 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1346,7 +1353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -1359,6 +1366,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -1370,6 +1378,7 @@
 					DEBUG,
 					"CK_DEBUG=1",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = ck;
 				USER_HEADER_SEARCH_PATHS = ".. ../../inc ../../ext ../../ext/libogg/include";
 				USE_HEADERMAP = NO;
@@ -1384,6 +1393,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -1392,6 +1402,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = core/pch.h;
 				GCC_PREPROCESSOR_DEFINITIONS = "CK_NDEBUG=1";
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = ck;
 				USER_HEADER_SEARCH_PATHS = ".. ../../inc ../../ext ../../ext/libogg/include";
 				USE_HEADERMAP = NO;

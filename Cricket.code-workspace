@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"mesonbuild.configureOnOpen": true,
+		"mesonbuild.buildFolder": "mesonbuild/debug/linux",
+		"mesonbuild.configureOptions": [
+			"--native-file=meson.clang.cfg"
+		],
+		"files.associations": {
+			"os_types.h": "c",
+			"alloca.h": "c",
+			"memory.h": "c"
+		}
+	}
+}
